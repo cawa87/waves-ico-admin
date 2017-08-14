@@ -1,0 +1,5 @@
+layout:
+    logged_in_as: 'Logged in as %username%'
+    login: Login
+    register: Register
+
