@@ -33,3 +33,18 @@ services:
     # AppBundle\Service\ExampleService:
     #     arguments:
     #         $someArgument: 'some_value'
+
+    AppBundle\Wrapper\CurrencyRateWrapper: '@app.wrappers.currency_rate_wrapper'
+
+    app.wrappers.currency_rate_wrapper:
+        public: true
+        class: AppBundle\Wrappers\CurrencyRateWrapper
+        arguments:
+          - '%cr_api_url%'
+
+
+#    user.registration_complet:
+#        class: AppBundle\EventListener\RegistrationCompleteListener
+#        arguments: ["@router", "@doctrine.orm.entity_manager",'@logger']
+#        tags:
+#            - { name: 'kernel.event_subscriber'}

@@ -11,12 +11,12 @@ use Symfony\Component\HttpFoundation\Request;
 /**
  * Class DefaultController
  * @package AppBundle\Controller
- * @Route("/dashboard", name="dashboard")
+ * @Route("/admin/user")
  */
-class DashboardController extends Controller
+class AdminUserController extends Controller
 {
     /**
-     * @Route("/", name="dashboard_homepage")
+     * @Route("/", name="admin_user_list")
      */
     public function indexAction(Request $request)
     {

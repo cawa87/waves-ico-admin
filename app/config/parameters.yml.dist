@@ -12,8 +12,16 @@ parameters:
 
     mailer_transport: smtp
     mailer_host: 127.0.0.1
-    mailer_user: ~
-    mailer_password: ~
+    mailer_user: zaweb.studio@gmail.com
+    mailer_password: 'dgsucqrfwjatbbtk'
 
     # A secret key that's used to generate certain security-related tokens
     secret: ThisTokenIsNotSoSecretChangeIt
+
+    # Currency rate api
+    cr_api_url: 'https://api.coinmarketcap.com/v1/'
+
+    # Current price for BNR
+    bnr_price: '10.0'
+    # BNR wallet address(base58)
+    bnr_wallet: 'asdkfjlkasdjfaklsdjfasdjfkl'

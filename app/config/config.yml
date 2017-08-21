@@ -75,3 +75,10 @@ fos_user:
     from_email:
         address: "stub@baner.su"
         sender_name: "stub"
+
+    registration:
+        confirmation:
+            enabled: true
+            from_email:
+                address: zaweb.studio@gmail.com
+                sender_name: Demo registration
