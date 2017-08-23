@@ -1,12 +1,62 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <meta charset="UTF-8" />
+    <meta charset="UTF-8">
+    <link rel="icon" type="image/png" href="/img/favicon.png">
+    <title>BANER ICO Panel</title>
+    <link rel="stylesheet" href="/css/style.css">
 </head>
 <body>
-<div>
-    {% block content %}
-    {% endblock content %}
-</div>
+<!-- Header-->
+<header class="main-header">
+    <div class="container"><img class="logo" src="/img/logo.svg">
+        <div class="inner-action">
+            <div class="dropdown dropdown-lang"><a data-toggle="dropdown" href="#" id="lang">Russian</a>
+                <ul class="dropdown-menu" role="menu" aria-labelledby="lang">
+                    <li>12</li>
+                    <li>21</li>
+                </ul>
+            </div>
+            <div class="dropdown dropdown-login"><a data-toggle="dropdown" href="#" id="login">admin@baner.com</a>
+                <ul class="dropdown-menu" role="menu" aria-labelledby="login">
+                    <li>Выход</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</header>
+<!-- Main-->
+<section class="main-content">
+    <div class="container">
+        <!-- Left aside-->
+        <aside class="aside-left">
+            <div class="panel-mini total-balance">
+                <div class="title">Общий баланс:</div>
+                <div class="num-balance">0 PLBT</div>
+            </div>
+            <!-- Navigation-->
+            <nav class="main-nav">
+                <ul class="nav-list">
+                    <li class="nav-item"><a class="nav-link" href="login.html">Вход</a></li>
+                    <li class="nav-item"><a class="nav-link" href="register.html">Регистрация</a></li>
+                    <li class="nav-item"><a class="nav-link" href="register-confirm.html">Успешная регистрация</a></li>
+                    <li class="nav-item"><a class="nav-link" href="password-email.html">Восстановление пароля</a></li>
+                    <li class="nav-item"><a class="nav-link" href="password-email-confirm.html">Подтверждение пароля</a></li>
+                    <li class="nav-item"><a class="nav-link" href="password-reset.html">Изменение пароля</a></li>
+                    <li class="nav-item"><a class="nav-link" href="/">Панель управления</a></li>
+                    <li class="nav-item"><a class="nav-link" href="history-start.html">Начало транзакций</a></li>
+                    <li class="nav-item"><a class="nav-link" href="history.html">История транзакций</a></li>
+                    <li class="nav-item"><a class="nav-link" href="address.html">Адрес аккаунта</a></li>
+                    <li class="nav-item"><a class="nav-link" href="sending.html">Отправить</a></li>
+                </ul>
+            </nav>
+        </aside>
+        {% block content %}
+        {% endblock %}
+    </div>
+</section>
+<section class="main-content">
+<script src="/js/libs/jquery.min.js"></script>
+<script src="/js/dropdown.js"></script>
 </body>
 </html>

@@ -22,6 +22,6 @@ parameters:
     cr_api_url: 'https://api.coinmarketcap.com/v1/'
 
     # Current price for BNR
-    bnr_price: '10.0'
+    bnr_price: '10'
     # BNR wallet address(base58)
     bnr_wallet: 'asdkfjlkasdjfaklsdjfasdjfkl'

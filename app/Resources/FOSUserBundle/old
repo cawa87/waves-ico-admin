@@ -1,0 +1,10 @@
+
+{% if is_granted("IS_AUTHENTICATED_REMEMBERED") %}
+    {{ 'layout.logged_in_as'|trans({'%username%': app.user.username}) }} |
+    <a href="{{ path('fos_user_security_logout') }}">
+        {{ 'layout.logout'|trans }}
+    </a>
+{% else %}
+    <a href="{{ path('fos_user_security_login') }}">{{ 'layout.login'|trans }}</a>
+    <a href="{{ path('fos_user_registration_register') }}">{{ 'layout.register'|trans }}</a>
+{% endif %}

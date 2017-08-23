@@ -1,5 +1,147 @@
 {% extends ":AppBundle:layout.html.twig" %}
 
 {% block content %}
-    hey
+    <!-- Center content-->
+    <section class="content">
+        <section class="panel panel-invest">
+            <h2 class="panel-title">Инвестировать</h2>
+            <div class="panel-body">
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod</p>
+            </div>
+        </section>
+        <!-- Invested panel-->
+        <section class="panel panel-invested">
+            <h2 class="panel-title">Инвестировано</h2>
+            <div class="panel-body">
+                <div class="invested-item one"><i class="invested-icon"></i>
+                    <div class="amount">11,202.583078</div>
+                    <div class="currency">USD</div>
+                </div>
+                <div class="invested-item two"><i class="invested-icon"></i>
+                    <div class="amount">11,202.583078</div>
+                    <div class="currency">BTC</div>
+                </div>
+                <div class="invested-item three"><i class="invested-icon"></i>
+                    <div class="amount">11,202.583078</div>
+                    <div class="currency">ETH</div>
+                </div>
+                <div class="invested-item four"><i class="invested-icon"></i>
+                    <div class="amount">11,202.583078</div>
+                    <div class="currency">LTC</div>
+                </div>
+                <div class="invested-item five"><i class="invested-icon"></i>
+                    <div class="amount">11,202.583078</div>
+                    <div class="currency">EMC</div>
+                </div>
+                <div class="invested-item six"><i class="invested-icon"></i>
+                    <div class="amount">11,202.583078</div>
+                    <div class="currency">USDT</div>
+                </div>
+                <div class="invested-item seven"><i class="invested-icon"></i>
+                    <div class="amount">11,202.583078</div>
+                    <div class="currency">WAVES</div>
+                </div>
+                <div class="invested-item eight"><i class="invested-icon"></i>
+                    <div class="amount">11,202.583078</div>
+                    <div class="currency">MONERO</div>
+                </div>
+            </div>
+        </section>
+        <!-- Bonus panel-->
+        <section class="panel panel-bonus">
+            <h2 class="panel-title">Бонусы</h2>
+            <div class="panel-body">
+                <div class="bonus-item">
+                    <div class="percent">25%</div>
+                    <div class="empty-scale">
+                        <div class="full-scale"></div>
+                    </div>
+                    <div class="time">День 1-2</div>
+                </div>
+                <div class="bonus-item">
+                    <div class="percent">20%</div>
+                    <div class="empty-scale">
+                        <div class="full-scale"></div>
+                    </div>
+                    <div class="time">День 3-7</div>
+                </div>
+                <div class="bonus-item">
+                    <div class="percent">15%</div>
+                    <div class="empty-scale">
+                        <div class="full-scale"></div>
+                    </div>
+                    <div class="time">Неделя 2</div>
+                </div>
+                <div class="bonus-item">
+                    <div class="percent">10%</div>
+                    <div class="empty-scale">
+                        <div class="full-scale"></div>
+                    </div>
+                    <div class="time">Неделя 3</div>
+                </div>
+                <div class="bonus-item">
+                    <div class="percent">5%</div>
+                    <div class="empty-scale">
+                        <div class="full-scale"></div>
+                    </div>
+                    <div class="time">Неделя 4</div>
+                </div>
+                <div class="bonus-item">
+                    <div class="percent">0%</div>
+                    <div class="empty-scale">
+                        <div class="full-scale"></div>
+                    </div>
+                    <div class="time">Неделя 5</div>
+                </div>
+            </div>
+        </section>
+        <!-- Course panel-->
+        <section class="panel panel-course">
+            <h2 class="panel-title">Курс обмена</h2>
+            <div class="panel-body">
+                <div class="course-tip">PLBT цена</div>
+                <div class="panel-course-wrap">
+                    <ul class="course-list">
+                        <li class="course-item"><span class="icon"></span><span class="currency">USD</span><span class="amount">10</span></li>
+                        <li class="course-item"><span class="icon"></span><span class="currency">BTC</span><span class="amount">0.003782</span></li>
+                        <li class="course-item"><span class="icon"></span><span class="currency">ETH</span><span class="amount">0.031544</span></li>
+                        <li class="course-item"><span class="icon"></span><span class="currency">USDT</span><span class="amount">10</span></li>
+                    </ul>
+                    <ul class="course-list">
+                        <li class="course-item"><span class="icon"></span><span class="currency">DASH</span><span class="amount">0.054309</span></li>
+                        <li class="course-item"><span class="icon"></span><span class="currency">ZEC</span><span class="amount">0.02718</span></li>
+                        <li class="course-item"><span class="icon"></span><span class="currency">ETC</span><span class="amount">0.532165</span></li>
+                        <li class="course-item"><span class="icon"></span><span class="currency">LTC</span><span class="amount">0.218884</span></li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+        <!-- Footer-->
+        <footer class="main-footer">
+            <p class="copyright">© 2017 Baner Foundation OÜ. All rights reserved</p>
+            <p class="feedback">
+                Возникли вопросы? Пожалуйста, свяжитесь с нами по support@baner.su<br>
+                The website is owned by Baner Foundation OU with the company number 12302823, Tartu mnt 43 Tallinn 10128 Estonia
+            </p>
+            <div class="payment-list"><img src="img/footer/pay1.png"><img src="img/footer/pay3.png"><img src="img/footer/pay2.png"></div>
+        </footer>
+    </section>
+    <!-- Right aside-->
+    <aside class="aside-right">
+        <div class="panel-mini statistics">
+            <div class="line">Дней осталось:<span>13</span></div>
+            <div class="line">Текущий бонус:<span>5%</span></div>
+        </div>
+        <section class="panel panel-status">
+            <div class="panel-title">Текущий статус</div>
+            <div class="panel-body status-body">
+                <div class="invested-all">
+                    <div class="title">ИНВЕСТИРОВАНО (всего)</div><span class="currency bnr">8554.182707 BTC</span><span class="currency usd">23,481,146 USD</span>
+                </div>
+                <div class="members">
+                    <div class="title">УЧАСТНИКИ</div><span class="count">1938</span>
+                </div>
+            </div>
+        </section>
+    </aside>
 {% endblock content %}
