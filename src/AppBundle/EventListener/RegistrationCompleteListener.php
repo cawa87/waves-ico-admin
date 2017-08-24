@@ -3,6 +3,7 @@
 namespace AppBundle\EventListener;
 
 use AppBundle\Entity\UserWallet;
+use AppBundle\Wrappers\WavesNodeWrapper;
 use Doctrine\Common\Persistence\ObjectManager;
 use Doctrine\ORM\EntityManagerInterface;
 use FOS\UserBundle\Event\FilterUserResponseEvent;
@@ -17,15 +18,15 @@ use Symfony\Component\Routing\Generator\UrlGeneratorInterface;
 
 class RegistrationCompleteListener implements EventSubscriberInterface
 {
-    private $router;
     private $logger;
     private $em;
+    private $wrapper;
 
-    public function __construct(UrlGeneratorInterface $router, ObjectManager $em, LoggerInterface $logger)
+    public function __construct(ObjectManager $em, LoggerInterface $logger, WavesNodeWrapper $wrapper)
     {
-        $this->router = $router;
         $this->em = $em;
         $this->logger = $logger;
+        $this->wrapper = $wrapper;
     }
 
     /**
@@ -48,7 +49,7 @@ class RegistrationCompleteListener implements EventSubscriberInterface
         $user = $event->getUser();
         $wallet = new UserWallet();
         $wallet->setUser($user);
-        $wallet->setAddress(uniqid());
+        $wallet->setAddress($this->wrapper->generateUserWalletAddress());
 
         $this->logger->info('CREATING WALLET');
         $this->em->persist($wallet);
@@ -56,7 +57,7 @@ class RegistrationCompleteListener implements EventSubscriberInterface
         $this->em->flush();
 
         //}
-      //   $url = $this->router->generate('standard_user_registration_success');
+        //   $url = $this->router->generate('standard_user_registration_success');
 //         $event->setResponse(new RedirectResponse('/dashboard'));
     }
 }

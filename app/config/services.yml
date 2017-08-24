@@ -37,14 +37,19 @@ services:
     AppBundle\Wrapper\CurrencyRateWrapper: '@app.wrappers.currency_rate_wrapper'
 
     app.wrappers.currency_rate_wrapper:
-        public: true
         class: AppBundle\Wrappers\CurrencyRateWrapper
         arguments:
           - '%cr_api_url%'
 
+    AppBundle\Wrappers\WavesNodeWrapper: '@app.wrappers.waves_node_wrapper'
 
-#    user.registration_complet:
-#        class: AppBundle\EventListener\RegistrationCompleteListener
-#        arguments: ["@router", "@doctrine.orm.entity_manager",'@logger']
-#        tags:
-#            - { name: 'kernel.event_subscriber'}
+    app.wrappers.waves_node_wrapper:
+        class: AppBundle\Wrappers\WavesNodeWrapper
+        arguments:
+          - '%node_api_url%'
+          - '%node_api_key%'
+
+    user.registration_complet:
+        class: AppBundle\EventListener\RegistrationCompleteListener
+        tags:
+            - { name: 'kernel.event_subscriber'}

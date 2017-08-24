@@ -7,7 +7,7 @@ use Doctrine\ORM\Mapping as ORM;
 use Gedmo\Mapping\Annotation as Gedmo;
 
 /**
- * @ORM\Entity
+ * @ORM\Entity(repositoryClass="AppBundle\Repository\UserRepository")
  * @ORM\Table(name="user")
  *
  */
@@ -42,7 +42,7 @@ class User extends BaseUser
 
     /**
      * @var Transaction[]
-     * @ORM\OneToMany(targetEntity="AppBundle\Entity\Transaction",mappedBy="user", fetch="EXTRA_LAZY")
+     * @ORM\OneToMany(targetEntity="AppBundle\Entity\Transaction",mappedBy="user", fetch="EXTRA_LAZY") EAGER
      */
     protected $transactions;
 
@@ -117,6 +117,72 @@ class User extends BaseUser
     {
         $this->lastName = $lastName;
     }
+
+    /**
+     * @return \DateTime
+     */
+    public function getCreatedAt()
+    {
+        return $this->createdAt;
+    }
+
+    /**
+     * @param \DateTime $createdAt
+     */
+    public function setCreatedAt($createdAt)
+    {
+        $this->createdAt = $createdAt;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getId()
+    {
+        return $this->id;
+    }
+
+    /**
+     * @param mixed $id
+     */
+    public function setId($id)
+    {
+        $this->id = $id;
+    }
+
+    /**
+     * @return Transaction[]
+     */
+    public function getTransactions()
+    {
+        return $this->transactions;
+    }
+
+    /**
+     * @param Transaction[] $transactions
+     */
+    public function setTransactions($transactions)
+    {
+        $this->transactions = $transactions;
+    }
+
+    /**
+     * @return \DateTime
+     */
+    public function getUpdatedAt()
+    {
+        return $this->updatedAt;
+    }
+
+    /**
+     * @param \DateTime $updatedAt
+     */
+    public function setUpdatedAt($updatedAt)
+    {
+        $this->updatedAt = $updatedAt;
+    }
+
+
 
 
 }

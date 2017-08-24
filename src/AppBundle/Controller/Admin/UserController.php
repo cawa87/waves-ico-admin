@@ -2,6 +2,7 @@
 
 namespace AppBundle\Controller\Admin;
 
+use AppBundle\Entity\User;
 use AppBundle\Wrappers\CurrencyRateWrapper;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Template;
@@ -20,6 +21,10 @@ class UserController extends Controller
      */
     public function indexAction(Request $request)
     {
-        return $this->render('AppBundle/Admin/User/index.html.twig',[]);
+        $users = $this->getDoctrine()->getRepository(User::class)->findForAdmin();
+
+        return $this->render('AppBundle/Admin/User/index.html.twig',[
+            'users' => $users
+        ]);
     }
 }
