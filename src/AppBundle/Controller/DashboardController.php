@@ -11,7 +11,6 @@ use Symfony\Component\HttpFoundation\Request;
 /**
  * Class DefaultController
  * @package AppBundle\Controller
- * @Route("/dashboard", name="dashboard")
  */
 class DashboardController extends Controller
 {

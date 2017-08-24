@@ -4,10 +4,12 @@ namespace AppBundle\Entity;
 
 use FOS\UserBundle\Model\User as BaseUser;
 use Doctrine\ORM\Mapping as ORM;
+use Gedmo\Mapping\Annotation as Gedmo;
 
 /**
  * @ORM\Entity
  * @ORM\Table(name="user")
+ *
  */
 class User extends BaseUser
 {
@@ -37,6 +39,29 @@ class User extends BaseUser
      * @ORM\OneToOne(targetEntity="AppBundle\Entity\UserWallet", mappedBy="user")
      */
     protected $wallet;
+
+    /**
+     * @var Transaction[]
+     * @ORM\OneToMany(targetEntity="AppBundle\Entity\Transaction",mappedBy="user", fetch="EXTRA_LAZY")
+     */
+    protected $transactions;
+
+    /**
+     * @var \DateTime
+     *
+     * @ORM\Column(name="created_at", type="datetime")
+     * @Gedmo\Timestampable(on="create")
+     */
+    protected $createdAt;
+
+    /**
+     * @var \DateTime
+     *
+     * @ORM\Column(name="updated_at", type="datetime")
+     * @Gedmo\Timestampable(on="update")
+     */
+    protected $updatedAt;
+
 
 
     public function __construct()

@@ -1,6 +1,6 @@
 <?php
 
-namespace AppBundle\Controller;
+namespace AppBundle\Controller\Admin;
 
 use AppBundle\Wrappers\CurrencyRateWrapper;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
@@ -13,13 +13,13 @@ use Symfony\Component\HttpFoundation\Request;
  * @package AppBundle\Controller
  * @Route("/admin/user")
  */
-class AdminUserController extends Controller
+class UserController extends Controller
 {
     /**
      * @Route("/", name="admin_user_list")
      */
     public function indexAction(Request $request)
     {
-        return $this->render('AppBundle/Dashboard/index.html.twig',[]);
+        return $this->render('AppBundle/Admin/User/index.html.twig',[]);
     }
 }

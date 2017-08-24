@@ -51,6 +51,13 @@ class Currency
 
 
     /**
+     * @var Transaction[]
+     * @ORM\OneToMany(targetEntity="AppBundle\Entity\Transaction",mappedBy="currency", fetch="EXTRA_LAZY")
+     */
+    protected $transactions;
+
+
+    /**
      * Get id
      *
      * @return int

@@ -82,3 +82,9 @@ fos_user:
             from_email:
                 address: zaweb.studio@gmail.com
                 sender_name: Demo registration
+
+stof_doctrine_extensions:
+    orm:
+        default:
+            timestampable: true
+
