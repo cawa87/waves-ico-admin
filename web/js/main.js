@@ -41,22 +41,34 @@
 
 (function() {
 
-    var tipAction = $('.tip-bonus'),
-        tipDesc = $('.tip-bonus-desc');
+    var tooltip = $('.tooltip');
+    var tooltipButton = tooltip.find('.tooltip-call');
+    var tooltipContent = tooltip.find('.tooltip-content');
 
-    // Show/Hide tip
-    tipAction.on('click', function() {
-        tipDesc.toggleClass('show');
-    });
+    // Open/close tooltip
+    function handleToggleTooltipContent(e) {
+        var btn = $(this);
+        var currentTipContent = btn.next();
 
-    // Close tip click body
+        e.preventDefault();
+
+        tooltipContent.not(currentTipContent).removeClass('show');
+
+        ( currentTipContent.hasClass('show') )
+                    ? currentTipContent.removeClass('show')
+                    : currentTipContent.addClass('show');
+    };
+
+    tooltipButton.on('click', handleToggleTooltipContent);
+
+
+    //Close tooltip click body
     $('body').on('click', function(e) {
 
-        if ( !( $(e.target).is(tipDesc) )  && !( $(e.target).is(tipAction) )) {
-            tipDesc.removeClass('show');
+        if ( !( $(e.target).parents().is(tooltip)) ) {
+            tooltipButton.next().removeClass('show')
         }
     });
-
 
 })();
 
