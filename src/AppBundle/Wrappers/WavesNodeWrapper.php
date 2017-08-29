@@ -51,6 +51,6 @@ class WavesNodeWrapper
 
         $resp = json_decode($res->getBody());
 
-        return $resp['address'];
+        return $resp->address;
     }
 }
