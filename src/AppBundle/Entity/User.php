@@ -2,9 +2,11 @@
 
 namespace AppBundle\Entity;
 
+use Doctrine\Common\Annotations\Annotation\Required;
 use FOS\UserBundle\Model\User as BaseUser;
 use Doctrine\ORM\Mapping as ORM;
 use Gedmo\Mapping\Annotation as Gedmo;
+use Symfony\Component\Validator\Constraints as Assert;
 
 /**
  * @ORM\Entity(repositoryClass="AppBundle\Repository\UserRepository")
@@ -22,14 +24,14 @@ class User extends BaseUser
 
     /**
      * @var string
-     *
+     * @Assert\NotBlank()
      * @ORM\Column(name="first_name", type="string", length=255, nullable=true)
      */
     protected $firstName;
 
     /**
      * @var string
-     *
+     * @Assert\NotBlank()
      * @ORM\Column(name="last_name", type="string", length=255, nullable=true)
      */
     protected $lastName;
@@ -61,7 +63,6 @@ class User extends BaseUser
      * @Gedmo\Timestampable(on="update")
      */
     protected $updatedAt;
-
 
 
     public function __construct()
@@ -183,6 +184,14 @@ class User extends BaseUser
     }
 
 
+    public function setEmail($email)
+    {
+        $email = is_null($email) ? '' : $email;
+        parent::setEmail($email);
+        $this->setUsername($email);
+
+        return $this;
+    }
 
 
 }

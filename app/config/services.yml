@@ -34,6 +34,12 @@ services:
     #     arguments:
     #         $someArgument: 'some_value'
 
+    app.form.registration:
+        class: AppBundle\Form\RegistrationType
+        tags:
+            - { name: form.type, alias: app_user_registration }
+
+
     AppBundle\Wrapper\CurrencyRateWrapper: '@app.wrappers.currency_rate_wrapper'
 
     app.wrappers.currency_rate_wrapper:

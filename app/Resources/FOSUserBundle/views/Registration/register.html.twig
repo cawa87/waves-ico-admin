@@ -1,52 +1,59 @@
 {% extends "@FOSUser/layout.html.twig" %}
 
-{% block fos_user_content %}
-    <section class="panel panel-form">
-        <h2 class="panel-title">Вход</h2>
-        <div class="panel-body panel-form-body">
+{% form_theme form ':form:register.html.twig' %}
 
-            {{ form_start(form, {'method': 'post', 'action': path('fos_user_registration_register'), 'attr': {'class': 'fos_user_registration_register'}}) }}
-            {{ form_widget(form) }}
-            <div>
-                <input type="submit" value="{{ 'registration.submit'|trans }}"/>
+{% block fos_user_content %}
+    <!-- Register panel-->
+    <section class="panel panel-form">
+        <h2 class="panel-title">Вход
+            <div class="dropdown-block dropdown-lang"><a class="select-lang" data-toggle="dropdown" href="">Russian</a>
+                <ul class="dropdown-menu dropdown-menu-lang" data-toggle="dropdown-menu">
+                    <li class="drop-item">Russian</li>
+                    <li class="drop-item">English</li>
+                    <li class="drop-item">China</li>
+                </ul>
             </div>
+        </h2>
+        <div class="panel-body panel-form-body">
+            {{ form_start(form, {'method': 'post', 'action': path('fos_user_registration_register'), 'attr': {'class': 'fos_user_registration_register'}}) }}
+
+            {{ form_errors(form) }}
+            <div class="form-line">
+                {{ form_row(form.firstName) }}
+                <label class="label" for="first_name">First Name</label>
+                <input class="input" type="text" name="fos_user_registration_form[firstName]" id="first_name" placeholder="First name" value="">
+            </div>
+            <div class="form-line">
+                {{ form_row(form.lastName) }}
+                <label class="label" for="last_name">Last Name</label>
+                <input class="input" type="text" name="fos_user_registration_form[lastName]" id="last_name" placeholder="Last Name" value="">
+            </div>
+            <div class="form-line">
+                <label class="label" for="email">Email</label>
+                {{ form_row(form.email) }}
+                <input class="input" type="text" name="fos_user_registration_form[email]" id="email" placeholder="Email" value="">
+            </div>
+            <div class="form-line">
+                {{ form_row(form.plainPassword) }}
+                <label class="label" for="password">Password</label>
+                <input class="input" type="password" name="fos_user_registration_form[plainPassword][first]" id="password" placeholder="Password" value="">
+            </div>
+            <div class="form-line">
+                <label class="label" for="password_repeat">Repeat password</label>
+                <input class="input" type="password" name="fos_user_registration_form[plainPassword][second]" id="password_repeat" placeholder="Password repeat" value="">
+            </div>
+            <div class="form-line">
+                <input type="checkbox" id="agreement" name="agreement" value="false">
+                <label class="check-label" for="agreement">I have read and agree with<a href="" target="_blank"></a>Terms and Conditions and confirm that &nbsp;<a href="" target="_blank"></a>I'm NOT the US citizen</label>
+            </div>
+            <button class="btn btn-block btn-form blue" type="submit">Зарегистрироваться</button>
+            <div class="tip-sign-in">Already have an account? <a class="link" href="login.html">Sign in</a></div>
+
             {{ form_end(form) }}
 
-            <!--   <form method="post" action="{{ path('fos_user_registration_register') }}" >
-
-                <div class="form-line">
-                    <label class="label" for="first_name">First Name</label>
-                    <input class="input" type="text" name="first_name" id="first_name" placeholder="First name"
-                           value="">
-                </div>
-                <div class="form-line">
-                    <label class="label" for="last_name">Last Name</label>
-                    <input class="input" type="text" name="last_name" id="last_name" placeholder="Last Name" value="">
-                </div>
-                <div class="form-line">
-                    <label class="label" for="email">Email</label>
-                    <input class="input" type="text" name="email" id="email" placeholder="Email" value="">
-                </div>
-                <div class="form-line">
-                    <label class="label" for="password">Password</label>
-                    <input class="input" type="password" name="password" id="password" placeholder="Password" value="">
-                </div>
-                <div class="form-line">
-                    <label class="label" for="password_repeat">Repeat password</label>
-                    <input class="input" type="password" name="password_repeat" id="password_repeat"
-                           placeholder="Password repeat" value="">
-                </div>
-                <div class="form-line">
-                    <input type="checkbox" id="agreement" name="agreement" value="false">
-                    <label class="check-label" for="agreement">I have read and agree with<a href="" target="_blank"></a>Terms
-                        and Conditions and confirm that &nbsp;<a href="" target="_blank"></a>I'm NOT the US
-                        citizen</label>
-                </div>
-                <button class="btn btn-block btn-form blue" type="submit">Зарегистрироваться</button>
-                <div class="tip-sign-in">Already have an account? <a class="link" href="login.html">Sign in</a></div>
-            </form>
-             -->
         </div>
     </section>
-    <!--  include "@FOSUser/Registration/register_content.html.twig" -->
+<!-- include "@FOSUser/Registration/register_content.html.twig" %} -->
 {% endblock fos_user_content %}
+
+

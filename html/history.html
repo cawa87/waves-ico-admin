@@ -2,24 +2,39 @@
 <html>
   <head>
     <meta charset="UTF-8">
-    <link rel="icon" type="image/png" href="../img/favicon.png">
+    <link rel="icon" type="image/png" href="./img/favicon.png">
     <title>BANER ICO Panel</title>
     <link rel="stylesheet" href="css/style.css">
   </head>
   <body>
+    <!-- alert-waves-->
+    <div class="alert-waves">
+      <div class="container">
+        <div class="waves-address-wrap">
+          <form><span class="waves-desc">Адрес waves</span>
+            <input class="input waves-input" type="text" name="waves-address" placeholder="Введите адрес waves для дальнейшей работы">
+            <buttion class="btn waves-btn" type="submit">Готово</buttion>
+          </form>
+          <div class="waves-tip">Ошибка. Проверьте правильность введенного вами адреса.</div>
+        </div>
+        <div class="waves-about"><a class="open-popup" href="" data-name="waves">Что такое waves и где его взять</a></div>
+      </div>
+    </div>
     <!-- Header-->
     <header class="main-header">
       <div class="container"><img class="logo" src="img/logo.svg">
         <div class="inner-action">
-          <div class="dropdown dropdown-lang"><a data-toggle="dropdown" href="#" id="lang">Russian</a>
-            <ul class="dropdown-menu" role="menu" aria-labelledby="lang">
-              <li>12</li>
-              <li>21</li>
+          <div class="dropdown-block dropdown-lang"><a class="select-lang" data-toggle="dropdown" href="">Russian</a>
+            <ul class="dropdown-menu dropdown-menu-lang" data-toggle="dropdown-menu">
+              <li class="drop-item">Russian</li>
+              <li class="drop-item">English</li>
+              <li class="drop-item">China</li>
             </ul>
           </div>
-          <div class="dropdown dropdown-login"><a data-toggle="dropdown" href="#" id="login">admin@baner.com</a>
-            <ul class="dropdown-menu" role="menu" aria-labelledby="login">
-              <li>Выход</li>
+          <div class="dropdown-block dropdown-user"><a class="username" data-toggle="dropdown" href="">admin@baner.com</a>
+            <ul class="dropdown-menu dropdown-menu-user" data-toggle="dropdown-menu">
+              <li class="drop-item">Настройки</li>
+              <li class="drop-item">Выход</li>
             </ul>
           </div>
         </div>
@@ -32,7 +47,7 @@
         <aside class="aside-left">
           <div class="panel-mini total-balance">
             <div class="title">Общий баланс:</div>
-            <div class="num-balance">0 PLBT</div>
+            <div class="num-balance">0 BNR</div>
           </div>
           <!-- Navigation-->
           <nav class="main-nav">
@@ -42,17 +57,21 @@
               <li class="nav-item"><a class="nav-link" href="register-confirm.html">Успешная регистрация</a></li>
               <li class="nav-item"><a class="nav-link" href="password-email.html">Восстановление пароля</a></li>
               <li class="nav-item"><a class="nav-link" href="password-email-confirm.html">Подтверждение пароля</a></li>
-              <li class="nav-item"><a class="nav-link" href="password-reset.html">Изменение пароля</a></li>
-              <li class="nav-item"><a class="nav-link" href="/">Панель управления</a></li>
+              <li class="nav-item"><a class="nav-link" href="password-reset.html">Изменение пароля</a></li><br>
+<br>
+              <li class="nav-item"><a class="nav-link" href="index.html">Панель управления</a></li>
               <li class="nav-item"><a class="nav-link" href="history-start.html">Начало транзакций</a></li>
               <li class="nav-item"><a class="nav-link" href="history.html">История транзакций</a></li>
               <li class="nav-item"><a class="nav-link" href="address.html">Адрес аккаунта</a></li>
-              <li class="nav-item"><a class="nav-link" href="sending.html">Отправить</a></li>
+              <li class="nav-item"><a class="nav-link" href="sending.html">Отправить</a></li><br>
+<br>
+              <li class="nav-item"><a class="nav-link" href="settings.html">Настройки</a></li>
+              <li class="nav-item"><a class="nav-link" href="settings-password.html">Настройки / пароль</a></li>
             </ul>
           </nav>
         </aside>
         <!-- Center content-->
-        <section class="content content-large">
+        <section class="content content-lg">
           <section class="panel panel-history">
             <h2 class="panel-title">История транзакций</h2>
             <div class="panel-body history-table">
@@ -84,17 +103,19 @@
           </section>
           <!-- Footer-->
           <footer class="main-footer">
-            <p class="copyright">© 2017 Baner Foundation OÜ. All rights reserved</p>
-            <p class="feedback">
-              Возникли вопросы? Пожалуйста, свяжитесь с нами по support@baner.su<br>
-              The website is owned by Baner Foundation OU with the company number 12302823, Tartu mnt 43 Tallinn 10128 Estonia
-            </p>
-            <div class="payment-list"><img src="img/footer/pay1.png"><img src="img/footer/pay3.png"><img src="img/footer/pay2.png"></div>
+            <p class="copyright">© 2017 BANER. All rights reserved</p>
+            <p class="feedback">Возникли вопросы? Пожалуйста, свяжитесь с нами по support@baner.su<br></p>
           </footer>
         </section>
       </div>
     </section>
+    <!-- Overlay waves-->
+    <div class="overlay waves-overlay"></div>
+    <!-- Scripts-->
     <script src="js/libs/jquery.min.js"></script>
-    <script src="js/dropdown.js"></script>
+    <script src="js/wave-auth.js"></script>
+    <script src="js/main.js"></script>
+    <script src="js/calculator.js"></script>
+    <script src="js/popup.js"></script>
   </body>
 </html>

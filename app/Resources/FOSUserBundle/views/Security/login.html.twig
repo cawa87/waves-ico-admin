@@ -4,7 +4,15 @@
 {% block fos_user_content %}
     <!-- Register panel-->
     <section class="panel panel-form">
-        <h2 class="panel-title">Вход</h2>
+        <h2 class="panel-title">Вход
+            <div class="dropdown-block dropdown-lang"><a class="select-lang" data-toggle="dropdown" href="">Russian</a>
+                <ul class="dropdown-menu dropdown-menu-lang" data-toggle="dropdown-menu">
+                    <li class="drop-item">Russian</li>
+                    <li class="drop-item">English</li>
+                    <li class="drop-item">China</li>
+                </ul>
+            </div>
+        </h2>
         <div class="panel-body panel-form-body">
 
             {% if error %}
@@ -28,7 +36,7 @@
                 <button class="btn btn-block btn-form blue" type="submit">Войти</button>
                 <a class="btn btn-block btn-form white"
                    href="{{ path('fos_user_registration_register') }}">Регистрация</a>
-                <a class="link tip-password" href="">Забыли пароль?</a>
+                <a class="link tip-password" href="{{ path('fos_user_resetting_send_email') }}">Забыли пароль?</a>
             </form>
         </div>
     </section>
