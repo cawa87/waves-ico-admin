@@ -73,9 +73,9 @@
         </div>
     </section>
 
-    <section class="main-content">
-
-    <script src="/js/libs/jquery.min.js"></script>
-    <script src="/js/main.js"></script>
+    {% block script %}
+        <script src="/js/libs/jquery.min.js"></script>
+        <script src="/js/main.js"></script>
+    {% endblock %}
 </body>
 </html>
