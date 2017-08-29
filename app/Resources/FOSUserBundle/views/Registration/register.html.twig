@@ -17,7 +17,6 @@
         <div class="panel-body panel-form-body">
             {{ form_start(form, {'method': 'post', 'action': path('fos_user_registration_register'), 'attr': {'class': 'fos_user_registration_register'}}) }}
 
-            {{ form_errors(form) }}
             <div class="form-line">
                 {{ form_row(form.firstName) }}
                 <label class="label" for="first_name">First Name</label>
@@ -43,7 +42,7 @@
                 <input class="input" type="password" name="fos_user_registration_form[plainPassword][second]" id="password_repeat" placeholder="Password repeat" value="">
             </div>
             <div class="form-line">
-                <input type="checkbox" id="agreement" name="agreement" value="false">
+                <input type="checkbox" id="agreement" name="agreement" value="false" required>
                 <label class="check-label" for="agreement">I have read and agree with<a href="" target="_blank"></a>Terms and Conditions and confirm that &nbsp;<a href="" target="_blank"></a>I'm NOT the US citizen</label>
             </div>
             <button class="btn btn-block btn-form blue" type="submit">Зарегистрироваться</button>

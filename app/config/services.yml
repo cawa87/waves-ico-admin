@@ -59,3 +59,8 @@ services:
         class: AppBundle\EventListener\RegistrationCompleteListener
         tags:
             - { name: 'kernel.event_subscriber'}
+
+    AppBundle\EventSubscriber\LocaleSubscriber:
+        arguments: ['%kernel.default_locale%']
+        # redundant if you're using autoconfigure
+        tags: [kernel.event_subscriber]

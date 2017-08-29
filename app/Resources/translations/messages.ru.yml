@@ -1,0 +1,5 @@
+layout:
+    logged_in_as: 'Вы вошли как %username%'
+    login: Вход
+    register: Регистрация
+

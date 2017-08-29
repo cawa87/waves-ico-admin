@@ -4,12 +4,12 @@
 {% block fos_user_content %}
     <!-- Register panel-->
     <section class="panel panel-form">
-        <h2 class="panel-title">Вход
+        <h2 class="panel-title">{{ 'layout.login'| trans }}
             <div class="dropdown-block dropdown-lang"><a class="select-lang" data-toggle="dropdown" href="">Russian</a>
                 <ul class="dropdown-menu dropdown-menu-lang" data-toggle="dropdown-menu">
-                    <li class="drop-item">Russian</li>
-                    <li class="drop-item">English</li>
-                    <li class="drop-item">China</li>
+                    <li class="drop-item"><a href="?locale=ru">Russian</a></li>
+                    <li class="drop-item"><a href="?locale=en">English</a></li>
+                    <li class="drop-item"><a href="?locale=ch">China</a></li>
                 </ul>
             </div>
         </h2>
