@@ -7,56 +7,75 @@
     <link rel="stylesheet" href="/css/style.css">
 </head>
 <body>
-<!-- Header-->
-<header class="main-header">
-    <div class="container"><img class="logo" src="/img/logo.svg">
-        <div class="inner-action">
-            <div class="dropdown dropdown-lang"><a data-toggle="dropdown" href="#" id="lang">Russian</a>
-                <ul class="dropdown-menu" role="menu" aria-labelledby="lang">
-                    <li>12</li>
-                    <li>21</li>
-                </ul>
-            </div>
-            <div class="dropdown dropdown-login"><a data-toggle="dropdown" href="#" id="login">admin@baner.com</a>
-                <ul class="dropdown-menu" role="menu" aria-labelledby="login">
-                    <li>Выход</li>
-                </ul>
+    <!-- Header-->
+    <header class="main-header">
+        <div class="container"><img class="logo" src="img/logo.svg">
+            <div class="inner-action">
+                <!-- lang-->
+                <div class="dropdown-block dropdown-lang">
+                    <a class="select-lang" data-toggle="dropdown" href="">Russian</a>
+                    <ul class="dropdown-menu dropdown-menu-lang" data-toggle="dropdown-menu">
+                        <li class="drop-item">Russian</li>
+                        <li class="drop-item">English</li>
+                        <li class="drop-item">China</li>
+                    </ul>
+                </div>
+                <!-- login-->
+                <div class="dropdown-block dropdown-user">
+                    <a class="username" data-toggle="dropdown" href="">admin@baner.com</a>
+                    <ul class="dropdown-menu dropdown-menu-user" data-toggle="dropdown-menu">
+                        <li class="drop-item">Настройки</li>
+                        <li class="drop-item">Выход</li>
+                    </ul>
+                </div>
+                <!-- waves-->
+                <div class="waves-view">
+                    <div class="title">Адрес BANER Waves
+                        <div class="tooltip tooltip-waves-header">
+                            <div class="tooltip-call white"></div>
+                            <div class="tooltip-content">Это Waves адрес компании BANER выделенный персонально для вас. Именно его нужно использовать для покупки токенов. Другими словами, именно на него вы отправляете свои денежные средства из личного кабинета <a href="https://waveswallet.io/" target="_blank" class="link">https://waveswallet.io/</a>.</div>
+                        </div>
+                    </div>
+                    <div class="address">3N9iRMou3pgmyPbFZn5QZQvBTQBkL2fR6R1</div>
+                </div>
             </div>
         </div>
-    </div>
-</header>
-<!-- Main-->
-<section class="main-content">
-    <div class="container">
-        <!-- Left aside-->
-        <aside class="aside-left">
-            <div class="panel-mini total-balance">
-                <div class="title">Общий баланс:</div>
-                <div class="num-balance">0 PLBT</div>
-            </div>
-            <!-- Navigation-->
-            <nav class="main-nav">
-                <ul class="nav-list">
-                    <li class="nav-item"><a class="nav-link" href="login.html">Вход</a></li>
-                    <li class="nav-item"><a class="nav-link" href="register.html">Регистрация</a></li>
-                    <li class="nav-item"><a class="nav-link" href="register-confirm.html">Успешная регистрация</a></li>
-                    <li class="nav-item"><a class="nav-link" href="password-email.html">Восстановление пароля</a></li>
-                    <li class="nav-item"><a class="nav-link" href="password-email-confirm.html">Подтверждение пароля</a></li>
-                    <li class="nav-item"><a class="nav-link" href="password-reset.html">Изменение пароля</a></li>
-                    <li class="nav-item"><a class="nav-link" href="/">Панель управления</a></li>
-                    <li class="nav-item"><a class="nav-link" href="history-start.html">Начало транзакций</a></li>
-                    <li class="nav-item"><a class="nav-link" href="history.html">История транзакций</a></li>
-                    <li class="nav-item"><a class="nav-link" href="address.html">Адрес аккаунта</a></li>
-                    <li class="nav-item"><a class="nav-link" href="sending.html">Отправить</a></li>
-                </ul>
-            </nav>
-        </aside>
-        {% block content %}
-        {% endblock %}
-    </div>
-</section>
-<section class="main-content">
-<script src="/js/libs/jquery.min.js"></script>
-<script src="/js/dropdown.js"></script>
+    </header>
+
+    <!-- Main-->
+    <section class="main-content">
+        <div class="container">
+            <!-- Left aside-->
+            <aside class="aside-left">
+                <div class="panel-mini total-balance">
+                    <div class="title">Общий баланс:</div>
+                    <div class="num-balance">0 PLBT</div>
+                </div>
+                <!-- Navigation-->
+                <nav class="main-nav">
+                    <ul class="nav-list">
+                        <li class="nav-item"><a class="nav-link" href="login.html">Вход</a></li>
+                        <li class="nav-item"><a class="nav-link" href="register.html">Регистрация</a></li>
+                        <li class="nav-item"><a class="nav-link" href="register-confirm.html">Успешная регистрация</a></li>
+                        <li class="nav-item"><a class="nav-link" href="password-email.html">Восстановление пароля</a></li>
+                        <li class="nav-item"><a class="nav-link" href="password-email-confirm.html">Подтверждение пароля</a></li>
+                        <li class="nav-item"><a class="nav-link" href="password-reset.html">Изменение пароля</a></li>
+                        <li class="nav-item"><a class="nav-link" href="/">Панель управления</a></li>
+                        <li class="nav-item"><a class="nav-link" href="history-start.html">Начало транзакций</a></li>
+                        <li class="nav-item"><a class="nav-link" href="history.html">История транзакций</a></li>
+                        <li class="nav-item"><a class="nav-link" href="address.html">Адрес аккаунта</a></li>
+                        <li class="nav-item"><a class="nav-link" href="sending.html">Отправить</a></li>
+                    </ul>
+                </nav>
+            </aside>
+            {% block content %}
+            {% endblock %}
+        </div>
+    </section>
+
+    <section class="main-content">
+
+    <script src="/js/libs/jquery.min.js"></script>
+    <script src="/js/main.js"></script>
 </body>
 </html>
