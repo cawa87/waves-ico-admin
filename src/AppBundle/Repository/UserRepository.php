@@ -13,11 +13,22 @@ class UserRepository extends \Doctrine\ORM\EntityRepository
 
     public function findForAdmin()
     {
-        $result =$this->getEntityManager()
+        $result = $this->getEntityManager()
             ->createQuery(
                 'SELECT p FROM AppBundle:User p ORDER BY p.username ASC'
             )
             ->getResult();
         return $result;
+    }
+
+
+    public function getCount()
+    {
+        $qb = $this->createQueryBuilder('u');
+        $qb->select('COUNT(u)');
+        //$qb->where('a.valideAdmin = :valideAdmin');
+        //$qb->setParameter('valideAdmin', 1);
+
+        return $qb->getQuery()->getSingleScalarResult();
     }
 }

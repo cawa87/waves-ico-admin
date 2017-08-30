@@ -47,6 +47,29 @@ services:
         arguments:
           - '%cr_api_url%'
 
+#    AppBundle\Repository\UserRepository: '@app.repositories.user'
+#
+#    app.repositories.user:
+#        class: Doctrine\ORM\EntityRepository
+#        factory: ["@doctrine.orm.entity_manager", getRepository]
+#        arguments:
+#            - AppBundle\Entity\User
+
+#
+#
+#    AppBundle\Service\Twig\UserManagement: '@app.services.twig.user_management'
+#
+#    app.services.twig.user_management:
+#        class: AppBundle\Service\Twig\UserManagement
+#        arguments:
+#          - '@app.repositories.user'
+#
+#    AppBundle\Service\Twig\InvestmentsManagement: '@app.services.twig.investments_management'
+#
+#    app.services.twig.investments_management:
+#        class: AppBundle\Service\Twig\InvestmentsManagement
+#
+
     AppBundle\Wrappers\WavesNodeWrapper: '@app.wrappers.waves_node_wrapper'
 
     app.wrappers.waves_node_wrapper:

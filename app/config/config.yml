@@ -37,6 +37,10 @@ framework:
 twig:
     debug: '%kernel.debug%'
     strict_variables: '%kernel.debug%'
+    globals:
+        # the value is the service's id
+#        user_management: '@AppBundle\Service\Twig\UserManagement'
+#        investments_management: '@AppBundle\Service\Twig\InvestmentsManagement'
 
 # Doctrine Configuration
 doctrine:
