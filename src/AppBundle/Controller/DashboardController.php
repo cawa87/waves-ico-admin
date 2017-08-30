@@ -24,7 +24,7 @@ class DashboardController extends Controller
         $userCount = $product = $this->getDoctrine()
             ->getRepository(User::class)
             ->getCount();
-        
+
         return $this->render('AppBundle/Dashboard/index.html.twig',[
             'userCount' => $userCount
         ]);
