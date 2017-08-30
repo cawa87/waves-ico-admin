@@ -41,7 +41,7 @@ class WavesNodeWrapper
     {
 
         $client = $this->client;
-        $url = $this->apiUrl . '/addresses';
+        $url = $this->apiUrl . 'addresses';
         // var_dump($url); die();
 
         $res = $client->request('POST', $url, [

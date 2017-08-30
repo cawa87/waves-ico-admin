@@ -43,6 +43,12 @@ class User extends BaseUser
     protected $wallet;
 
     /**
+     * @var string
+     * @ORM\Column(name="waves_address", type="string", length=255, nullable=true)
+     */
+    protected $wavesAddress;
+
+    /**
      * @var Transaction[]
      * @ORM\OneToMany(targetEntity="AppBundle\Entity\Transaction",mappedBy="user", fetch="EXTRA_LAZY") EAGER
      */
@@ -192,6 +198,23 @@ class User extends BaseUser
 
         return $this;
     }
+
+    /**
+     * @return string
+     */
+    public function getWavesAddress()
+    {
+        return $this->wavesAddress;
+    }
+
+    /**
+     * @param string $wavesAddress
+     */
+    public function setWavesAddress($wavesAddress)
+    {
+        $this->wavesAddress = $wavesAddress;
+    }
+
 
 
 }
