@@ -7,9 +7,23 @@
     <link rel="stylesheet" href="/css/style.css">
 </head>
 <body>
+    <!-- Alert Waves-->
+    <div class="alert-waves">
+        <div class="container">
+            <div class="waves-address-wrap">
+                <form><span class="waves-desc">Адрес waves</span>
+                    <input class="input waves-input" type="text" name="waves-address" placeholder="Введите адрес waves для дальнейшей работы">
+                    <buttion class="btn waves-btn" type="submit">Готово</buttion>
+                </form>
+                <div class="waves-tip">Ошибка. Проверьте правильность введенного вами адреса.</div>
+            </div>
+            <div class="waves-about"><a class="open-popup" href="" data-name="waves">Что такое waves и где его взять</a></div>
+        </div>
+    </div>
+
     <!-- Header-->
     <header class="main-header">
-        <div class="container"><img class="logo" src="img/logo.svg">
+        <div class="container"><img class="logo" src="/img/logo.svg">
             <div class="inner-action">
                 <!-- lang-->
                 <div class="dropdown-block dropdown-lang">
@@ -24,7 +38,9 @@
                 <div class="dropdown-block dropdown-user">
                     <a class="username" data-toggle="dropdown" href="">admin@baner.com</a>
                     <ul class="dropdown-menu dropdown-menu-user" data-toggle="dropdown-menu">
-                        <li class="drop-item">Настройки</li>
+                        <li class="drop-item">
+                            <a href="{{ path('app_usersettings_index') }}">Настройки</a>
+                        </li>
                         <li class="drop-item">Выход</li>
                     </ul>
                 </div>
@@ -54,13 +70,15 @@
                 <!-- Navigation-->
                 <nav class="main-nav">
                     <ul class="nav-list">
-                        <li class="nav-item"><a class="nav-link" href="index.html">Панель управления</a></li>
-                        <li class="nav-item"><a class="nav-link" href="history-start.html">Начало транзакций</a></li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="{{ path('dashboard_homepage') }}">Панель управления</a>
+                        </li>
                         <li class="nav-item">
                             <a class="nav-link" href="{{ path('app_transactionhistory_index')}}">История транзакций</a>
                         </li>
-                        <li class="nav-item"><a class="nav-link" href="address.html">Адрес аккаунта</a></li>
-                        <li class="nav-item"><a class="nav-link" href="sending.html">Отправить</a></li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="{{ path('app_useraddress_index')}}">Адрес аккаунта</a>
+                        </li>
                     </ul>
                 </nav>
             </aside>
@@ -69,9 +87,37 @@
         </div>
     </section>
 
+    {% block popup %}
+        <!-- Popup waves-->
+        <div class="overlay popup-overlay">
+            <div class="popup popup-waves" data-name="waves"><i class="popup-close"></i>
+                <h2 class="pp-title">Инструкция</h2>
+                <p class="pp-desc">Прежде чем получить доступ ко всему функционалу сайта, вам потребуется указать свой адрес кошелька Waves.
+                    <br>Это займет 2 минуты вашего времени.</p>
+                <div class="pp-warrning">
+                    <div class="title">Внимание!</div>
+                    <p class="desc">Перед началом прохождения инструкции, убедитесь, что у вас выключено расширение Adblock или другое подобное. Иначе работоспособность сайта не гарантируется.</p>
+                </div>
+                <ul class="pp-manual-list">
+                    <li class="pp-manual-item"><span>1. Перейдем на официальный сайт веб-клиента для кошелька Waves: https://waveswallet.io/</span>
+                        <div class="pp-warrning">
+                            <div class="title">Внимание!</div>
+                            <p class="desc">Обязательно сверяйте ссылку с той, что указана в нашей инструкции.</p>
+                        </div><img class="pp-img" src="/img/pattern.jpg">
+                    </li>
+                    <li class="pp-manual-item"><span>2. Регистрируем новый аккаунт в системе Waves. Для этого жмем на кнопку NEW ACCOUNT</span><img class="pp-img" src="/img/pattern.jpg"></li>
+                    <li class="pp-manual-item"><span>3. Читаем текст уведомления и жмем на кнопку I UNDERSTAND.</span></li>
+                </ul>
+            </div>
+        </div>
+    {% endblock %}
+
     {% block script %}
+        <!-- Scripts -->
         <script src="/js/libs/jquery.min.js"></script>
+        <script src="/js/wave-auth.js"></script>
         <script src="/js/main.js"></script>
+        <script src="/js/popup.js"></script>
     {% endblock %}
 </body>
 </html>

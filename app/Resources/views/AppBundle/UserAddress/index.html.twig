@@ -1,0 +1,70 @@
+{% extends ":AppBundle:layout.html.twig" %}
+
+{% block title %}AppBundle:TransactionHistory:index{% endblock %}
+
+{% block content %}
+    <!-- Сontent-->
+    <div class="content-block">
+
+        <!-- Col content-->
+        <div class="content content-md">
+            <div class="content content-center">
+                <section class="panel panel-address">
+                    <h2 class="panel-title">Адрес аккаунта</h2>
+                    <div class="panel-body address-body">
+                        <div class="tip-title">АДРЕС КОШЕЛЬКА</div>
+                        <p class="warrning-msg">Не отправляйте ETH на этот адрес до окончания ICO. Инструменты для инвестирования доступны на вкладке "Панель управления".</p>
+                        <p class="appear-msg">Your address will appear here after the ICO</p>
+                        <button class="btn white">Скопировать</button>
+                        <div class="msg-reserve">Хотите сделать резервную копию кошелька ?</div>
+                    </div>
+                </section>
+            </div>
+
+            <!-- Right aside-->
+            <aside class="aside-right">
+                <div class="panel-mini statistics">
+                    <div class="line">Дней осталось:<span>25</span></div>
+                    <div class="line">Текущий бонус:<span>25%</span>
+                        <div class="tooltip tooltip-bonus">
+                            <div class="tooltip-call black"></div>
+                            <div class="tooltip-content">Мы принимаем инвестиции в EMC с минимальной суммой в 1000 долларов на адрес EeLeckKqTRvbbyThGhvMYeVWhrCwYb6ev6. Пожалуйста, свяжитесь с нами с помощью emc@baner.su чтобы оформить заказ или получить ответы на вопросы.</div>
+                        </div>
+                    </div>
+                </div>
+                <section class="panel panel-status">
+                    <div class="panel-title">Текущий статус</div>
+                    <div class="panel-body status-body">
+                        <div class="invested-all">
+                            <div class="title">ИНВЕСТИРОВАНО (всего)</div>
+                            <ul class="currency-list">
+                                <li class="currency-item bnr">0 BTC</li>
+                                <li class="currency-item usd">0 USD</li>
+                            </ul>
+                        </div>
+                        <div class="members">
+                            <div class="title">УЧАСТНИКИ</div><span class="count">0</span>
+                        </div>
+                    </div>
+                </section>
+            </aside>
+        </div>
+
+        <!-- Col content-->
+        <div class="content content-md">
+            <!-- Footer-->
+            <footer class="main-footer">
+                <p class="copyright">© 2017 BANER. All rights reserved</p>
+                <p class="feedback">Возникли вопросы? Пожалуйста, свяжитесь с нами по support@baner.su
+                    <br>
+                </p>
+            </footer>
+        </div>
+    </div>
+{% endblock %}
+
+{% block script %}
+    {{ parent() }}
+
+    <script src="/js/popup.js"></script>
+{% endblock script %}
