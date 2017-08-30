@@ -2,212 +2,221 @@
 
 {% block content %}
 
-    <div class="content content-md">
-        <!-- Center content-->
-        <div class="content content-center">
-            <!-- Invest panel-->
-            <section class="panel panel-invest">
-                <h2 class="panel-title">Инвестировать</h2>
-                <div class="panel-body">
-                    <div class="invest-action">
-                        <!-- Zeroline-->
-                        <div class="invest-line">
-                            <div class="col-desc">Адрес BANER Waves
-                                <div class="tooltip tooltip-waves">
-                                    <div class="tooltip-call gray"></div>
-                                    <div class="tooltip-content">Это Waves адрес компании BANER выделенный персонально для вас. Именно его нужно использовать для покупки токенов. Другими словами, именно на него вы отправляете свои денежные средства из личного кабинета <a href="https://waveswallet.io/" target="_blank" class="link">https://waveswallet.io/</a>.</div>
-                                </div>
-                            </div>
-                            <div class="col-action">
-                                <div class="waves-views">3N9iRMou3pgmyPbFZn5QZQvBTQBkL2fR6R1</div>
-                            </div>
-                        </div>
-                        <!-- Oneline-->
-                        <div class="invest-line indent">
-                            <div class="col-desc">Валюта</div>
-                            <div class="col-action">
-                                <div class="dropdown-block">
-                                    <div class="invest-field select-currency" data-toggle="dropdown">
-                                        <div class="currency">USD</div><span class="arrow"></span>
+    <!-- Content-->
+    <div class="content-block">
+
+        <!-- Col content-->
+        <div class="content content-md">
+            <!-- Center content-->
+            <div class="content content-center">
+                <!-- Invest panel-->
+                <section class="panel panel-invest">
+                    <h2 class="panel-title">Инвестировать</h2>
+                    <div class="panel-body">
+                        <div class="invest-action">
+                            <!-- Zeroline-->
+                            <div class="invest-line">
+                                <div class="col-desc">Адрес BANER Waves
+                                    <div class="tooltip tooltip-waves">
+                                        <div class="tooltip-call gray"></div>
+                                        <div class="tooltip-content">Это Waves адрес компании BANER выделенный персонально для вас. Именно его нужно использовать для покупки токенов. Другими словами, именно на него вы отправляете свои денежные средства из личного кабинета <a href="https://waveswallet.io/" target="_blank" class="link">https://waveswallet.io/</a>.</div>
                                     </div>
-                                    <ul class="dropdown-menu drop-menu-currency" data-toggle="dropdown-menu">
-                                        <li class="drop-item curr-item">USD</li>
-                                        <li class="drop-item curr-item">EURO</li>
-                                        <li class="drop-item curr-item">BTC</li>
-                                        <li class="drop-item curr-item">WAVES</li>
-                                        <li class="drop-item curr-item">ETH</li>
-                                    </ul>
+                                </div>
+                                <div class="col-action">
+                                    <div class="waves-views">3N9iRMou3pgmyPbFZn5QZQvBTQBkL2fR6R1</div>
+                                </div>
+                            </div>
+                            <!-- Oneline-->
+                            <div class="invest-line indent">
+                                <div class="col-desc">Валюта</div>
+                                <div class="col-action">
+                                    <div class="dropdown-block">
+                                        <div class="invest-field select-currency" data-toggle="dropdown">
+                                            <div class="currency">USD</div><span class="arrow"></span>
+                                        </div>
+                                        <ul class="dropdown-menu drop-menu-currency" data-toggle="dropdown-menu">
+                                            <li class="drop-item curr-item">USD</li>
+                                            <li class="drop-item curr-item">EURO</li>
+                                            <li class="drop-item curr-item">BTC</li>
+                                            <li class="drop-item curr-item">WAVES</li>
+                                            <li class="drop-item curr-item">ETH</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- Twoline-->
+                            <div class="invest-line indent">
+                                <div class="col-desc">Сумма</div>
+                                <div class="col-action">
+                                    <div class="input-amount-wrap">
+                                        <input class="invest-field input-amount" type="text" value="0" placeholder="Сумма">
+                                        <div class="action-amount"><span class="plus">+</span><span class="minus">-</span></div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- Threeline-->
+                            <div class="invest-line indent">
+                                <div class="col-desc"></div>
+                                <div class="col-action">
+                                    <button class="btn btn-block blue open-popup" data-name="invest">Инвестировать</button>
+                                </div>
+                            </div>
+                            <!-- Fourline-->
+                            <div class="invest-line">
+                                <div class="col-desc"></div>
+                                <div class="col-action">
+                                    <!-- Result-->
+                                    <div class="invest-result">
+                                        <ul class="result-list">
+                                            <li class="result-item">Количество (BNR): 0 BNR</li>
+                                            <li class="result-item">Бонус (BNR): 0 BNR</li>
+                                            <li class="result-item">ВЫ ПОЛУЧИТЕ (BNR): 0 BNR</li>
+                                        </ul>
+                                    </div>
                                 </div>
                             </div>
                         </div>
-                        <!-- Twoline-->
-                        <div class="invest-line indent">
-                            <div class="col-desc">Сумма</div>
-                            <div class="col-action">
-                                <div class="input-amount-wrap">
-                                    <input class="invest-field input-amount" type="text" value="0" placeholder="Сумма">
-                                    <div class="action-amount"><span class="plus">+</span><span class="minus">-</span></div>
-                                </div>
-                            </div>
+                    </div>
+                </section>
+            </div>
+            <!-- Right aside-->
+            <aside class="aside-right">
+                <div class="panel-mini statistics">
+                    <div class="line">Дней осталось:<span>25</span></div>
+                    <div class="line">Текущий бонус:<span>25%</span>
+                        <div class="tooltip tooltip-bonus">
+                            <div class="tooltip-call black"></div>
+                            <div class="tooltip-content">Мы принимаем инвестиции в EMC с минимальной суммой в 1000 долларов на адрес EeLeckKqTRvbbyThGhvMYeVWhrCwYb6ev6. Пожалуйста, свяжитесь с нами с помощью emc@baner.su чтобы оформить заказ или получить ответы на вопросы.</div>
                         </div>
-                        <!-- Threeline-->
-                        <div class="invest-line indent">
-                            <div class="col-desc"></div>
-                            <div class="col-action">
-                                <button class="btn btn-block blue open-popup" data-name="invest">Инвестировать</button>
-                            </div>
+                    </div>
+                </div>
+                <section class="panel panel-status">
+                    <div class="panel-title">Текущий статус</div>
+                    <div class="panel-body status-body">
+                        <div class="invested-all">
+                            <div class="title">ИНВЕСТИРОВАНО (всего)</div>
+                            <ul class="currency-list">
+                                <li class="currency-item bnr">0 BTC</li>
+                                <li class="currency-item usd">0 USD</li>
+                            </ul>
                         </div>
-                        <!-- Fourline-->
-                        <div class="invest-line">
-                            <div class="col-desc"></div>
-                            <div class="col-action">
-                                <!-- Result-->
-                                <div class="invest-result">
-                                    <ul class="result-list">
-                                        <li class="result-item">Количество (BNR): 0 BNR</li>
-                                        <li class="result-item">Бонус (BNR): 0 BNR</li>
-                                        <li class="result-item">ВЫ ПОЛУЧИТЕ (BNR): 0 BNR</li>
-                                    </ul>
-                                </div>
-                            </div>
+                        <div class="members">
+                            <div class="title">УЧАСТНИКИ</div><span class="count">0</span>
                         </div>
+                    </div>
+                </section>
+            </aside>
+        </div>
+
+        <!-- Col content-->
+        <div class="content content-md">
+            <!-- Invested panel-->
+            <section class="panel panel-invested">
+                <h2 class="panel-title">Инвестировано</h2>
+                <div class="panel-body">
+                    <ul class="currency-list">
+                        <li class="currency-item usd"><i class="icon"></i>
+                            <div class="amount">0</div>
+                            <div class="currency">USD</div>
+                        </li>
+                        <li class="currency-item euro"><i class="icon"></i>
+                            <div class="amount">0</div>
+                            <div class="currency">EURO</div>
+                        </li>
+                        <li class="currency-item btc"><i class="icon"></i>
+                            <div class="amount">0</div>
+                            <div class="currency">BTC</div>
+                        </li>
+                        <li class="currency-item waves"><i class="icon"></i>
+                            <div class="amount">0</div>
+                            <div class="currency">WAVES</div>
+                        </li>
+                        <li class="currency-item eth"><i class="icon"></i>
+                            <div class="amount">0</div>
+                            <div class="currency">ETH</div>
+                        </li>
+                    </ul>
+                </div>
+            </section>
+            <!-- Bonus panel-->
+            <section class="panel panel-bonus">
+                <h2 class="panel-title">Бонусы</h2>
+                <div class="panel-body">
+                    <div class="bonus-item">
+                        <div class="percent">25%</div>
+                        <div class="empty-scale">
+                            <div class="part-scale full-scale"></div>
+                        </div>
+                        <div class="time">День 1-2</div>
+                    </div>
+                    <div class="bonus-item">
+                        <div class="percent">20%</div>
+                        <div class="empty-scale">
+                            <div class="part-scale full-scale"></div>
+                        </div>
+                        <div class="time">День 3-5</div>
+                    </div>
+                    <div class="bonus-item">
+                        <div class="percent">15%</div>
+                        <div class="empty-scale">
+                            <div class="part-scale full-scale"></div>
+                        </div>
+                        <div class="time">День 6-8</div>
+                    </div>
+                    <div class="bonus-item">
+                        <div class="percent">10%</div>
+                        <div class="empty-scale">
+                            <div class="part-scale part-scale-20"></div>
+                        </div>
+                        <div class="time">День 9-12</div>
+                    </div>
+                    <div class="bonus-item">
+                        <div class="percent">5%</div>
+                        <div class="empty-scale"></div>
+                        <div class="time">День 13-17</div>
+                    </div>
+                    <div class="bonus-item">
+                        <div class="percent">0%</div>
+                        <div class="empty-scale"></div>
+                        <div class="time">День 18-25</div>
+                    </div>
+                </div>
+            </section>
+            <!-- Course panel-->
+            <section class="panel panel-course">
+                <h2 class="panel-title">Курс обмена</h2>
+                <div class="panel-body">
+                    <div class="course-tip">BNR цена</div>
+                    <div class="panel-course-wrap">
+                        <ul class="course-list">
+                            <li class="course-item"><span class="icon"></span><span class="currency">USD</span><span class="amount">0</span></li>
+                            <li class="course-item"><span class="icon"></span><span class="currency">EURO</span><span class="amount">0</span></li>
+                        </ul>
+                        <ul class="course-list">
+                            <li class="course-item"><span class="icon"></span><span class="currency">BTC</span><span class="amount">0</span></li>
+                            <li class="course-item"><span class="icon"></span><span class="currency">WAVES</span><span class="amount">0</span></li>
+                        </ul>
+                        <ul class="course-list">
+                            <li class="course-item"><span class="icon"></span><span class="currency">ETH</span><span class="amount">0</span></li>
+                        </ul>
                     </div>
                 </div>
             </section>
         </div>
-        <!-- Right aside-->
-        <aside class="aside-right">
-            <div class="panel-mini statistics">
-                <div class="line">Дней осталось:<span>25</span></div>
-                <div class="line">Текущий бонус:<span>25%</span>
-                    <div class="tooltip tooltip-bonus">
-                        <div class="tooltip-call black"></div>
-                        <div class="tooltip-content">Мы принимаем инвестиции в EMC с минимальной суммой в 1000 долларов на адрес EeLeckKqTRvbbyThGhvMYeVWhrCwYb6ev6. Пожалуйста, свяжитесь с нами с помощью emc@baner.su чтобы оформить заказ или получить ответы на вопросы.</div>
-                    </div>
-                </div>
-            </div>
-            <section class="panel panel-status">
-                <div class="panel-title">Текущий статус</div>
-                <div class="panel-body status-body">
-                    <div class="invested-all">
-                        <div class="title">ИНВЕСТИРОВАНО (всего)</div>
-                        <ul class="currency-list">
-                            <li class="currency-item bnr">0 BTC</li>
-                            <li class="currency-item usd">0 USD</li>
-                        </ul>
-                    </div>
-                    <div class="members">
-                        <div class="title">УЧАСТНИКИ</div><span class="count">0</span>
-                    </div>
-                </div>
-            </section>
-        </aside>
+
+        <!-- Col content-->
+        <div class="content content-md">
+             <!-- Footer-->
+            <footer class="main-footer">
+                <p class="copyright">© 2017 BANER. All rights reserved</p>
+                <p class="feedback">Возникли вопросы? Пожалуйста, свяжитесь с нами по support@baner.su
+                    <br>
+                </p>
+            </footer>
+        </div>
     </div>
 
-    <!-- Center content-->
-    <section class="content content-md">
-        <!-- Invested panel-->
-        <section class="panel panel-invested">
-            <h2 class="panel-title">Инвестировано</h2>
-            <div class="panel-body">
-                <ul class="currency-list">
-                    <li class="currency-item usd"><i class="icon"></i>
-                        <div class="amount">0</div>
-                        <div class="currency">USD</div>
-                    </li>
-                    <li class="currency-item euro"><i class="icon"></i>
-                        <div class="amount">0</div>
-                        <div class="currency">EURO</div>
-                    </li>
-                    <li class="currency-item btc"><i class="icon"></i>
-                        <div class="amount">0</div>
-                        <div class="currency">BTC</div>
-                    </li>
-                    <li class="currency-item waves"><i class="icon"></i>
-                        <div class="amount">0</div>
-                        <div class="currency">WAVES</div>
-                    </li>
-                    <li class="currency-item eth"><i class="icon"></i>
-                        <div class="amount">0</div>
-                        <div class="currency">ETH</div>
-                    </li>
-                </ul>
-            </div>
-        </section>
-        <!-- Bonus panel-->
-        <section class="panel panel-bonus">
-            <h2 class="panel-title">Бонусы</h2>
-            <div class="panel-body">
-                <div class="bonus-item">
-                    <div class="percent">25%</div>
-                    <div class="empty-scale">
-                        <div class="part-scale full-scale"></div>
-                    </div>
-                    <div class="time">День 1-2</div>
-                </div>
-                <div class="bonus-item">
-                    <div class="percent">20%</div>
-                    <div class="empty-scale">
-                        <div class="part-scale full-scale"></div>
-                    </div>
-                    <div class="time">День 3-5</div>
-                </div>
-                <div class="bonus-item">
-                    <div class="percent">15%</div>
-                    <div class="empty-scale">
-                        <div class="part-scale full-scale"></div>
-                    </div>
-                    <div class="time">День 6-8</div>
-                </div>
-                <div class="bonus-item">
-                    <div class="percent">10%</div>
-                    <div class="empty-scale">
-                        <div class="part-scale part-scale-20"></div>
-                    </div>
-                    <div class="time">День 9-12</div>
-                </div>
-                <div class="bonus-item">
-                    <div class="percent">5%</div>
-                    <div class="empty-scale"></div>
-                    <div class="time">День 13-17</div>
-                </div>
-                <div class="bonus-item">
-                    <div class="percent">0%</div>
-                    <div class="empty-scale"></div>
-                    <div class="time">День 18-25</div>
-                </div>
-            </div>
-        </section>
-        <!-- Course panel-->
-        <section class="panel panel-course">
-            <h2 class="panel-title">Курс обмена</h2>
-            <div class="panel-body">
-                <div class="course-tip">BNR цена</div>
-                <div class="panel-course-wrap">
-                    <ul class="course-list">
-                        <li class="course-item"><span class="icon"></span><span class="currency">USD</span><span class="amount">0</span></li>
-                        <li class="course-item"><span class="icon"></span><span class="currency">EURO</span><span class="amount">0</span></li>
-                    </ul>
-                    <ul class="course-list">
-                        <li class="course-item"><span class="icon"></span><span class="currency">BTC</span><span class="amount">0</span></li>
-                        <li class="course-item"><span class="icon"></span><span class="currency">WAVES</span><span class="amount">0</span></li>
-                    </ul>
-                    <ul class="course-list">
-                        <li class="course-item"><span class="icon"></span><span class="currency">ETH</span><span class="amount">0</span></li>
-                    </ul>
-                </div>
-            </div>
-        </section>
-        <!-- Footer-->
-        <footer class="main-footer">
-            <p class="copyright">© 2017 BANER. All rights reserved</p>
-            <p class="feedback">Возникли вопросы? Пожалуйста, свяжитесь с нами по support@baner.su
-                <br>
-            </p>
-        </footer>
-    </section>
-
-    <!-- Popups-->
+    <!-- Popup waves-->
     <div class="overlay popup-overlay">
         <div class="popup popup-waves" data-name="waves"><i class="popup-close"></i>
             <h2 class="pp-title">Инструкция</h2>
@@ -229,6 +238,8 @@
             </ul>
         </div>
     </div>
+
+    <!-- Popup invest-->
     <div class="overlay popup-overlay">
         <div class="popup popup-invest" data-name="invest"><i class="popup-close"></i>
             <h2 class="pp-title">Как инвестировать?</h2>
