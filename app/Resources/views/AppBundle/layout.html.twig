@@ -114,6 +114,8 @@
 
     {% block script %}
         <!-- Scripts -->
+        <script src="{{ asset('bundles/fosjsrouting/js/router.js') }}"></script>
+        <script src="{{ path('fos_js_routing_js', { callback: 'fos.Router.setData' }) }}"></script>
         <script src="/js/libs/jquery.min.js"></script>
         <script src="/js/wave-auth.js"></script>
         <script src="/js/main.js"></script>
