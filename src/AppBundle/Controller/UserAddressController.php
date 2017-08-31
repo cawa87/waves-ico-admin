@@ -31,7 +31,8 @@ class UserAddressController extends Controller
 
         if ($form->isSubmitted() && $form->isValid()) {
             $address = $form->getData();
-            $user = $this->getUser()->setWavesAddress($address['address']);
+            $user = $this->getUser();
+            $user->setWavesAddress($address['address']);
 
             $em = $this->getDoctrine()->getManager();
             $em->persist($user);
