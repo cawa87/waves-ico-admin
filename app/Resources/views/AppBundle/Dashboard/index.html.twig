@@ -24,7 +24,13 @@
                                     </div>
                                 </div>
                                 <div class="col-action">
-                                    <div class="waves-views">3N9iRMou3pgmyPbFZn5QZQvBTQBkL2fR6R1</div>
+                                    <div class="waves-views">
+                                        {% if app.user.wallet %}
+                                           {{ app.user.wallet.address }}
+                                        {% else %}
+                                            aдрес wawes
+                                        {% endif %}
+                                    </div>
                                 </div>
                             </div>
                             <!-- Oneline-->
