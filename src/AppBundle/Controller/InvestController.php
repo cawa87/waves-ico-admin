@@ -20,10 +20,10 @@ class InvestController extends Controller
     {
         //@todo
 
-        return [
+        return $this->json([
             'success' => true,
             'amount' => 100,
             'bonus' => 10,
-        ];
+        ]);
     }
 }

@@ -38,8 +38,8 @@ class UserAddressController extends Controller
             $em->flush();
         }
 
-        return [
+        return $this->json([
             'success' => true
-        ];
+        ]);
     }
 }
