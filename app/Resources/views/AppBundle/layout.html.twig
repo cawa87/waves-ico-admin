@@ -12,13 +12,8 @@
 <div class="alert-waves">
     <div class="container">
         <div class="waves-address-wrap">
-            <!--     <form class="waves-form" name="attach_address">
-                <span class="waves-desc">Адрес waves</span>
-                <input class="input waves-input" type="text" name="attach_address[address]" placeholder="Введите адрес waves для дальнейшей работы">
-                <button class="btn waves-btn" type="submit">Готово</button>
-            </form>
-             -->
-            <form name="attach_address" method="post" action="{{ path('attach_user_address') }}">
+
+            <form name="attach_address" method="post" action="{{ path('attach_user_address') }}" class="waves-form">
                 <div id="attach_address">
                     <div>
                         <label for="attach_address_address" class="required">Address</label>
