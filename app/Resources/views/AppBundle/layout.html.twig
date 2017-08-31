@@ -7,30 +7,33 @@
     <link rel="stylesheet" href="/css/style.css">
 </head>
 <body>
+
 <!-- Alert Waves-->
 <div class="alert-waves">
     <div class="container">
         <div class="waves-address-wrap">
 
-            <form name="attach_address" method="post" action="{{ path('attach_user_address') }}" class="waves-form">
-                <div id="attach_address">
-                    <div><label for="attach_address_address" class="required">Address</label><input type="text"
-                                                                                                    id="attach_address_address"
-                                                                                                    name="attach_address[address]"
-                                                                                                    required="required"
-                                                                                                    value="фывыфв">
-                    </div>
-                    <div>
-                        <button type="submit" id="attach_address_save" name="attach_address[save]">Save</button>
-                    </div>
-                    <input type="hidden" id="attach_address__token" name="attach_address[_token]"
-                           value="{{ csrf_token("attach_address") }}">
-                </div>
+            <form class="waves-form">
+                <label class="waves-desc" for="attach_address_address">Адрес waves</label>
+                <input class="input waves-input"
+                       type="text"
+                       id="attach_address_address"
+                       name="attach_address[address]"
+                       placeholder="Введите адрес waves для дальнейшей работы"
+                       autocomplete="off"
+                       required>
 
+                <input type="hidden"
+                       name="attach_address[_token]"
+                       value="{{ csrf_token("attach_address") }}">
+
+                <button type="submit" class="btn waves-btn">Готово</button>
             </form>
             <div class="waves-tip">Ошибка. Проверьте правильность введенного вами адреса.</div>
         </div>
-        <div class="waves-about"><a class="open-popup" href="" data-name="waves">Что такое waves и где его взять</a>
+
+        <div class="waves-about">
+            <a class="open-popup" href="" data-name="waves">Что такое waves и где его взять</a>
         </div>
     </div>
 </div>
@@ -70,6 +73,7 @@
                         </div>
                     </div>
                 </div>
+
                 <div class="address">
                     {% if app.user.wallet %}
                         {{ app.user.wallet.address }}
