@@ -7,205 +7,235 @@
     <link rel="stylesheet" href="/css/style.css">
 </head>
 <body>
-    <!-- Alert Waves-->
-    <div class="alert-waves">
-        <div class="container">
-            <div class="waves-address-wrap">
-                <form class="waves-form">
-                    <span class="waves-desc">Адрес waves</span>
-                    <input class="input waves-input"
-                           type="text"
-                           name="address"
-                           placeholder="Введите адрес waves для дальнейшей работы"
-                           autocomplete="off"
-                           required
-                           >
 
-                    <button class="btn waves-btn" type="submit">Готово</button>
-                </form>
-                <div class="waves-tip">Ошибка. Проверьте правильность введенного вами адреса.</div>
+<!-- Alert Waves-->
+<div class="alert-waves">
+    <div class="container">
+        <div class="waves-address-wrap">
+            <!--     <form class="waves-form" name="attach_address">
+                <span class="waves-desc">Адрес waves</span>
+                <input class="input waves-input" type="text" name="attach_address[address]" placeholder="Введите адрес waves для дальнейшей работы">
+                <button class="btn waves-btn" type="submit">Готово</button>
+            </form>
+             -->
+            <form name="attach_address" method="post" action="{{ path('attach_user_address') }}">
+                <div id="attach_address">
+                    <div>
+                        <label for="attach_address_address" class="required">Address</label>
+                        <input type="text"
+                               id="attach_address_address"
+                               name="attach_address[address]"
+                               required="required"
+                               value="фывыфв">
+                    </div>
+                    <div>
+                        <button type="submit" id="attach_address_save" name="attach_address[save]">Save</button>
+                    </div>
+                    <input type="hidden" id="attach_address__token" name="attach_address[_token]"
+                           value="hATwiCWVumNloc9_qza65QKoNSBkZ4VksB6_CWysUc4">
+                </div>
+            </form>
+
+            <div class="waves-tip">Ошибка. Проверьте правильность введенного вами адреса.</div>
+        </div>
+        <div class="waves-about">
+            <a class="open-popup" href="" data-name="waves">Что такое waves и где его взять</a>
+        </div>
+    </div>
+</div>
+
+<!-- Header-->
+<header class="main-header">
+    <div class="container"><img class="logo" src="/img/logo.svg">
+        <div class="inner-action">
+            <!-- lang-->
+            <div class="dropdown-block dropdown-lang">
+                <a class="select-lang" data-toggle="dropdown" href="">Russian</a>
+                <ul class="dropdown-menu dropdown-menu-lang" data-toggle="dropdown-menu">
+                    <li class="drop-item">Russian</li>
+                    <li class="drop-item">English</li>
+                    <li class="drop-item">China</li>
+                </ul>
             </div>
-            <div class="waves-about"><a class="open-popup" href="" data-name="waves">Что такое waves и где его взять</a></div>
+            <!-- login-->
+            <div class="dropdown-block dropdown-user">
+                <a class="username" data-toggle="dropdown" href="">admin@baner.com</a>
+                <ul class="dropdown-menu dropdown-menu-user" data-toggle="dropdown-menu">
+                    <li class="drop-item">
+                        <a href="{{ path('app_usersettings_index') }}">Настройки</a>
+                    </li>
+                    <li class="drop-item">Выход</li>
+                </ul>
+            </div>
+            <!-- waves-->
+            <div class="waves-view">
+                <div class="title">Адрес BANER Waves
+                    <div class="tooltip tooltip-waves-header">
+                        <div class="tooltip-call white"></div>
+                        <div class="tooltip-content">Это Waves адрес компании BANER выделенный персонально для вас.
+                            Именно его нужно использовать для покупки токенов. Другими словами, именно на него вы
+                            отправляете свои денежные средства из личного кабинета <a href="https://waveswallet.io/" target="_blank" class="link">https://waveswallet.io/</a>.
+                        </div>
+                    </div>
+                </div>
+
+                <div class="address">
+                    {% if app.user.wallet %}
+                        {{ app.user.wallet.address }}
+                    {% else %}
+                        aдрес wawes
+                    {% endif %}
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+
+<!-- Main-->
+<section class="main-content">
+    <div class="container">
+        <!-- Left aside-->
+        <aside class="aside-left">
+            <div class="panel-mini total-balance">
+                <div class="title">Общий баланс:</div>
+                <div class="num-balance">0 PLBT</div>
+            </div>
+            <!-- Navigation-->
+            <nav class="main-nav">
+                <ul class="nav-list">
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{ path('dashboard_homepage') }}">Панель управления</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{ path('app_transactionhistory_index') }}">История транзакций</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{ path('app_useraddress_index') }}">Адрес аккаунта</a>
+                    </li>
+                </ul>
+            </nav>
+        </aside>
+        {% block content %}
+        {% endblock %}
+    </div>
+</section>
+
+{% block popup %}
+
+    <!-- Popup waves-->
+    <div class="overlay popup-overlay">
+        <div class="popup popup-waves" data-name="waves"><i class="popup-close"></i>
+            <h2 class="pp-title">Инструкция</h2>
+            <h3 class="pp-desc pp-desc-invest">Как получить адрес Waves?</h3>
+            <ul class="pp-manual-list">
+
+                <!-- Line-->
+                <li class="pp-manual-item">
+                    <span>Прежде чем получить доступ ко всему функционалу сайта, вам потребуется указать свой адрес кошелька Waves. Это займет 2 минуты вашего времени.</span>
+
+                    <div class="pp-warrning">
+                        <div class="title">Внимание!</div>
+                        <p class="desc">Перед началом прохождения инструкции, убедитесь, что у вас выключено расширение
+                            Adblock или другое подобное. Иначе работоспособность сайта не гарантируется.</p>
+                    </div>
+                </li>
+
+                <!-- Line-->
+                <li class="pp-manual-item">
+                    <span><b>1.</b> Перейдем на официальный сайт веб-клиента для кошелька Waves: <a
+                                href="https://waveswallet.io/" class="pp-link"
+                                target="_blank">https://waveswallet.io/</a></span>
+
+                    <div class="pp-warrning">
+                        <div class="title">Внимание!</div>
+                        <p class="desc">Обязательно сверяйте ссылку с той, что указана в нашей инструкции.</p>
+                    </div>
+
+                    <img class="pp-img" src="/img/screen/sc-waves1.png">
+                </li>
+
+                <!-- Line-->
+                <li class="pp-manual-item">
+                    <span><b>2.</b> Регистрируем новый аккаунт в системе Waves. Для этого жмем на кнопку <b>NEW ACCOUNT</b></span>
+                    <img class="pp-img" src="/img/screen/sc-waves2.png">
+                </li>
+
+                <!-- Line-->
+                <li class="pp-manual-item">
+                    <span><b>3.</b> Читаем текст уведомления и жмем на кнопку <b>I UNDERSTAND</b>.</span>
+
+                    <div class="pp-warrning">
+                        <div class="title">Внимание!</div>
+                        <p class="desc">Читать уведомление обязательно, в нем важная информация для безопасности вашего
+                            аккаунта.</p>
+                    </div>
+
+                    <img class="pp-img" src="/img/screen/sc-waves3.png">
+                </li>
+
+                <!-- Line-->
+                <li class="pp-manual-item">
+                    <span><b>4.</b> Записываем SEED, который был сгенерирован для вас. Удостоверьтесь, что верно переписали SEED.</span>
+
+                    <div class="pp-warrning">
+                        <div class="title">Внимание!</div>
+                        <p class="desc">Настоятельно рекомендуем не копировать и не распространять SEED в пределах вашей
+                            файловой системы и Интернета. Самый надежный способ - записать SEED на физический листок
+                            бумаги (лучше несколько) и положить в безопасное место. Если вы все-таки храните SEED в
+                            электронном виде, храните его на носителе у которого нет доступа к Интернету. SEED не должен
+                            быть доступен третьим лицам.</p>
+                    </div>
+
+                    <img class="pp-img" src="/img/screen/sc-waves4.png">
+                </li>
+
+                <!-- Line-->
+                <li class="pp-manual-item">
+                    <span><b>5.</b> Поле <b>NAME</b> опционально, его заполнение необязательно. Если вы собираетесь создавать много аккаунтов, рекомендуется заполнить это поле, для удобства, чтобы не путаться в адресах созданных аккаунтов.</span>
+
+                    <img class="pp-img" src="/img/screen/sc-waves5.png">
+                </li>
+
+                <!-- Line-->
+                <li class="pp-manual-item">
+                    <span><b>6.</b>. Придумываем и повторяем пароль. Пароль используется для шифрования вашего SEED и будет использован для входа в аккаунт.</span>
+
+                    <div class="pp-warrning">
+                        <div class="title">Внимание!</div>
+                        <p class="desc">Пароль должен быть сложный, чтобы защитить вас от <a
+                                    href="https://ru.wikipedia.org/wiki/%D0%9F%D0%BE%D0%BB%D0%BD%D1%8B%D0%B9_%D0%BF%D0%B5%D1%80%D0%B5%D0%B1%D0%BE%D1%80"
+                                    class="pp-link" target="_blank">брутфорса</a>. Используйте пароли длиной не менее 12
+                            символов для максимальной стойкости защиты к такой атаке. Например: M3mSH6aT7waG</p>
+                    </div>
+
+                    <img class="pp-img" src="/img/screen/sc-waves6.png">
+                </li>
+
+                <!-- Line-->
+                <li class="pp-manual-item">
+                    <span><b>7.</b> Жмем кнопку <b>REGISTER</b>.</span>
+                    <img class="pp-img" src="/img/screen/sc-waves7.png">
+                </li>
+
+                <!-- Line-->
+                <li class="pp-manual-item">
+                    <span><b>8.</b> Регистрация завершена. В панеле управления аккаунтом вы можете скопировать свой адрес и использовать его для вставки в нашей системе для доступа ко всему функционалу.</span>
+                    <img class="pp-img" src="/img/screen/sc-waves8.png">
+                </li>
+            </ul>
         </div>
     </div>
 
-    <!-- Header-->
-    <header class="main-header">
-        <div class="container"><img class="logo" src="/img/logo.svg">
-            <div class="inner-action">
-                <!-- lang-->
-                <div class="dropdown-block dropdown-lang">
-                    <a class="select-lang" data-toggle="dropdown" href="">Russian</a>
-                    <ul class="dropdown-menu dropdown-menu-lang" data-toggle="dropdown-menu">
-                        <li class="drop-item">Russian</li>
-                        <li class="drop-item">English</li>
-                        <li class="drop-item">China</li>
-                    </ul>
-                </div>
-                <!-- login-->
-                <div class="dropdown-block dropdown-user">
-                    <a class="username" data-toggle="dropdown" href="">admin@baner.com</a>
-                    <ul class="dropdown-menu dropdown-menu-user" data-toggle="dropdown-menu">
-                        <li class="drop-item">
-                            <a href="{{ path('app_usersettings_index') }}">Настройки</a>
-                        </li>
-                        <li class="drop-item">Выход</li>
-                    </ul>
-                </div>
-                <!-- waves-->
-                <div class="waves-view">
-                    <div class="title">Адрес BANER Waves
-                        <div class="tooltip tooltip-waves-header">
-                            <div class="tooltip-call white"></div>
-                            <div class="tooltip-content">Это Waves адрес компании BANER выделенный персонально для вас. Именно его нужно использовать для покупки токенов. Другими словами, именно на него вы отправляете свои денежные средства из личного кабинета <a href="https://waveswallet.io/" target="_blank" class="link">https://waveswallet.io/</a>.</div>
-                        </div>
-                    </div>
-                    <div class="address">
-                        {% if app.user.wallet %}
-                           {{ app.user.wallet.address }}
-                        {% else %}
-                            aдрес wawes
-                        {% endif %}
-                    </div>
-                </div>
-            </div>
-        </div>
-    </header>
+{% endblock %}
 
-    <!-- Main-->
-    <section class="main-content">
-        <div class="container">
-            <!-- Left aside-->
-            <aside class="aside-left">
-                <div class="panel-mini total-balance">
-                    <div class="title">Общий баланс:</div>
-                    <div class="num-balance">0 BNR</div>
-                </div>
-                <!-- Navigation-->
-                <nav class="main-nav">
-                    <ul class="nav-list">
-                        <li class="nav-item">
-                            <a class="nav-link" href="{{ path('dashboard_homepage') }}">Панель управления</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="{{ path('app_transactionhistory_index')}}">История транзакций</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="{{ path('app_useraddress_index')}}">Адрес аккаунта</a>
-                        </li>
-                    </ul>
-                </nav>
-            </aside>
-            {% block content %}
-            {% endblock %}
-        </div>
-    </section>
-
-    {% block popup %}
-
-        <!-- Popup waves-->
-        <div class="overlay popup-overlay">
-            <div class="popup popup-waves" data-name="waves"><i class="popup-close"></i>
-                <h2 class="pp-title">Инструкция</h2>
-                <h3 class="pp-desc pp-desc-invest">Как получить адрес Waves?</h3>
-                <ul class="pp-manual-list">
-
-                    <!-- Line-->
-                    <li class="pp-manual-item">
-                        <span>Прежде чем получить доступ ко всему функционалу сайта, вам потребуется указать свой адрес кошелька Waves. Это займет 2 минуты вашего времени.</span>
-
-                        <div class="pp-warrning">
-                            <div class="title">Внимание!</div>
-                            <p class="desc">Перед началом прохождения инструкции, убедитесь, что у вас выключено расширение Adblock или другое подобное. Иначе работоспособность сайта не гарантируется.</p>
-                        </div>
-                    </li>
-
-                    <!-- Line-->
-                    <li class="pp-manual-item">
-                        <span><b>1.</b> Перейдем на официальный сайт веб-клиента для кошелька Waves: <a href="https://waveswallet.io/" class="pp-link" target="_blank">https://waveswallet.io/</a></span>
-
-                        <div class="pp-warrning">
-                            <div class="title">Внимание!</div>
-                            <p class="desc">Обязательно сверяйте ссылку с той, что указана в нашей инструкции.</p>
-                        </div>
-
-                        <img class="pp-img" src="/img/screen/sc-waves1.png">
-                    </li>
-
-                    <!-- Line-->
-                    <li class="pp-manual-item">
-                        <span><b>2.</b> Регистрируем новый аккаунт в системе Waves. Для этого жмем на кнопку <b>NEW ACCOUNT</b></span>
-                        <img class="pp-img" src="/img/screen/sc-waves2.png">
-                    </li>
-
-                    <!-- Line-->
-                    <li class="pp-manual-item">
-                        <span><b>3.</b> Читаем текст уведомления и жмем на кнопку <b>I UNDERSTAND</b>.</span>
-
-                        <div class="pp-warrning">
-                            <div class="title">Внимание!</div>
-                            <p class="desc">Читать уведомление обязательно, в нем важная информация для безопасности вашего аккаунта.</p>
-                        </div>
-
-                        <img class="pp-img" src="/img/screen/sc-waves3.png">
-                    </li>
-
-                    <!-- Line-->
-                    <li class="pp-manual-item">
-                        <span><b>4.</b> Записываем SEED, который был сгенерирован для вас. Удостоверьтесь, что верно переписали SEED.</span>
-
-                        <div class="pp-warrning">
-                            <div class="title">Внимание!</div>
-                            <p class="desc">Настоятельно рекомендуем не копировать и не распространять SEED в пределах вашей файловой системы и Интернета. Самый надежный способ - записать SEED на физический листок бумаги (лучше несколько) и положить в безопасное место. Если вы все-таки храните SEED в электронном виде, храните его на носителе у которого нет доступа к Интернету. SEED не должен быть доступен третьим лицам.</p>
-                        </div>
-
-                        <img class="pp-img" src="/img/screen/sc-waves4.png">
-                    </li>
-
-                    <!-- Line-->
-                    <li class="pp-manual-item">
-                        <span><b>5.</b> Поле <b>NAME</b> опционально, его заполнение необязательно. Если вы собираетесь создавать много аккаунтов, рекомендуется заполнить это поле, для удобства, чтобы не путаться в адресах созданных аккаунтов.</span>
-
-                        <img class="pp-img" src="/img/screen/sc-waves5.png">
-                    </li>
-
-                    <!-- Line-->
-                    <li class="pp-manual-item">
-                        <span><b>6.</b>. Придумываем и повторяем пароль. Пароль используется для шифрования вашего SEED и будет использован для входа в аккаунт.</span>
-
-                        <div class="pp-warrning">
-                            <div class="title">Внимание!</div>
-                            <p class="desc">Пароль должен быть сложный, чтобы защитить вас от <a href="https://ru.wikipedia.org/wiki/%D0%9F%D0%BE%D0%BB%D0%BD%D1%8B%D0%B9_%D0%BF%D0%B5%D1%80%D0%B5%D0%B1%D0%BE%D1%80" class="pp-link" target="_blank">брутфорса</a>. Используйте пароли длиной не менее 12 символов для максимальной стойкости защиты к такой атаке. Например: M3mSH6aT7waG</p>
-                        </div>
-
-                        <img class="pp-img" src="/img/screen/sc-waves6.png">
-                    </li>
-
-                    <!-- Line-->
-                    <li class="pp-manual-item">
-                        <span><b>7.</b> Жмем кнопку <b>REGISTER</b>.</span>
-                        <img class="pp-img" src="/img/screen/sc-waves7.png">
-                    </li>
-
-                    <!-- Line-->
-                    <li class="pp-manual-item">
-                        <span><b>8.</b> Регистрация завершена. В панеле управления аккаунтом вы можете скопировать свой адрес и использовать его для вставки в нашей системе для доступа ко всему функционалу.</span>
-                        <img class="pp-img" src="/img/screen/sc-waves8.png">
-                    </li>
-                </ul>
-            </div>
-        </div>
-
-    {% endblock %}
-
-    {% block script %}
-        <!-- Scripts -->
-        <script src="{{ asset('bundles/fosjsrouting/js/router.js') }}"></script>
-        <script src="{{ path('fos_js_routing_js', { callback: 'fos.Router.setData' }) }}"></script>
-        <script src="/js/libs/jquery.min.js"></script>
-        <script src="/js/wave-auth.js"></script>
-        <script src="/js/main.js"></script>
-        <script src="/js/popup.js"></script>
-    {% endblock %}
+{% block script %}
+    <!-- Scripts -->
+    <script src="{{ asset('bundles/fosjsrouting/js/router.js') }}"></script>
+    <script src="{{ path('fos_js_routing_js', { callback: 'fos.Router.setData' }) }}"></script>
+    <script src="/js/libs/jquery.min.js"></script>
+    <script src="/js/wave-auth.js"></script>
+    <script src="/js/main.js"></script>
+    <script src="/js/popup.js"></script>
+{% endblock %}
 </body>
 </html>
