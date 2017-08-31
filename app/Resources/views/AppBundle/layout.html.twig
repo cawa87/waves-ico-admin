@@ -24,7 +24,7 @@
                         <button type="submit" id="attach_address_save" name="attach_address[save]">Save</button>
                     </div>
                     <input type="hidden" id="attach_address__token" name="attach_address[_token]"
-                           value="hATwiCWVumNloc9_qza65QKoNSBkZ4VksB6_CWysUc4">
+                           value="{{ csrf_token("attach_address") }}">
                 </div>
 
             </form>

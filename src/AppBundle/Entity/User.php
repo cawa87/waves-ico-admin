@@ -70,6 +70,12 @@ class User extends BaseUser
      */
     protected $updatedAt;
 
+    /**
+     * @var WavesTransaction[]
+     * @ORM\OneToMany(targetEntity="AppBundle\Entity\WavesTransaction", mappedBy="user")
+     */
+    protected $wavesTransactions;
+
 
     public function __construct()
     {

@@ -74,6 +74,7 @@ services:
 
     app.wrappers.waves_node_wrapper:
         class: AppBundle\Wrappers\WavesNodeWrapper
+        public: true
         arguments:
           - '%node_api_url%'
           - '%node_api_key%'

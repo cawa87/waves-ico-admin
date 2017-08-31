@@ -22,7 +22,7 @@ class CurrencyGetRatesCommand extends ContainerAwareCommand
 
     protected function execute(InputInterface $input, OutputInterface $output)
     {
-        $argument = $input->getArgument('argument');
+       // $argument = $input->getArgument('argument');
 
         $wrapper = $this->getContainer()->get('app.wrappers.currency_rate_wrapper');
 
