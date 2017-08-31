@@ -52,7 +52,13 @@
                             <div class="tooltip-content">Это Waves адрес компании BANER выделенный персонально для вас. Именно его нужно использовать для покупки токенов. Другими словами, именно на него вы отправляете свои денежные средства из личного кабинета <a href="https://waveswallet.io/" target="_blank" class="link">https://waveswallet.io/</a>.</div>
                         </div>
                     </div>
-                    <div class="address">{{ app.user.wallet.address }}</div>
+                    <div class="address">
+                        {% if app.user.wallet %}
+                           {{ app.user.wallet.address }}
+                        {% else %}
+                            aдрес wawes
+                        {% endif %}
+                    </div>
                 </div>
             </div>
         </div>
