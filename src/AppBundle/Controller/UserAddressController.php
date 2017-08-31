@@ -21,7 +21,7 @@ class UserAddressController extends Controller
 
     /**
      * @Method({"POST"})
-     * @Route("address/attach" , name="attach_user_address")
+     * @Route("address/attach" , name="attach_user_address" , options={"expose"=true})
      */
     public function attachAction(Request $request)
     {

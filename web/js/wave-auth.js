@@ -1,34 +1,30 @@
 (function() {
 
     var wWaves = $('.alert-waves'),
-        wInput = wWaves.find('.waves-input'),
-        wBtn = wWaves.find('.waves-btn'),
-        wOvwerlay = $('.waves-overlay');
+        wInput = wWaves.find('.waves-input');
+        // wBtn = wWaves.find('.waves-btn'),
+        // wOvwerlay = $('.waves-overlay');
 
     var wTip = wWaves.find('.waves-tip');
 
-    if (sessionStorage.getItem('addressWaves') === 'true' ) { 
-        wWaves.hide();
-        wOvwerlay.addClass('hide');
-    }
 
-    else {
-        function handleEnterWaves() {
+    $('.waves-form').on('submit', function(e) {
+        e.preventDefault();
 
-            if ( wInput.val() ) {
-                sessionStorage.setItem('addressWaves', 'true');
-                wTip.removeClass('show');
-                wWaves.hide();
-                wOvwerlay.addClass('hide');
-            }
+        if ( wInput.val() ) {
 
-            else {
-                wTip.addClass('show');
-            }
+            var request = $.ajax({
+                url: Routing.generate('attach_user_address'),
+                type: 'POST',
+                data: {'address': wInput.val()},
+
+                success: function(data) {
+                    console.log(data);
+                }
+            });
+
         }
-
-        wBtn.on('click', handleEnterWaves);
-    }
+    });
 
 })();
 //# sourceMappingURL=wave-auth.js.map
