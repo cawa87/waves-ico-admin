@@ -25,9 +25,11 @@
             var formSerialize = $('.waves-form').serialize();
 
             $.post(url, formSerialize, function(response) {
-               
-                wWaves.hide();
-                wOvwerlay.hide();
+
+                wInput.parent().fadeOut(600, function() {
+                    wWaves.slideUp(800);
+                    wOvwerlay.fadeOut(800);
+                })
 
             }, 'JSON');
         }
