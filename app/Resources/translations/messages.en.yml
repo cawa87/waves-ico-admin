@@ -3,3 +3,9 @@ layout:
     login: Login
     register: Register
 
+nav:
+    dashboard: Dashboard
+    history: 'Transaction history'
+    address: 'Account address'
+
+

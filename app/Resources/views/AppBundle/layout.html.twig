@@ -104,13 +104,19 @@
             <nav class="main-nav">
                 <ul class="nav-list">
                     <li class="nav-item">
-                        <a class="nav-link" href="{{ path('dashboard_homepage') }}">Панель управления</a>
+                        <a class="nav-link" href="{{ path('dashboard_homepage') }}">
+                            {{ 'nav.dashboard'| trans }}
+                        </a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="{{ path('app_transactionhistory_index') }}">История транзакций</a>
+                        <a class="nav-link" href="{{ path('app_transactionhistory_index') }}">
+                            {{ 'nav.history'| trans }}
+                        </a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="{{ path('app_useraddress_index') }}">Адрес аккаунта</a>
+                        <a class="nav-link" href="{{ path('app_useraddress_index') }}">
+                            {{ 'nav.address'| trans }}
+                        </a>
                     </li>
                 </ul>
             </nav>

@@ -3,3 +3,8 @@ layout:
     login: Вход
     register: Регистрация
 
+nav:
+    dashboard: 'Панель управления'
+    history: 'История транзакций'
+    address: 'Адрес аккаунта'
+
