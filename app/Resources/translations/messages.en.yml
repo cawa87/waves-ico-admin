@@ -9,7 +9,9 @@ layout:
     btn_login: 'Log In'
     btn_reg: 'Sign Up'
     btn_forget: 'Forgot your password?'
-    checkbox: "I have read and agree withTerms and Conditions and confirm that  I'm NOT the US citizen"
+    checkbox_start: 'I have read and agree with'
+    checkbox_link: 'Terms and Conditions'
+    checkbox_end: "and confirm that I'm NOT the US citizen"
     repeat_login: 'Already have an account?'
 
     first_name: 'First name'

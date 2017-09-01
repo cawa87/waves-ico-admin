@@ -45,7 +45,7 @@
             </div>
             <div class="form-line">
                 <input type="checkbox" id="agreement" name="agreement" value="false" required>
-                <label class="check-label" for="agreement">I have read and agree with<a href="" target="_blank"></a>Terms and Conditions and confirm that &nbsp;<a href="" target="_blank"></a>I'm NOT the US citizen</label>
+                <label class="check-label" for="agreement">{{ 'layout.checkbox_start'| trans }} <a href="" class="link" target="_blank">{{ 'layout.checkbox_link'| trans }}</a> {{ 'layout.checkbox_end'| trans }}</label>
             </div>
             <button class="btn btn-block btn-form blue" type="submit">{{ 'layout.btn_reg'| trans }}</button>
             <div class="tip-sign-in">{{ 'layout.repeat_login'| trans }} <a class="link" href="login.html">{{ 'layout.btn_login'| trans }}</a></div>

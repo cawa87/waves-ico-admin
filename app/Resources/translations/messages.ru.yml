@@ -9,7 +9,9 @@ layout:
     btn_login: Войти
     btn_reg: Регистрация
     btn_forget: 'Забыли пароль?'
-    checkbox: 'Я прочитал и согласен с Условиями и условиями и подтверждаю, что я НЕ являюсь гражданином США'
+    checkbox_start: 'Я прочитал и согласен с'
+    checkbox_link: 'Terms and Conditions'
+    checkbox_end: 'и подтверждаю, что я НЕ являюсь гражданином США'
     repeat_login: 'Уже есть учетная запись?'
 
     first_name: Имя
