@@ -7,8 +7,18 @@
         <div class="panel-body panel-form-body">
             <div class="register-confirm"><img class="icon" src="/img/success.svg">
                 <div class="title">Почти готово!</div>
-                <p class="desc">Пожалуйста, проверьте входящие в вашем почтовом ящике, чтобы завершить регистрацию</p>
+                <p class="desc">Благодарим за регистрацию в ICO. Через 5 секунд Вы будете
+                    <a href="/" style="text-decoration: underline;">перенаправлены</a>...</p>
             </div>
         </div>
     </section>
 {% endblock fos_user_content %}
+
+
+{% block javascript %}
+    <script>
+        setTimeout(function () {
+            window.location.href = '/';
+        }, 5000);
+    </script>
+{% endblock %}

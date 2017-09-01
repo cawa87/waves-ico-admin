@@ -37,6 +37,9 @@ class UserAddressController extends Controller
             $em = $this->getDoctrine()->getManager();
             $em->persist($user);
             $em->flush();
+        }else{
+            return $this->json($form->getErrors());
+
         }
 
 

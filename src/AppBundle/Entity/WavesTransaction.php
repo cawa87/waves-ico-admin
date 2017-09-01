@@ -59,7 +59,7 @@ class WavesTransaction
     /**
      * @var \DateTime
      *
-     * @ORM\Column(name="timestamp", type="datetime")
+     * @ORM\Column(name="timestamp", type="string")
      */
     protected $timestamp;
 
@@ -80,7 +80,7 @@ class WavesTransaction
     /**
      * @var string
      *
-     * @ORM\Column(name="asset_id", type="string", length=255)
+     * @ORM\Column(name="asset_id", type="string", length=255, nullable=true)
      */
     protected $assetId;
 
@@ -94,9 +94,24 @@ class WavesTransaction
     /**
      * @var string
      *
-     * @ORM\Column(name="fee_asset", type="string", length=255)
+     * @ORM\Column(name="fee_asset", type="string", length=255, nullable=true)
      */
     protected $feeAsset;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="attachment", type="string", length=255, nullable=true)
+     */
+    protected $attachment;
+
+
+    /**
+     * @var User
+     *
+     * @ORM\ManyToOne(targetEntity="AppBundle\Entity\User", inversedBy="wavesTransactions")
+     */
+    protected $user;
 
 
     /**
@@ -364,6 +379,39 @@ class WavesTransaction
     {
         $this->feeAsset = $feeAsset;
     }
+
+    /**
+     * @return string
+     */
+    public function getAttachment()
+    {
+        return $this->attachment;
+    }
+
+    /**
+     * @param string $attachment
+     */
+    public function setAttachment($attachment)
+    {
+        $this->attachment = $attachment;
+    }
+
+    /**
+     * @return User
+     */
+    public function getUser()
+    {
+        return $this->user;
+    }
+
+    /**
+     * @param User $user
+     */
+    public function setUser($user)
+    {
+        $this->user = $user;
+    }
+
 
 
 }

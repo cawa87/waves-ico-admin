@@ -11,6 +11,8 @@ class WavesNodeWrapper
 
     protected $client;
 
+    const TRANSACTION_LIMIT = 100;
+
 
     /**
      * WavesNodeWrapper constructor.
@@ -52,5 +54,20 @@ class WavesNodeWrapper
         $resp = json_decode($res->getBody());
 
         return $resp->address;
+    }
+
+    public function getAddressTransactions($address)
+    {
+
+        $client = $this->client;
+        $url = $this->apiUrl . 'transactions/address/' . $address . '/limit/' . self::TRANSACTION_LIMIT;
+        // var_dump($url); die();
+
+        $res = $client->request('GET', $url, [
+            'headers' => ['api_key' => $this->apiKey]
+        ]);
+        //echo $res->getStatusCode();
+
+        return json_decode($res->getBody())[0];
     }
 }
