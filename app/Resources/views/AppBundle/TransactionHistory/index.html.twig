@@ -9,11 +9,11 @@
         <!-- Col content-->
         <div class="content content-lg">
             <section class="panel panel-history">
-                <h2 class="panel-title">История транзакций</h2>
+                <h2 class="panel-title">{{ 'panel-history.title'| trans }}</h2>
                 <div class="panel-body history-start">
-                    <div class="desc">Тут будут показываться
-                        <br>ваши транзакции</div>
-                    <button class="btn blue open-popup" data-name="invest">Провести первую транзакцию</button>
+                    <div class="desc">{{ 'panel-history.empty_desc_start'| trans }}
+                        <br>{{ 'panel-history.empty_desc_end'| trans }}</div>
+                    <button class="btn blue open-popup" data-name="invest">{{ 'panel-history.btn'| trans }}</button>
                 </div>
             </section>
         </div>
@@ -21,13 +21,13 @@
         <!-- Col content-->
         <div class="content content-lg">
             <section class="panel panel-history">
-                <h2 class="panel-title">История транзакций</h2>
+                <h2 class="panel-title">{{ 'panel-history.title'| trans }}</h2>
                 <div class="panel-body history-table">
                     <div class="history-row history-row-head">
-                        <div class="history-cell">Дата</div>
-                        <div class="history-cell">Описание</div>
-                        <div class="history-cell">Статус</div>
-                        <div class="history-cell">Сумма</div>
+                        <div class="history-cell">{{ 'panel-history.table_date'| trans }}</div>
+                        <div class="history-cell">{{ 'panel-history.table_desc'| trans }}</div>
+                        <div class="history-cell">{{ 'panel-history.table_status'| trans }}</div>
+                        <div class="history-cell">{{ 'panel-history.table_amount'| trans }}</div>
                     </div>
                     <div class="history-row">
                         <div class="history-cell cell-date">12 Jun 16:52</div>
@@ -55,10 +55,8 @@
         <div class="content content-lg">
             <!-- Footer-->
             <footer class="main-footer">
-                <p class="copyright">© 2017 BANER. All rights reserved</p>
-                <p class="feedback">Возникли вопросы? Пожалуйста, свяжитесь с нами по support@baner.su
-                    <br>
-                </p>
+                <p class="copyright">{{ 'footer.copyright'| trans }}</p>
+                <p class="feedback">{{ 'footer.feedback'| trans }}</p>
             </footer>
         </div>
     </div>

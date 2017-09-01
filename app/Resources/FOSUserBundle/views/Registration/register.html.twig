@@ -5,12 +5,14 @@
 {% block fos_user_content %}
     <!-- Register panel-->
     <section class="panel panel-form">
-        <h2 class="panel-title">Вход
-            <div class="dropdown-block dropdown-lang"><a class="select-lang" data-toggle="dropdown" href="">Russian</a>
+        <h2 class="panel-title">{{ 'layout.register'| trans }}
+            <div class="dropdown-block dropdown-lang">
+                <a class="select-lang" data-toggle="dropdown" href="">
+                    {{ (app.request.locale == "en") ? 'English' : 'Russian' }}
+                </a>
                 <ul class="dropdown-menu dropdown-menu-lang" data-toggle="dropdown-menu">
-                    <li class="drop-item">Russian</li>
-                    <li class="drop-item">English</li>
-                    <li class="drop-item">China</li>
+                    <li class="drop-item"><a href="?_locale=ru">Russian</a></li>
+                    <li class="drop-item"><a href="?_locale=en">English</a></li>
                 </ul>
             </div>
         </h2>
@@ -19,34 +21,34 @@
 
             <div class="form-line">
                 {{ form_row(form.firstName) }}
-                <label class="label" for="first_name">First Name</label>
-                <input class="input" type="text" name="fos_user_registration_form[firstName]" id="first_name" placeholder="First name" value="">
+                <label class="label" for="first_name">{{ 'layout.first_name'| trans }}</label>
+                <input class="input" type="text" name="fos_user_registration_form[firstName]" id="first_name" placeholder="{{ 'layout.first_name'| trans }}" value="">
             </div>
             <div class="form-line">
                 {{ form_row(form.lastName) }}
-                <label class="label" for="last_name">Last Name</label>
-                <input class="input" type="text" name="fos_user_registration_form[lastName]" id="last_name" placeholder="Last Name" value="">
+                <label class="label" for="last_name">{{ 'layout.last_name'| trans }}</label>
+                <input class="input" type="text" name="fos_user_registration_form[lastName]" id="last_name" placeholder="{{ 'layout.last_name'| trans }}" value="">
             </div>
             <div class="form-line">
-                <label class="label" for="email">Email</label>
+                <label class="label" for="email">{{ 'layout.email'| trans }}</label>
                 {{ form_row(form.email) }}
-                <input class="input" type="text" name="fos_user_registration_form[email]" id="email" placeholder="Email" value="">
+                <input class="input" type="text" name="fos_user_registration_form[email]" id="email" placeholder="{{ 'layout.email'| trans }}" value="">
             </div>
             <div class="form-line">
                 {{ form_row(form.plainPassword) }}
-                <label class="label" for="password">Password</label>
-                <input class="input" type="password" name="fos_user_registration_form[plainPassword][first]" id="password" placeholder="Password" value="">
+                <label class="label" for="password">{{ 'layout.password'| trans }}</label>
+                <input class="input" type="password" name="fos_user_registration_form[plainPassword][first]" id="password" placeholder="{{ 'layout.password'| trans }}" value="">
             </div>
             <div class="form-line">
-                <label class="label" for="password_repeat">Repeat password</label>
-                <input class="input" type="password" name="fos_user_registration_form[plainPassword][second]" id="password_repeat" placeholder="Password repeat" value="">
+                <label class="label" for="password_repeat">{{ 'layout.repeat_pass'| trans }}</label>
+                <input class="input" type="password" name="fos_user_registration_form[plainPassword][second]" id="password_repeat" placeholder="{{ 'layout.repeat_pass'| trans }}" value="">
             </div>
             <div class="form-line">
                 <input type="checkbox" id="agreement" name="agreement" value="false" required>
                 <label class="check-label" for="agreement">I have read and agree with<a href="" target="_blank"></a>Terms and Conditions and confirm that &nbsp;<a href="" target="_blank"></a>I'm NOT the US citizen</label>
             </div>
-            <button class="btn btn-block btn-form blue" type="submit">Зарегистрироваться</button>
-            <div class="tip-sign-in">Already have an account? <a class="link" href="login.html">Sign in</a></div>
+            <button class="btn btn-block btn-form blue" type="submit">{{ 'layout.btn_reg'| trans }}</button>
+            <div class="tip-sign-in">{{ 'layout.repeat_login'| trans }} <a class="link" href="login.html">{{ 'layout.btn_login'| trans }}</a></div>
 
             {{ form_end(form) }}
 

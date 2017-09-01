@@ -9,18 +9,18 @@
         <!-- Coll content-->
         <div class="content content-center">
             <section class="panel panel-settings">
-                <h2 class="panel-title">Настройки</h2>
+                <h2 class="panel-title">{{ 'panel-settings.title'| trans }}</h2>
                 <div class="panel-body settings-body">
                     <div class="set-line">
-                        <div class="set-name">Пароль</div>
-                        <div class="set-value">****<a class="btn-change-pass btn blue" href="settings-password.html">Изменить</a></div>
+                        <div class="set-name">{{ 'panel-settings.password'| trans }}</div>
+                        <div class="set-value">****<a class="btn-change-pass btn blue" href="settings-password.html">{{ 'panel-settings.btn-change'| trans }}</a></div>
                     </div>
                     <div class="set-line">
-                        <div class="set-name">Email</div>
+                        <div class="set-name">{{ 'panel-settings.email'| trans }}</div>
                         <div class="set-value">admain@baner.com</div>
                     </div>
                     <div class="set-line">
-                        <div class="set-name">Номер телефона</div>
+                        <div class="set-name">{{ 'panel-settings.phone'| trans }}</div>
                         <div class="set-value">+7 (812) 111 22 33</div>
                     </div>
                 </div>
@@ -30,33 +30,33 @@
         <!-- Coll content-->
         <div class="content content-center">
             <section class="panel panel-settings">
-                <h2 class="panel-title">Настройки</h2>
+                <h2 class="panel-title">{{ 'panel-settings.title'| trans }}</h2>
                 <div class="panel-body settings-body">
                     <div class="set-line">
                         <div class="new-pass-list">
                             <div class="passline">
-                                <div class="set-name">Старый пароль</div>
-                                <input class="input set-input" type="text"><a class="link link-cancel" href="settings.html">Отмена</a>
+                                <div class="set-name">{{ 'panel-settings.old_pass'| trans }}</div>
+                                <input class="input set-input" type="text"><a class="link link-cancel" href="settings.html">{{ 'panel-settings.btn_cancel'| trans }}</a>
                             </div>
                             <div class="passline">
-                                <div class="set-name">Новый пароль</div>
+                                <div class="set-name">{{ 'panel-settings.new_pass'| trans }}</div>
                                 <input class="input set-input" type="text">
                             </div>
                             <div class="passline">
-                                <div class="set-name">Повторите пароль</div>
+                                <div class="set-name">{{ 'panel-settings.repeat_pass'| trans }}</div>
                                 <input class="input set-input" type="text">
                             </div>
                             <div class="passline">
-                                <div class="set-name"></div><a class="btn blue btn-get-pass" href="">Изменить пароль</a>
+                                <div class="set-name"></div><a class="btn blue btn-get-pass" href="">{{ 'panel-settings.btn_change_pass'| trans }}</a>
                             </div>
                         </div>
                     </div>
                     <div class="set-line">
-                        <div class="set-name">Email</div>
+                        <div class="set-name">{{ 'panel-settings.email'| trans }}</div>
                         <div class="set-value">admain@baner.com</div>
                     </div>
                     <div class="set-line">
-                        <div class="set-name">Номер телефона</div>
+                        <div class="set-name">{{ 'panel-settings.phone'| trans }}</div>
                         <div class="set-value">+7 (812) 111 22 33</div>
                     </div>
                 </div>
@@ -67,10 +67,8 @@
         <div class="content content-md">
             <!-- Footer-->
             <footer class="main-footer">
-                <p class="copyright">© 2017 BANER. All rights reserved</p>
-                <p class="feedback">Возникли вопросы? Пожалуйста, свяжитесь с нами по support@baner.su
-                    <br>
-                </p>
+                <p class="copyright">{{ 'footer.copyright'| trans }}</p>
+                <p class="feedback">{{ 'footer.feedback'| trans }}</p>
             </footer>
         </div>
 

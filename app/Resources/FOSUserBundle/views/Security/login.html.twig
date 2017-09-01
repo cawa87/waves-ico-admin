@@ -5,11 +5,13 @@
     <!-- Register panel-->
     <section class="panel panel-form">
         <h2 class="panel-title">{{ 'layout.login'| trans }}
-            <div class="dropdown-block dropdown-lang"><a class="select-lang" data-toggle="dropdown" href="">Russian</a>
+            <div class="dropdown-block dropdown-lang">
+                <a class="select-lang" data-toggle="dropdown" href="">
+                    {{ (app.request.locale == "en") ? 'English' : 'Russian' }}
+                </a>
                 <ul class="dropdown-menu dropdown-menu-lang" data-toggle="dropdown-menu">
                     <li class="drop-item"><a href="?_locale=ru">Russian</a></li>
                     <li class="drop-item"><a href="?_locale=en">English</a></li>
-                    <li class="drop-item"><a href="?_locale=ch">China</a></li>
                 </ul>
             </div>
         </h2>
@@ -26,17 +28,17 @@
                 {% endif %}
 
                 <div class="form-line">
-                    <label class="label" for="email">Email</label>
-                    <input class="input" type="email" name="_username" id="email" placeholder="Эл. почта" value="">
+                    <label class="label" for="email">{{ 'layout.email'| trans }}</label>
+                    <input class="input" type="email" name="_username" id="email" placeholder="{{ 'layout.email'| trans }}" value="">
                 </div>
                 <div class="form-line">
-                    <label class="label" for="password">Пароль</label>
-                    <input class="input" type="password" name="_password" id="password" placeholder="Пароль">
+                    <label class="label" for="password">{{ 'layout.password'| trans }}</label>
+                    <input class="input" type="password" name="_password" id="password" placeholder="{{ 'layout.password'| trans }}">
                 </div>
-                <button class="btn btn-block btn-form blue" type="submit">Войти</button>
+                <button class="btn btn-block btn-form blue" type="submit">{{ 'layout.btn_login'| trans }}</button>
                 <a class="btn btn-block btn-form white"
-                   href="{{ path('fos_user_registration_register') }}">Регистрация</a>
-                <a class="link tip-password" href="{{ path('fos_user_resetting_send_email') }}">Забыли пароль?</a>
+                   href="{{ path('fos_user_registration_register') }}">{{ 'layout.btn_reg'| trans }}</a>
+                <a class="link tip-password" href="{{ path('fos_user_resetting_send_email') }}">{{ 'layout.btn_forget'| trans }}</a>
             </form>
         </div>
     </section>

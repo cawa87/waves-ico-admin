@@ -3,8 +3,106 @@ layout:
     login: Вход
     register: Регистрация
 
+    email: 'Email'
+    password: 'Пароль'
+    repeat_pass: 'Повторите пароль'
+    btn_login: Войти
+    btn_reg: Регистрация
+    btn_forget: 'Забыли пароль?'
+    checkbox: 'Я прочитал и согласен с Условиями и условиями и подтверждаю, что я НЕ являюсь гражданином США'
+    repeat_login: 'Уже есть учетная запись?'
+
+    first_name: Имя
+    last_name: Фамилия
+
+header:
+    address: 'Адрес BANER Waves'
+    settings: Настройки
+    exit: Выход
+
+footer:
+    copyright: '© 2017 BANER. Все права защищены.'
+    feedback: 'Возникли вопросы? Пожалуйста, свяжитесь с нами по адресу: support@baner.su'
+
 nav:
     dashboard: 'Панель управления'
     history: 'История транзакций'
     address: 'Адрес аккаунта'
+
+aside_left:
+    balance: 'Общий баланс'
+
+aside_right:
+    day: 'Дней осталось'
+    bonus: 'Текущий бонус'
+    status: 'Текущий статус'
+    invested: 'ИНВЕСТИРОВАНО (всего)'
+    members: УЧАСТНИКИ
+
+alert_waves:
+    title: 'Адрес waves'
+    placeholder: 'Введите адрес waves для дальнейшей работы'
+    btn: Готово
+    btn_popup: 'Что такое Waves и где его взять'
+    error: 'Ошибка. Проверьте правильность введенного вами адреса.'
+
+panel_invest:
+    title: Инвестировать
+    address: 'Адрес BANER Waves'
+    currency: Валюта
+    amount: Сумма
+    btn: Инвестировать
+    result_amount: Количество
+    result_bonus: Бонус
+    result_get: 'ВЫ ПОЛУЧИТЕ'
+
+panel_invested:
+    title: Инвестировано
+
+panel_bonus:
+    title: Бонусы
+    day: День
+
+panel_course:
+    title: 'Курс обмена'
+    price: цена
+
+panel-history:
+    title: 'История транзакций'
+    empty_desc_start: 'Тут будут показываться'
+    empty_desc_end: 'ваши транзакции'
+    btn: 'Провести первую транзакцию'
+    table_date: Дата
+    table_desc: Описание
+    table_status: Статус
+    table_amount: Сумма
+
+panel-address:
+    title: 'Адрес аккаунта'
+    address-wallet: 'АДРЕС КОШЕЛЬКА'
+    desc: 'Не отправляйте ETH на этот адрес до окончания ICO. Инструменты для инвестирования доступны на вкладке "Панель управления".'
+    address-tip: 'Ваш адрес появится здесь после ICO'
+    btn_copy: Скопировать
+    copy_wallet: 'Хотите сделать резервную копию кошелька?'
+
+panel-settings:
+    title: Настройки
+    password: Пароль
+    email: Email
+    phone: 'Номер телефона'
+    btn-change: Изменить
+    old_pass: 'Старый пароль'
+    new_pass: 'Новый пароль'
+    repeat_pass: 'Повторите пароль'
+    btn_cancel: Отмена
+    btn_change_pass: 'Изменить пароль'
+
+tooltip:
+    waves: 'Это Waves адрес компании BANER выделенный персонально для вас.
+            Именно его нужно использовать для покупки токенов. 
+            Другими словами, именно на него вы отправляете свои денежные средства из личного кабинета'
+
+    bonus: 'Мы принимаем инвестиции в EMC с минимальной суммой в 1000 долларов на адрес 
+            EeLeckKqTRvbbyThGhvMYeVWhrCwYb6ev6. Пожалуйста, свяжитесь с нами 
+            с помощью emc@baner.su чтобы оформить заказ или получить ответы на вопросы.'
 

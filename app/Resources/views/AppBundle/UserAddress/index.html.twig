@@ -10,13 +10,13 @@
         <div class="content content-md">
             <div class="content content-center">
                 <section class="panel panel-address">
-                    <h2 class="panel-title">Адрес аккаунта</h2>
+                    <h2 class="panel-title">{{ 'panel-address.title'| trans }}</h2>
                     <div class="panel-body address-body">
-                        <div class="tip-title">АДРЕС КОШЕЛЬКА</div>
-                        <p class="warrning-msg">Не отправляйте ETH на этот адрес до окончания ICO. Инструменты для инвестирования доступны на вкладке "Панель управления".</p>
-                        <p class="appear-msg">Your address will appear here after the ICO</p>
-                        <button class="btn white">Скопировать</button>
-                        <div class="msg-reserve">Хотите сделать резервную копию кошелька ?</div>
+                        <div class="tip-title">{{ 'panel-address.address-wallet'| trans }}</div>
+                        <p class="warrning-msg">{{ 'panel-address.desc'| trans }}</p>
+                        <p class="appear-msg">{{ 'panel-address.address-tip'| trans }}</p>
+                        <button class="btn white">{{ 'panel-address.btn_copy'| trans }}</button>
+                        <div class="msg-reserve">{{ 'panel-address.copy_wallet'| trans }}</div>
                     </div>
                 </section>
             </div>
@@ -24,26 +24,26 @@
             <!-- Right aside-->
             <aside class="aside-right">
                 <div class="panel-mini statistics">
-                    <div class="line">Дней осталось:<span>25</span></div>
-                    <div class="line">Текущий бонус:<span>25%</span>
+                    <div class="line">{{ 'aside_right.day'| trans }}:<span>25</span></div>
+                    <div class="line">{{ 'aside_right.bonus'| trans }}:<span>25%</span>
                         <div class="tooltip tooltip-bonus">
                             <div class="tooltip-call black"></div>
-                            <div class="tooltip-content">Мы принимаем инвестиции в EMC с минимальной суммой в 1000 долларов на адрес EeLeckKqTRvbbyThGhvMYeVWhrCwYb6ev6. Пожалуйста, свяжитесь с нами с помощью emc@baner.su чтобы оформить заказ или получить ответы на вопросы.</div>
+                            <div class="tooltip-content">{{ 'tooltip.bonus'| trans }}</div>
                         </div>
                     </div>
                 </div>
                 <section class="panel panel-status">
-                    <div class="panel-title">Текущий статус</div>
+                    <div class="panel-title">{{ 'aside_right.status'| trans }}</div>
                     <div class="panel-body status-body">
                         <div class="invested-all">
-                            <div class="title">ИНВЕСТИРОВАНО (всего)</div>
+                            <div class="title">{{ 'aside_right.invested'| trans }}</div>
                             <ul class="currency-list">
                                 <li class="currency-item bnr">0 BTC</li>
                                 <li class="currency-item usd">0 USD</li>
                             </ul>
                         </div>
                         <div class="members">
-                            <div class="title">УЧАСТНИКИ</div><span class="count">0</span>
+                            <div class="title">{{ 'aside_right.members'| trans }}</div><span class="count">0</span>
                         </div>
                     </div>
                 </section>
@@ -54,10 +54,8 @@
         <div class="content content-md">
             <!-- Footer-->
             <footer class="main-footer">
-                <p class="copyright">© 2017 BANER. All rights reserved</p>
-                <p class="feedback">Возникли вопросы? Пожалуйста, свяжитесь с нами по support@baner.su
-                    <br>
-                </p>
+                <p class="copyright">{{ 'footer.copyright'| trans }}</p>
+                <p class="feedback">{{ 'footer.feedback'| trans }}</p>
             </footer>
         </div>
     </div>

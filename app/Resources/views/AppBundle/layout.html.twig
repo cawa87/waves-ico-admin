@@ -16,25 +16,25 @@
             <div class="waves-address-wrap">
 
                 <form class="waves-form">
-                    <label class="waves-desc" for="attach_address_address">Адрес waves</label>
+                    <label class="waves-desc" for="attach_address_address">{{ 'alert_waves.title'| trans }}</label>
                     <input class="input waves-input"
                            type="text"
                            id="attach_address_address"
                            name="attach_address[address]"
-                           placeholder="Введите адрес waves для дальнейшей работы"
+                           placeholder="{{ 'alert_waves.placeholder'| trans }}"
                            autocomplete="off">
 
                     <input type="hidden"
                            name="attach_address[_token]"
                            value="{{ csrf_token("attach_address") }}">
 
-                    <button type="submit" class="btn waves-btn">Готово</button>
+                    <button type="submit" class="btn waves-btn">{{ 'alert_waves.btn'| trans }}</button>
                 </form>
-                <div class="waves-tip">Ошибка. Проверьте правильность введенного вами адреса.</div>
+                <div class="waves-tip">{{ 'alert_waves.error'| trans }}</div>
             </div>
 
             <div class="waves-about">
-                <a class="open-popup" href="" data-name="waves">Что такое Waves и где его взять</a>
+                <a class="open-popup" href="" data-name="waves">{{ 'alert_waves.btn_popup'| trans }}</a>
             </div>
         </div>
     </div>
@@ -64,19 +64,17 @@
                 <a class="username" data-toggle="dropdown" href="">admin@baner.com</a>
                 <ul class="dropdown-menu dropdown-menu-user" data-toggle="dropdown-menu">
                     <li class="drop-item">
-                        <a href="{{ path('app_usersettings_index') }}">Настройки</a>
+                        <a href="{{ path('app_usersettings_index') }}">{{ 'header.settings'| trans }}</a>
                     </li>
-                    <li class="drop-item">Выход</li>
+                    <li class="drop-item">{{ 'header.exit'| trans }}</li>
                 </ul>
             </div>
             <!-- waves-->
             <div class="waves-view">
-                <div class="title">Адрес BANER Waves
+                <div class="title">{{ 'header.address'| trans }}
                     <div class="tooltip tooltip-waves-header">
                         <div class="tooltip-call white"></div>
-                        <div class="tooltip-content">Это Waves адрес компании BANER выделенный персонально для вас.
-                            Именно его нужно использовать для покупки токенов. Другими словами, именно на него вы
-                            отправляете свои денежные средства из личного кабинета <a href="https://waveswallet.io/" target="_blank" class="link">https://waveswallet.io/</a>.
+                        <div class="tooltip-content">{{ 'tooltip.waves'| trans }} <a href="https://waveswallet.io/" target="_blank" class="link">https://waveswallet.io/</a>.
                         </div>
                     </div>
                 </div>
@@ -99,7 +97,7 @@
         <!-- Left aside-->
         <aside class="aside-left">
             <div class="panel-mini total-balance">
-                <div class="title">Общий баланс:</div>
+                <div class="title">{{ 'aside_left.balance'| trans }}:</div>
                 <div class="num-balance">0 BNR</div>
             </div>
             <!-- Navigation-->

@@ -3,9 +3,100 @@ layout:
     login: Login
     register: Register
 
+    email: 'Email'
+    password: 'Password'
+    repeat_pass: 'Repeat password'
+    btn_login: 'Log In'
+    btn_reg: 'Sign Up'
+    btn_forget: 'Forgot your password?'
+    checkbox: "I have read and agree withTerms and Conditions and confirm that  I'm NOT the US citizen"
+    repeat_login: 'Already have an account?'
+
+    first_name: 'First name'
+    last_name: 'Last name'
+
+header:
+    address: 'Address BANER Waves'
+    settings: 'Settings'
+    exit: 'Exit'
+
+footer:
+    copyright: '© 2017 BANER. All rights reserved.'
+    feedback: 'Any questions? Please contact us at: support@baner.su.'
+
 nav:
-    dashboard: Dashboard
+    dashboard: 'Dashboard'
     history: 'Transaction history'
     address: 'Account address'
 
+aside_left:
+    balance: 'Total balance'
 
+aside_right:
+    day: 'Days left'
+    bonus: 'Current bonus'
+    status: 'Current status'
+    invested: 'INVESTED (total)'
+    members: MEMBERS
+
+alert_waves:
+    title: 'Address waves'
+    placeholder: 'Enter the address of the waves for further work'
+    btn: Done
+    btn_popup: 'What is Waves and where to get it'
+    error: 'Error! Verify that the address you entered is correct.'
+
+panel_invest:
+    title: Invest
+    address: 'BANER Waves'
+    currency: Currency
+    amount: Amount
+    btn: Invest
+    result_amount: Amount
+    result_bonus: Bonus
+    result_get: "YOU'LL GET"
+
+panel_invested:
+    title: Invested
+
+panel_bonus:
+    title: Bonuses
+    day: Day
+
+panel_course:
+    title: 'Exchange rate'
+    price: price
+
+panel-history:
+    title: 'Transaction history'
+    empty_desc_start : 'Your transactions'
+    empty_desc_end: 'will be shown here'
+    btn: 'Conduct first transaction'
+    table_date: Date
+    table_desc: Description
+    table_status: Status
+    table_amount: Amount
+
+panel-address:
+    title: 'Account address'
+    address-wallet: 'WALLET ADDRESS'
+    desc: 'Do not send ETH to this address before the end of the ICO. Investment tools are available on the "Dashboard" tab'
+    address-tip: 'Your address will appear here after the ICO'
+    btn_copy: Copy
+    copy_wallet: 'Do you want to make a backup copy of your wallet?'
+
+panel-settings:
+    title: 'Settings'
+    password: 'Password'
+    email: 'Email'
+    phone: 'Phone number'
+    btn-change: Edit
+    old_pass: 'Old password'
+    new_pass: 'New password'
+    repeat_pass: 'Repeat password'
+    btn_cancel: Cancel
+    btn_change_pass: 'Change password'
+
+tooltip:
+    waves: "This is the Waves address of the company BANER dedicated personally to you. It is necessary to use it to buy tokens. In other words, it is to him that you send your money from your private office"
+    bonus: "We accept investments in EMC with a minimum amount of $ 1000 to the address of ELECkKrRbbThGhVMEVVnrSvOb6ev6. Please contact us via emc@baner.su to place an order or get answers to your questions."
