@@ -2,8 +2,8 @@
 
     var wWaves = $('.alert-waves'),
         wInput = wWaves.find('.waves-input');
-        wBtn = wWaves.find('.waves-btn');
-        // wOvwerlay = $('.waves-overlay');
+        wBtn = wWaves.find('.waves-btn'),
+        wOvwerlay = $('.waves-overlay');
 
     var wTip = wWaves.find('.waves-tip');
 
@@ -25,8 +25,10 @@
             var formSerialize = $('.waves-form').serialize();
 
             $.post(url, formSerialize, function(response) {
-                //your callback here
-                console.log(response);
+               
+                wWaves.hide();
+                wOvwerlay.hide();
+
             }, 'JSON');
         }
 

@@ -8,34 +8,43 @@
 </head>
 <body>
 
-<!-- Alert Waves-->
-<div class="alert-waves">
-    <div class="container">
-        <div class="waves-address-wrap">
 
-            <form class="waves-form">
-                <label class="waves-desc" for="attach_address_address">Адрес waves</label>
-                <input class="input waves-input"
-                       type="text"
-                       id="attach_address_address"
-                       name="attach_address[address]"
-                       placeholder="Введите адрес waves для дальнейшей работы"
-                       autocomplete="off">
+{% if app.user.wavesAddress is null %}
 
-                <input type="hidden"
-                       name="attach_address[_token]"
-                       value="{{ csrf_token("attach_address") }}">
+    <!-- Alert Waves-->
+    <div class="alert-waves">
+        <div class="container">
+            <div class="waves-address-wrap">
 
-                <button type="submit" class="btn waves-btn">Готово</button>
-            </form>
-            <div class="waves-tip">Ошибка. Проверьте правильность введенного вами адреса.</div>
-        </div>
+                <form class="waves-form">
+                    <label class="waves-desc" for="attach_address_address">Адрес waves</label>
+                    <input class="input waves-input"
+                           type="text"
+                           id="attach_address_address"
+                           name="attach_address[address]"
+                           placeholder="Введите адрес waves для дальнейшей работы"
+                           autocomplete="off">
 
-        <div class="waves-about">
-            <a class="open-popup" href="" data-name="waves">Что такое Waves и где его взять</a>
+                    <input type="hidden"
+                           name="attach_address[_token]"
+                           value="{{ csrf_token("attach_address") }}">
+
+                    <button type="submit" class="btn waves-btn">Готово</button>
+                </form>
+                <div class="waves-tip">Ошибка. Проверьте правильность введенного вами адреса.</div>
+            </div>
+
+            <div class="waves-about">
+                <a class="open-popup" href="" data-name="waves">Что такое Waves и где его взять</a>
+            </div>
         </div>
     </div>
-</div>
+
+    <!-- Waves-overlay -->
+    <div class="overlay waves-overlay"></div>
+
+{% endif %}
+
 
 <!-- Header-->
 <header class="main-header">
