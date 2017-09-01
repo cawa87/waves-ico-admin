@@ -7,17 +7,32 @@
 
     var wTip = wWaves.find('.waves-tip');
 
+    // Убираем лишние пробелы
+    wInput.on('focusout', function() {
+        var valueTrim = $(this).val().trim();
+        $(this).val(valueTrim);
+    });
 
+    // Проверяем и отправляем адрес
     wBtn.on('click', function(e) {
         e.preventDefault();
 
-        var url = Routing.generate('attach_user_address');
-        var formSerialize = $('.waves-form').serialize();
+        if ( wInput.val() ) {
 
-        $.post(url, formSerialize, function(response) {
-            //your callback here
-            console.log(response);
-        }, 'JSON');
+            wTip.removeClass('show');
+
+            var url = Routing.generate('attach_user_address');
+            var formSerialize = $('.waves-form').serialize();
+
+            $.post(url, formSerialize, function(response) {
+                //your callback here
+                console.log(response);
+            }, 'JSON');
+        }
+
+        else {
+            wTip.addClass('show');
+        }
 
     });
 

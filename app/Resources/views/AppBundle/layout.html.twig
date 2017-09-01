@@ -20,8 +20,7 @@
                        id="attach_address_address"
                        name="attach_address[address]"
                        placeholder="Введите адрес waves для дальнейшей работы"
-                       autocomplete="off"
-                       required>
+                       autocomplete="off">
 
                 <input type="hidden"
                        name="attach_address[_token]"
@@ -33,7 +32,7 @@
         </div>
 
         <div class="waves-about">
-            <a class="open-popup" href="" data-name="waves">Что такое waves и где его взять</a>
+            <a class="open-popup" href="" data-name="waves">Что такое Waves и где его взять</a>
         </div>
     </div>
 </div>
@@ -46,9 +45,8 @@
             <div class="dropdown-block dropdown-lang">
                 <a class="select-lang" data-toggle="dropdown" href="">Russian</a>
                 <ul class="dropdown-menu dropdown-menu-lang" data-toggle="dropdown-menu">
-                    <li class="drop-item">Russian</li>
-                    <li class="drop-item">English</li>
-                    <li class="drop-item">China</li>
+                    <li class="drop-item"><a href="?_locale=ru">Russian</a></li>
+                    <li class="drop-item"><a href="?_locale=en">English</a></li>
                 </ul>
             </div>
             <!-- login-->
@@ -77,7 +75,7 @@
                     {% if app.user.wallet %}
                         {{ app.user.wallet.address }}
                     {% else %}
-                        aдрес wawes
+                        aдрес Waves
                     {% endif %}
                 </div>
             </div>
@@ -92,7 +90,7 @@
         <aside class="aside-left">
             <div class="panel-mini total-balance">
                 <div class="title">Общий баланс:</div>
-                <div class="num-balance">0 PLBT</div>
+                <div class="num-balance">0 BNR</div>
             </div>
             <!-- Navigation-->
             <nav class="main-nav">
