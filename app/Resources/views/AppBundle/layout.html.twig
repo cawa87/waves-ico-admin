@@ -51,7 +51,9 @@
         <div class="inner-action">
             <!-- lang-->
             <div class="dropdown-block dropdown-lang">
-                <a class="select-lang" data-toggle="dropdown" href="">Russian</a>
+                <a class="select-lang" data-toggle="dropdown" href="">
+                    {{ (app.request.locale == "en") ? 'English' : 'Russian' }}
+                </a>
                 <ul class="dropdown-menu dropdown-menu-lang" data-toggle="dropdown-menu">
                     <li class="drop-item"><a href="?_locale=ru">Russian</a></li>
                     <li class="drop-item"><a href="?_locale=en">English</a></li>
@@ -74,8 +76,7 @@
                         <div class="tooltip-call white"></div>
                         <div class="tooltip-content">Это Waves адрес компании BANER выделенный персонально для вас.
                             Именно его нужно использовать для покупки токенов. Другими словами, именно на него вы
-                            отправляете свои денежные средства из личного кабинета <a href="https://waveswallet.io/"
-                                                                                      target="_blank" class="link">https://waveswallet.io/</a>.
+                            отправляете свои денежные средства из личного кабинета <a href="https://waveswallet.io/" target="_blank" class="link">https://waveswallet.io/</a>.
                         </div>
                     </div>
                 </div>
