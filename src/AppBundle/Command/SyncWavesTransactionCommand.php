@@ -36,7 +36,7 @@ class SyncWavesTransactionCommand extends ContainerAwareCommand
 
         foreach ($users as $user) {
 
-            if(!$user->getWallet()){
+            if (!$user->getWallet()) {
                 $output->writeln('No wallet for user: ' . $user->getEmail());
                 continue;
             }
@@ -69,7 +69,8 @@ class SyncWavesTransactionCommand extends ContainerAwareCommand
                     // var_dump(date('m/d/Y H:i:s', substr($transaction->timestamp,0,10)));
                     $em->getManager()->persist($wavesTransaction);
 
-                    if ($transaction->recipient == $user->getWallet()->getAddress()) {
+                    if ($transaction->recipient == $user->getWallet()->getAddress()
+                        && $transaction->sender == $user->getWavesAddress()) {
 
                         if (!$transaction->assetId) {
                             $assetId = $em->getRepository(Currency::class)->findOneBy([
@@ -92,7 +93,7 @@ class SyncWavesTransactionCommand extends ContainerAwareCommand
                         $bnrTransaction->setWavesTxId($transaction->id);
                         $bnrTransaction->setUser($user);
                         $bnrTransaction->setCurrency($currency);
-                        $bnrTransaction->setAmount(($transaction->amount)/100000000);
+                        $bnrTransaction->setAmount(($transaction->amount) / 100000000);
                         $bnrTransaction->setInfo('Payment received.');
 
                         $em->getManager()->persist($bnrTransaction);
@@ -104,13 +105,8 @@ class SyncWavesTransactionCommand extends ContainerAwareCommand
                         $bnrTransaction->setTransactionType($bnrTransaction::TYPE_TOKEN_RESERVED);
                         $bnrTransaction->setUser($user);
                         // @todo current BNR price to param
-                        $bnrTransaction->setAmount((($transaction->amount/100000000)*$currencyRate)/10); // CURRENT PRICE
+                        $bnrTransaction->setAmount((($transaction->amount / 100000000) * $currencyRate) / 10); // CURRENT PRICE
                         $bnrTransaction->setInfo('Token reserved.');
-
-                        var_dump($transaction->amount/100000000);
-                        var_dump(($transaction->amount/100000000)*$currencyRate);
-                        var_dump((($transaction->amount/100000000)*$currencyRate)/10);
-                        die();
 
                         $em->getManager()->persist($bnrTransaction);
 

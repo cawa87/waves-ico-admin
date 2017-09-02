@@ -2,6 +2,7 @@
 
 namespace AppBundle\Controller;
 
+use AppBundle\Entity\Transaction;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 
@@ -17,7 +18,12 @@ class TransactionHistoryController extends Controller
      */
     public function indexAction()
     {
-        return $this->render('AppBundle/TransactionHistory/index.html.twig',[]);
+
+        $transactions = $this->getDoctrine()->getRepository(Transaction::class)->findByUser($this->getUser());
+
+        return $this->render('AppBundle/TransactionHistory/index.html.twig',[
+            'transactions' => $transactions
+        ]);
     }
 
 }
