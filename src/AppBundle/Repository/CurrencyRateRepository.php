@@ -37,18 +37,4 @@ class CurrencyRateRepository extends \Doctrine\ORM\EntityRepository
 
         return $qb->getQuery()->getSingleScalarResult();
     }
-
-
-    public function getLastRates()
-    {
-        $qb = $this->createQueryBuilder('cr');
-        $qb->select('cr.rate, c.code');
-        $qb->join('cr.currency','c');
-        $qb->groupBy('cr.currency');
-        $qb->add('orderBy', 'cr.updatedAt DESC');
-        $qb->setMaxResults(5);
-
-
-        return $qb->getQuery()->getArrayResult();
-    }
 }
