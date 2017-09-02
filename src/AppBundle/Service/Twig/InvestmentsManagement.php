@@ -25,4 +25,10 @@ class InvestmentsManagement
         //@todo
         return 0;
     }
+
+    public function getDaysBeforeEnd()
+    {
+        //@todo
+        return 30;
+    }
 }

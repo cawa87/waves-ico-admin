@@ -29,9 +29,11 @@ class Transaction
      */
     protected $transactionType;
 
-    const TYPE_INVEST = 100;
+    const TYPE_PAYMENT_RECEIVED = 100;
+    const TYPE_TOKEN_RESERVED = 300;
+    const TYPE_TOKEN_SENT = 500;
 
-    protected $types = [
+    protected $wavesTypes = [
 
     ];
 
@@ -39,6 +41,7 @@ class Transaction
     /**
      * @var Currency
      * @ORM\ManyToOne(targetEntity="AppBundle\Entity\Currency", inversedBy="transactions")
+     * @ORM\JoinColumn(name="currency_id", referencedColumnName="id", nullable=true)
      */
     protected $currency;
 
@@ -58,9 +61,16 @@ class Transaction
     /**
      * @var string
      *
-     * @ORM\Column(name="info", type="text")
+     * @ORM\Column(name="info", type="text", nullable=true)
      */
     protected $info;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="waves_tx_id", type="string", length=255, nullable=true)
+     */
+    protected $wavesTxId;
 
     /**
      * @var \DateTime
@@ -232,5 +242,39 @@ class Transaction
     {
         return $this->updatedAt;
     }
+
+    /**
+     * @return User
+     */
+    public function getUser()
+    {
+        return $this->user;
+    }
+
+    /**
+     * @param User $user
+     */
+    public function setUser($user)
+    {
+        $this->user = $user;
+    }
+
+    /**
+     * @return string
+     */
+    public function getWavesTxId()
+    {
+        return $this->wavesTxId;
+    }
+
+    /**
+     * @param string $wavesTxId
+     */
+    public function setWavesTxId($wavesTxId)
+    {
+        $this->wavesTxId = $wavesTxId;
+    }
+
+
 }
 

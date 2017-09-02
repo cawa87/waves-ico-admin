@@ -18,8 +18,11 @@ parameters:
     # A secret key that's used to generate certain security-related tokens
     secret: ThisTokenIsNotSoSecretChangeIt
 
+    # Crypt currency rate api
+    crypt_cr_api_url: https://api.coinmarketcap.com/v1/
+
     # Currency rate api
-    cr_api_url: https://api.coinmarketcap.com/v1/
+    cr_api_url: https://api.fixer.io/
 
     # Current price for BNR
     bnr_price: 10.0
