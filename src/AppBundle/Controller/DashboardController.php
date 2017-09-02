@@ -23,8 +23,16 @@ class DashboardController extends Controller
     public function indexAction(Request $request)
     {
 
-         $rates = $product = $this->getDoctrine()
-               ->getRepository(CurrencyRate::class)->getLastRates();
+        $rates['USD'] = 10; // @todo BNR price to params
+
+        $rates['EUR'] = $rates['USD'] / $this->getDoctrine()
+                ->getRepository(CurrencyRate::class)->getLastRateByCurrency(3);
+        $rates['BTC'] = $rates['USD'] / $this->getDoctrine()
+                ->getRepository(CurrencyRate::class)->getLastRateByCurrency(4);
+        $rates['WAVES'] = $rates['USD'] / $this->getDoctrine()
+                ->getRepository(CurrencyRate::class)->getLastRateByCurrency(1);
+        $rates['ETH'] = $rates['USD'] / $this->getDoctrine()
+                ->getRepository(CurrencyRate::class)->getLastRateByCurrency(5);
 
         $userCount = $product = $this->getDoctrine()
             ->getRepository(User::class)
