@@ -43,6 +43,27 @@ class Currency
     protected $name;
 
     /**
+     * @var string
+     *
+     * @ORM\Column(name="is_crypt", type="boolean")
+     */
+    protected $isCrypt = false;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="is_base", type="boolean")
+     */
+    protected $isBase = false;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="asset_id", type="string", length=255, unique=true)
+     */
+    protected $assetId;
+
+    /**
      * @var CurrencyRate[]
      * @ORM\OneToMany(targetEntity="AppBundle\Entity\CurrencyRate", mappedBy="currency")
      *
@@ -146,6 +167,71 @@ class Currency
     {
         $this->rates = $rates;
     }
+
+    /**
+     * @return string
+     */
+    public function getAssetId()
+    {
+        return $this->assetId;
+    }
+
+    /**
+     * @param string $assetId
+     */
+    public function setAssetId($assetId)
+    {
+        $this->assetId = $assetId;
+    }
+
+    /**
+     * @return Transaction[]
+     */
+    public function getTransactions()
+    {
+        return $this->transactions;
+    }
+
+    /**
+     * @param Transaction[] $transactions
+     */
+    public function setTransactions($transactions)
+    {
+        $this->transactions = $transactions;
+    }
+
+    /**
+     * @return string
+     */
+    public function isCrypt()
+    {
+        return $this->isCrypt;
+    }
+
+    /**
+     * @param string $isCrypt
+     */
+    public function setIsCrypt($isCrypt)
+    {
+        $this->isCrypt = $isCrypt;
+    }
+
+    /**
+     * @return string
+     */
+    public function isBase()
+    {
+        return $this->isBase;
+    }
+
+    /**
+     * @param string $isBase
+     */
+    public function setIsBase($isBase)
+    {
+        $this->isBase = $isBase;
+    }
+
 
 
 }

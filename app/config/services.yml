@@ -40,9 +40,18 @@ services:
             - { name: form.type, alias: app_user_registration }
 
 
+    AppBundle\Wrapper\CryptCurrencyRateWrapper: '@app.wrappers.crypt_currency_rate_wrapper'
+
+    app.wrappers.crypt_currency_rate_wrapper:
+        public: true
+        class: AppBundle\Wrappers\CryptCurrencyRateWrapper
+        arguments:
+          - '%crypt_cr_api_url%'
+
     AppBundle\Wrapper\CurrencyRateWrapper: '@app.wrappers.currency_rate_wrapper'
 
     app.wrappers.currency_rate_wrapper:
+        public: true
         class: AppBundle\Wrappers\CurrencyRateWrapper
         arguments:
           - '%cr_api_url%'
@@ -64,11 +73,11 @@ services:
 #        arguments:
 #          - '@app.repositories.user'
 #
-#    AppBundle\Service\Twig\InvestmentsManagement: '@app.services.twig.investments_management'
-#
-#    app.services.twig.investments_management:
-#        class: AppBundle\Service\Twig\InvestmentsManagement
-#
+    AppBundle\Service\Twig\InvestmentsManagement: '@app.services.twig.investments_management'
+
+    app.services.twig.investments_management:
+        class: AppBundle\Service\Twig\InvestmentsManagement
+
 
     AppBundle\Wrappers\WavesNodeWrapper: '@app.wrappers.waves_node_wrapper'
 

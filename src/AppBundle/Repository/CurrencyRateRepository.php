@@ -10,4 +10,31 @@ namespace AppBundle\Repository;
  */
 class CurrencyRateRepository extends \Doctrine\ORM\EntityRepository
 {
+
+    public function getLastRateByCurrency($currency)
+    {
+        $qb = $this->createQueryBuilder('cr');
+        $qb->select('cr.rate');
+        $qb->where('cr.currency = :currency');
+        $qb->add('orderBy', 'cr.updatedAt DESC');
+        $qb->setMaxResults(1);
+
+        $qb->setParameter('currency', $currency);
+
+        return $qb->getQuery()->getSingleScalarResult();
+    }
+
+    public function getLastRateByAssetId($assetId)
+    {
+        $qb = $this->createQueryBuilder('cr');
+        $qb->select('cr.rate');
+        $qb->join('cr.currency','c');
+        $qb->where('c.assetId = :assetId');
+        $qb->add('orderBy', 'cr.updatedAt DESC');
+        $qb->setMaxResults(1);
+
+        $qb->setParameter('assetId', $assetId);
+
+        return $qb->getQuery()->getSingleScalarResult();
+    }
 }

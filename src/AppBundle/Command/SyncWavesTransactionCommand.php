@@ -2,6 +2,9 @@
 
 namespace AppBundle\Command;
 
+use AppBundle\Entity\Currency;
+use AppBundle\Entity\CurrencyRate;
+use AppBundle\Entity\Transaction;
 use AppBundle\Entity\User;
 use AppBundle\Entity\WavesTransaction;
 use Symfony\Bundle\FrameworkBundle\Command\ContainerAwareCommand;
@@ -32,6 +35,12 @@ class SyncWavesTransactionCommand extends ContainerAwareCommand
         $users = $em->getRepository(User::class)->findAll();
 
         foreach ($users as $user) {
+
+            if(!$user->getWallet()){
+                $output->writeln('No wallet for user: ' . $user->getEmail());
+                continue;
+            }
+
             $address = $user->getWallet()->getAddress();
             $output->writeln('User address: ' . $address);
 
@@ -59,6 +68,54 @@ class SyncWavesTransactionCommand extends ContainerAwareCommand
                     // $output->writeln('Transaction: ' . $address);
                     // var_dump(date('m/d/Y H:i:s', substr($transaction->timestamp,0,10)));
                     $em->getManager()->persist($wavesTransaction);
+
+                    if ($transaction->recipient == $user->getWallet()->getAddress()) {
+
+                        if (!$transaction->assetId) {
+                            $assetId = $em->getRepository(Currency::class)->findOneBy([
+                                'code' => 'WAVES'
+                            ])->getAssetId();
+                        } else {
+                            $assetId = $transaction->assetId;
+                        }
+
+                        $currency = $em->getRepository(Currency::class)->findOneBy([
+                            'assetId' => $assetId
+                        ]);
+                        $currencyRate = $em->getRepository(CurrencyRate::class)
+                            ->getLastRateByAssetId($assetId);
+
+                        // payment receive tx
+                        $output->writeln('Creating payment receive TX');
+                        $bnrTransaction = new Transaction();
+                        $bnrTransaction->setTransactionType($bnrTransaction::TYPE_PAYMENT_RECEIVED);
+                        $bnrTransaction->setWavesTxId($transaction->id);
+                        $bnrTransaction->setUser($user);
+                        $bnrTransaction->setCurrency($currency);
+                        $bnrTransaction->setAmount(($transaction->amount)/100000000);
+                        $bnrTransaction->setInfo('Payment received.');
+
+                        $em->getManager()->persist($bnrTransaction);
+
+
+                        // reserve token
+                        $output->writeln('Creating token reserve TX');
+                        $bnrTransaction = new Transaction();
+                        $bnrTransaction->setTransactionType($bnrTransaction::TYPE_TOKEN_RESERVED);
+                        $bnrTransaction->setUser($user);
+                        // @todo current BNR price to param
+                        $bnrTransaction->setAmount((($transaction->amount/100000000)*$currencyRate)/10); // CURRENT PRICE
+                        $bnrTransaction->setInfo('Token reserved.');
+
+                        var_dump($transaction->amount/100000000);
+                        var_dump(($transaction->amount/100000000)*$currencyRate);
+                        var_dump((($transaction->amount/100000000)*$currencyRate)/10);
+                        die();
+
+                        $em->getManager()->persist($bnrTransaction);
+
+                    }
+
                 }
             }
         }

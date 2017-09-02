@@ -3,12 +3,12 @@
 namespace AppBundle\Wrappers;
 
 
-class CurrencyRateWrapper
+class CryptCurrencyRateWrapper
 {
 
     protected $apiUrl;
 
-    protected $methodUrl = 'latest';
+    protected $methodUrl = 'ticker/';
 
     protected $client;
 
@@ -24,14 +24,14 @@ class CurrencyRateWrapper
     }
 
 
-    public function getRate($currencyTo)
+    public function getCryptRate($currencyFrom, $currencyTo = 'USD')
     {
         $client = $this->client;
-        $url = $this->apiUrl . $this->methodUrl .   '?base=' . $currencyTo;
+        $url = $this->apiUrl . $this->methodUrl . $currencyFrom . '/' . '?convert=' . $currencyTo;
         // var_dump($url); die();
         $res = $client->request('GET', $url);
 
-        return json_decode($res->getBody());
+        return json_decode($res->getBody())[0];
     }
 
 }

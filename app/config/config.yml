@@ -40,7 +40,7 @@ twig:
     globals:
         # the value is the service's id
 #        user_management: '@AppBundle\Service\Twig\UserManagement'
-#        investments_management: '@AppBundle\Service\Twig\InvestmentsManagement'
+        investments_management: '@AppBundle\Service\Twig\InvestmentsManagement'
 
 # Doctrine Configuration
 doctrine:

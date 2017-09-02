@@ -320,16 +320,16 @@
         },
         {
             "name": "doctrine/common",
-            "version": "v2.8.0",
+            "version": "v2.8.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/doctrine/common.git",
-                "reference": "ed349f953d443963c590b008b37b864b8a3c4b21"
+                "reference": "f68c297ce6455e8fd794aa8ffaf9fa458f6ade66"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/doctrine/common/zipball/ed349f953d443963c590b008b37b864b8a3c4b21",
-                "reference": "ed349f953d443963c590b008b37b864b8a3c4b21",
+                "url": "https://api.github.com/repos/doctrine/common/zipball/f68c297ce6455e8fd794aa8ffaf9fa458f6ade66",
+                "reference": "f68c297ce6455e8fd794aa8ffaf9fa458f6ade66",
                 "shasum": ""
             },
             "require": {
@@ -389,7 +389,7 @@
                 "persistence",
                 "spl"
             ],
-            "time": "2017-07-22T09:01:43+00:00"
+            "time": "2017-08-31T08:43:38+00:00"
         },
         {
             "name": "doctrine/dbal",
@@ -2753,12 +2753,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/symfony.git",
-                "reference": "2b4b22430171a11e61273d1ffa74dfd3ded73b14"
+                "reference": "adc862ac2133b8e5a748c844aa00b787c4720f8e"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/symfony/zipball/2b4b22430171a11e61273d1ffa74dfd3ded73b14",
-                "reference": "2b4b22430171a11e61273d1ffa74dfd3ded73b14",
+                "url": "https://api.github.com/repos/symfony/symfony/zipball/adc862ac2133b8e5a748c844aa00b787c4720f8e",
+                "reference": "adc862ac2133b8e5a748c844aa00b787c4720f8e",
                 "shasum": ""
             },
             "require": {
@@ -2898,7 +2898,7 @@
             "keywords": [
                 "framework"
             ],
-            "time": "2017-08-30 07:47:25"
+            "time": "2017-09-01 19:30:42"
         },
         {
             "name": "twig/extensions",
