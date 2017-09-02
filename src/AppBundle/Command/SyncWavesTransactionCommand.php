@@ -94,7 +94,8 @@ class SyncWavesTransactionCommand extends ContainerAwareCommand
                         $bnrTransaction->setUser($user);
                         $bnrTransaction->setCurrency($currency);
                         $bnrTransaction->setAmount(($transaction->amount) / 100000000);
-                        $bnrTransaction->setInfo('Payment received.');
+                        $bnrTransaction->setInfo('Payment received. ' .
+                            ($transaction->amount) / 100000000 . ' ' . $currency->getName() . '.');
 
                         $em->getManager()->persist($bnrTransaction);
 
@@ -106,13 +107,14 @@ class SyncWavesTransactionCommand extends ContainerAwareCommand
                         $bnrTransaction->setUser($user);
                         // @todo current BNR price to param
                         $bnrTransaction->setAmount((($transaction->amount / 100000000) * $currencyRate) / 10); // CURRENT PRICE
-                        $bnrTransaction->setInfo('Token reserved.');
+                        $bnrTransaction->setInfo('Token reserved. ' .
+                            ((($transaction->amount / 100000000) * $currencyRate) / 10) . ' BNR.');
 
                         $em->getManager()->persist($bnrTransaction);
 
                     }
-
                 }
+
             }
         }
         $em->getManager()->flush();
