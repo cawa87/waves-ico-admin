@@ -23,19 +23,16 @@ class DashboardController extends Controller
     public function indexAction(Request $request)
     {
 
-        // $rate = $product = $this->getDoctrine()
-        //       ->getRepository(CurrencyRate::class)->getLastRateByAssetId('8LQW8f7P5d5PZM7GtZEBgaqRPGSzS3DfPuiXrURJ4AJS');
-        //  var_dump($rate);
-
-
-        //   die();
+         $rates = $product = $this->getDoctrine()
+               ->getRepository(CurrencyRate::class)->getLastRates();
 
         $userCount = $product = $this->getDoctrine()
             ->getRepository(User::class)
             ->getCount();
 
         return $this->render('AppBundle/Dashboard/index.html.twig', [
-            'userCount' => $userCount
+            'userCount' => $userCount,
+            'rates' => $rates,
         ]);
     }
 }
