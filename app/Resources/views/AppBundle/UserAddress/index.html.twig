@@ -14,9 +14,25 @@
                     <div class="panel-body address-body">
                         <div class="tip-title">{{ 'panel-address.address-wallet'| trans }}</div>
                         <p class="warrning-msg">{{ 'panel-address.desc'| trans }}</p>
-                        <p class="appear-msg">{{ 'panel-address.address-tip'| trans }}</p>
-                        <button class="btn white">{{ 'panel-address.btn_copy'| trans }}</button>
-                        <div class="msg-reserve">{{ 'panel-address.copy_wallet'| trans }}</div>
+
+                        <div class="waves-action">
+                            <div class="waves-address">{{ app.user.wavesAddress }}</div>
+                            <div class="waves-address-form">
+                                <form>
+                                    <input class="input waves-input" 
+                                           type="" 
+                                           name="attach_address[address]" 
+                                           placeholder="Введите адрес Waves" 
+                                           value="{{ app.user.wavesAddress }}">
+                                    <input type="hidden"
+                                           name="attach_address[_token]"
+                                           value="{{ csrf_token("attach_address") }}">
+                                </form>
+                            </div>
+                        </div>
+
+                        <button class="btn btn-edit white">Изменить</button>
+                        <button class="btn btn-done white">Готово</button>
                     </div>
                 </section>
             </div>
@@ -28,7 +44,9 @@
                     <div class="line">{{ 'aside_right.bonus'| trans }}:<span>25%</span>
                         <div class="tooltip tooltip-bonus">
                             <div class="tooltip-call black"></div>
-                            <div class="tooltip-content">{{ 'tooltip.bonus'| trans }}</div>
+                            <div class="tooltip-content">{{ 'tooltip.bonus'| trans }}: 
+                                <br>{{ 'tooltip.bonus_counting'| trans }}
+                            </div>
                         </div>
                     </div>
                 </div>

@@ -1632,7 +1632,7 @@ p {
 
 .panel-address .address-body {
   padding-top: 40px;
-  padding-bottom: 20px;
+  padding-bottom: 44px;
 }
 
 .panel-address .address-body .tip-title {
@@ -1660,6 +1660,36 @@ p {
   margin-top: 150px;
   font-size: 14px;
   color: #b0b0b0;
+}
+
+.panel-address .waves-action .waves-address {
+  width: 450px;
+  height: 45px;
+  padding: 0 15px;
+  line-height: 43px;
+  color: #777171;
+  border: 1px solid transparent;
+  border-bottom-color: #979797;
+}
+
+.panel-address .waves-action .waves-address-form {
+  display: none;
+}
+
+.panel-address .waves-action .waves-input {
+  width: 450px;
+  padding-top: 0;
+  padding-bottom: 0;
+}
+
+.panel-address .address-body .btn-edit {
+  width: 122px;
+  margin-top: 15px;
+}
+
+.panel-address .address-body .btn-done {
+  display: none;
+  margin-top: 15px;
 }
 
 .panel-sending .sending-body {

@@ -72,4 +72,54 @@
 
 })();
 
+
+// Edit Waves address (page address)
+;(function() {
+
+    var wAction = $('.waves-action'),
+        wView = wAction.find('.waves-address'),
+        wForm = wAction.find('.waves-address-form'),
+        wInput = wForm.find('.waves-input');
+
+    // Buttons
+    var btnEdit = $('.panel-address .btn-edit');
+    var btnDone = $('.panel-address .btn-done');
+
+    function handleShowEditInput() {
+        wAction.toggleClass('process');
+
+        wView.toggle();
+        wForm.toggle().find('.input').focus().select();
+
+        ( wAction.hasClass('process') )
+                ? $(this).text('Отмена')
+                : $(this).text('Изменить');
+
+        btnDone.show();
+    };
+
+
+    function handleEditAddresWaves() {
+        var url = Routing.generate('attach_user_address');
+        var formSerialize = wForm.find('form').serialize();
+
+        $.post(url, formSerialize, function(response) {
+
+            wAction.removeClass('process');
+            btnEdit.text('Изменить');
+            btnDone.hide();
+            wView.text( wForm.find('.input').val() );
+            wForm.hide();
+            wView.show();
+
+
+        }, 'JSON');
+    };
+
+    btnEdit.on('click', handleShowEditInput);
+    btnDone.on('click', handleEditAddresWaves);
+
+})();
+
+
 //# sourceMappingURL=main.js.map
