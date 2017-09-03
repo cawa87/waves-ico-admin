@@ -1471,25 +1471,57 @@ p {
 }
 
 .panel-course .panel-body .course-list {
-  float: left;
-  width: calc(100% / 3);
-  padding-left: 40px;
   font-size: 17px;
   color: #0e1824;
-  border-right: 1px solid #e3e4e8;
 }
 
-.panel-course .panel-body .course-list:first-of-type {
-  padding-left: 0;
-  border-right: 1px solid #e3e4e8;
-}
-
-.panel-course .panel-body .course-list:last-of-type {
-  border: none;
+.panel-course .panel-body .course-list::after {
+  content: '';
+  display: block;
+  clear: both;
+  float: none;
 }
 
 .panel-course .panel-body .course-item {
   padding: 13px 0;
+  float: left;
+  width: calc(100% / 3);
+  border-right: 1px solid #e3e4e8;
+}
+
+.panel-course .panel-body .course-item.eth {
+  border-right: none;
+}
+
+.panel-course .panel-body .course-item.btc,
+.panel-course .panel-body .course-item.eth,
+.panel-course .panel-body .course-item.waves {
+  padding-left: 30px;
+}
+
+.panel-course .panel-body .course-item.usd .icon {
+  background-image: url('../img/icons-invested/ic-usd.svg');
+  
+}
+
+.panel-course .panel-body .course-item.btc .icon {
+  background-image: url('../img/icons-invested/ic-btc.svg');
+  
+}
+
+.panel-course .panel-body .course-item.eth .icon {
+  background-image: url('../img/icons-invested/ic-eth.svg');
+  
+}
+
+.panel-course .panel-body .course-item.eur .icon {
+  background-image: url('../img/icons-invested/ic-euro.svg');
+  
+}
+
+.panel-course .panel-body .course-item.waves .icon {
+  background-image: url('../img/icons-invested/ic-waves.png');
+  
 }
 
 .panel-course .panel-body .course-item > * {
@@ -1500,7 +1532,9 @@ p {
 .panel-course .panel-body .course-item .icon {
   width: 20px;
   height: 20px;
-  background-color: #c1bfbf;
+  /*background-color: #c1bfbf;*/
+  background-repeat: no-repeat;
+  background-position: center;
   border-radius: 50%;
 }
 
