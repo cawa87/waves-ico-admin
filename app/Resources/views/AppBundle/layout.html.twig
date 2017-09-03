@@ -61,7 +61,7 @@
             </div>
             <!-- login-->
             <div class="dropdown-block dropdown-user">
-                <a class="username" data-toggle="dropdown" href="">admin@baner.com</a>
+                <a class="username" data-toggle="dropdown" href="">{{app.user.username}}</a>
                 <ul class="dropdown-menu dropdown-menu-user" data-toggle="dropdown-menu">
                     <li class="drop-item">
                         <a href="{{ path('app_usersettings_index') }}">{{ 'header.settings'| trans }}</a>
