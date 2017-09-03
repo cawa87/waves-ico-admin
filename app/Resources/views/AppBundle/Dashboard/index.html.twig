@@ -57,7 +57,10 @@
                                 <div class="col-action">
                                     <div class="input-amount-wrap">
                                         <input class="invest-field input-amount" type="text" value="0" placeholder="{{ 'panel_invest.amount'| trans }}">
-                                        <div class="action-amount"><span class="plus">+</span><span class="minus">-</span></div>
+                                        <div class="action-amount">
+                                            <span class="plus">+</span>
+                                            <span class="minus">-</span>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
@@ -68,6 +71,7 @@
                                     <button class="btn btn-block blue open-popup" data-name="invest">
                                         {{ 'panel_invest.btn'| trans }}
                                     </button>
+                                    <button class="get">GET REQUEST</button>
                                 </div>
                             </div>
                             <!-- Fourline-->
@@ -201,39 +205,15 @@
                 <div class="panel-body">
                     <div class="course-tip">BNR {{ 'panel_course.price'| trans }}</div>
                     <div class="panel-course-wrap">
-                        <ul class="course-list">
-                            <li class="course-item">
-                                <span class="icon"></span>
-                                <span class="currency">USD</span>
-                                <span class="amount">0</span>
-                            </li>
-
-                            <li class="course-item">
-                                <span class="icon"></span>
-                                <span class="currency">EURO</span>
-                                <span class="amount">0</span>
-                            </li>
-                        </ul>
 
                         <ul class="course-list">
-                            <li class="course-item">
-                                <span class="icon"></span>
-                                <span class="currency">BTC</span>
-                                <span class="amount">0</span>
-                            </li>
-
-                            <li class="course-item">
-                                <span class="icon"></span>
-                                <span class="currency">WAVES</span>
-                                <span class="amount">0</span>
-                            </li>
-                        </ul>
-                        <ul class="course-list">
-                            <li class="course-item">
-                                <span class="icon"></span>
-                                <span class="currency">ETH</span>
-                                <span class="amount">0</span>
-                            </li>
+                            {% for key, value in rates %}
+                                <li class="course-item {{key|lower}}">
+                                    <span class="icon"></span>
+                                    <span class="currency">{{key}}</span>
+                                    <span class="amount">{{value| number_format(4)}}</span>
+                                </li>
+                            {% endfor %}
                         </ul>
                     </div>
                 </div>
