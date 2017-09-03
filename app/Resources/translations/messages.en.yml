@@ -101,4 +101,5 @@ panel-settings:
 
 tooltip:
     waves: "This is the Waves address of the company BANER dedicated personally to you. It is necessary to use it to buy tokens. In other words, it is to him that you send your money from your private office"
-    bonus: "We accept investments in EMC with a minimum amount of $ 1000 to the address of ELECkKrRbbThGhVMEVVnrSvOb6ev6. Please contact us via emc@baner.su to place an order or get answers to your questions."
+    bonus: 'During the PRE-ICO period, BANER gives a bonus of up to 25%. As you approach the end of PRE-ICO, the bonus decreases. For example, in 1-2 days the bonus is 25%. If you buy 100 BNR tokens, then the account will be credited'
+    bonus_counting: '100 BNR + 25% = 125 BNR.'
