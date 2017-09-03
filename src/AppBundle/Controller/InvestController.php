@@ -14,7 +14,7 @@ class InvestController extends Controller
 
     /**
      * @Method({"GET"})
-     * @Route("invest/{currency}/{value}" , name="invest_estimation")
+     * @Route("invest/{currency}/{value}" , name="invest_estimation", options={"expose"=true})
      */
     public function InvestEstimationAction(Request $request)
     {
