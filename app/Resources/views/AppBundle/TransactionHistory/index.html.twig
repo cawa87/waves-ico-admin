@@ -6,50 +6,56 @@
     <!-- Content-->
     <div class="content-block">
 
-        <!-- Col content-->
-        <div class="content content-lg">
-            <section class="panel panel-history">
-                <h2 class="panel-title">{{ 'panel-history.title'| trans }}</h2>
-                <div class="panel-body history-start">
-                    <div class="desc">{{ 'panel-history.empty_desc_start'| trans }}
-                        <br>{{ 'panel-history.empty_desc_end'| trans }}</div>
-                    <button class="btn blue open-popup" data-name="invest">{{ 'panel-history.btn'| trans }}</button>
-                </div>
-            </section>
-        </div>
+        {% if transactions|length %}
 
-        <!-- Col content-->
-        <div class="content content-lg">
-            <section class="panel panel-history">
-                <h2 class="panel-title">{{ 'panel-history.title'| trans }}</h2>
-                <div class="panel-body history-table">
-                    <div class="history-row history-row-head">
-                        <div class="history-cell">{{ 'panel-history.table_date'| trans }}</div>
-                        <div class="history-cell">{{ 'panel-history.table_desc'| trans }}</div>
-                        <div class="history-cell">{{ 'panel-history.table_status'| trans }}</div>
-                        <div class="history-cell">{{ 'panel-history.table_amount'| trans }}</div>
+             <!-- Col content-->
+            <div class="content content-lg">
+                <section class="panel panel-history">
+                    <h2 class="panel-title">{{ 'panel-history.title'| trans }}</h2>
+                    <div class="panel-body history-table">
+                        <div class="history-row history-row-head">
+                            <div class="history-cell">{{ 'panel-history.table_date'| trans }}</div>
+                            <div class="history-cell">{{ 'panel-history.table_desc'| trans }}</div>
+                            <div class="history-cell">{{ 'panel-history.table_status'| trans }}</div>
+                            <div class="history-cell">{{ 'panel-history.table_amount'| trans }}</div>
+                        </div>
+                        <div class="history-row">
+                            <div class="history-cell cell-date">12 Jun 16:52</div>
+                            <div class="history-cell cell-desc">Converting 0.000000 BTC to 2.438626 PLBT</div>
+                            <div class="history-cell cell-status recelved">Recelved</div>
+                            <div class="history-cell cell-amount">+2.43862624386268626 PL…</div>
+                        </div>
+                        <div class="history-row">
+                            <div class="history-cell cell-date">12 Jun 16:52</div>
+                            <div class="history-cell cell-desc">Converting 0.000000 BTC to 2.438626 PLBTConverting 0.000000 BTC</div>
+                            <div class="history-cell cell-status expired">Expired</div>
+                            <div class="history-cell cell-amount">+1.15 PLBT</div>
+                        </div>
+                        <div class="history-row">
+                            <div class="history-cell cell-date">12 Jun 16:52</div>
+                            <div class="history-cell cell-desc">Converting 0.000000 BTC to 2.438626 PLBT</div>
+                            <div class="history-cell cell-status copleted">Copleted</div>
+                            <div class="history-cell cell-amount">+1.15 PLBT</div>
+                        </div>
                     </div>
-                    <div class="history-row">
-                        <div class="history-cell cell-date">12 Jun 16:52</div>
-                        <div class="history-cell cell-desc">Converting 0.000000 BTC to 2.438626 PLBT</div>
-                        <div class="history-cell cell-status recelved">Recelved</div>
-                        <div class="history-cell cell-amount">+2.43862624386268626 PL…</div>
+                </section>
+            </div>
+
+        {% else %}
+
+            <!-- Col content-->
+            <div class="content content-lg">
+                <section class="panel panel-history">
+                    <h2 class="panel-title">{{ 'panel-history.title'| trans }}</h2>
+                    <div class="panel-body history-start">
+                        <div class="desc">{{ 'panel-history.empty_desc_start'| trans }}
+                            <br>{{ 'panel-history.empty_desc_end'| trans }}</div>
+                        <button class="btn blue open-popup" data-name="invest">{{ 'panel-history.btn'| trans }}</button>
                     </div>
-                    <div class="history-row">
-                        <div class="history-cell cell-date">12 Jun 16:52</div>
-                        <div class="history-cell cell-desc">Converting 0.000000 BTC to 2.438626 PLBTConverting 0.000000 BTC</div>
-                        <div class="history-cell cell-status expired">Expired</div>
-                        <div class="history-cell cell-amount">+1.15 PLBT</div>
-                    </div>
-                    <div class="history-row">
-                        <div class="history-cell cell-date">12 Jun 16:52</div>
-                        <div class="history-cell cell-desc">Converting 0.000000 BTC to 2.438626 PLBT</div>
-                        <div class="history-cell cell-status copleted">Copleted</div>
-                        <div class="history-cell cell-amount">+1.15 PLBT</div>
-                    </div>
-                </div>
-            </section>
-        </div>
+                </section>
+            </div>
+
+        {% endif %}
 
         <!-- Col content-->
         <div class="content content-lg">
