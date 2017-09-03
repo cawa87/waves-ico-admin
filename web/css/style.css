@@ -327,7 +327,6 @@ p {
 }
 
 .dropdown-block .dropdown-menu .drop-item {
-  padding: 12px 25px;
   font-size: 14px;
   color: #0e1824;
   cursor: pointer;
@@ -337,9 +336,18 @@ p {
   background-color: #edeef0;
 }
 
+.dropdown-block .dropdown-menu .drop-item a {
+  display: block;
+  padding: 12px 25px;
+}
+
 .dropdown-block .drop-menu-currency {
   width: 220px;
   top: -45px;
+}
+
+.dropdown-block .drop-menu-currency .drop-item {
+  padding: 12px 25px;
 }
 
 .dropdown-block .dropdown-menu-user {
