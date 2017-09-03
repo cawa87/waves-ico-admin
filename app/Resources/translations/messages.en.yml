@@ -82,10 +82,8 @@ panel-history:
 panel-address:
     title: 'Account address'
     address-wallet: 'WALLET ADDRESS'
-    desc: 'Do not send ETH to this address before the end of the ICO. Investment tools are available on the "Dashboard" tab'
-    address-tip: 'Your address will appear here after the ICO'
+    desc: "This is the address of your Waves wallet, to receive a percentage of BANER's profit."
     btn_copy: Copy
-    copy_wallet: 'Do you want to make a backup copy of your wallet?'
 
 panel-settings:
     title: 'Settings'
