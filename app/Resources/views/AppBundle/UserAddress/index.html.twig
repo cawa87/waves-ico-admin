@@ -19,11 +19,12 @@
                             <div class="waves-address">{{ app.user.wavesAddress }}</div>
                             <div class="waves-address-form">
                                 <form>
-                                    <input class="input waves-input" 
-                                           type="" 
-                                           name="attach_address[address]" 
-                                           placeholder="Введите адрес Waves" 
+                                    <input class="input waves-input"
+                                           type="text"
+                                           name="attach_address[address]"
+                                           placeholder="Введите адрес Waves"
                                            value="{{ app.user.wavesAddress }}">
+
                                     <input type="hidden"
                                            name="attach_address[_token]"
                                            value="{{ csrf_token("attach_address") }}">

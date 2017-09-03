@@ -5,6 +5,10 @@
 
     var $itemCurrency = $('.drop-menu-currency .curr-item');
 
+    var resultAmount = $('.result-list .result'),
+        resultBonus = $('.result-list .bonus'),
+        resultTotal = $('.result-list .total-result');
+
     $itemCurrency.on('click', function() {
         $('.select-currency .currency').text( $(this).text() );
         $(this).parent()
@@ -32,6 +36,26 @@
     };
 
     calc();
+
+
+    $('.input-amount').on('input', function() {
+
+        var date = {
+            currency: $('.select-currency .currency').text(),
+            value: $('.input-amount').val(),
+        }
+
+        $.ajax({
+            url: Routing.generate('invest_estimation', date),
+            success: function(data) {
+                console.log(data);
+                resultAmount.find('span').text( data.amount );
+                resultBonus.find('span').text( data.bonus );
+                resultTotal.find('span').text( data.amount + data.bonus );
+            }
+        });
+        
+    })
 
 })();
 

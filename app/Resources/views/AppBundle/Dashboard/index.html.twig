@@ -71,7 +71,6 @@
                                     <button class="btn btn-block blue open-popup" data-name="invest">
                                         {{ 'panel_invest.btn'| trans }}
                                     </button>
-                                    <button class="get">GET REQUEST</button>
                                 </div>
                             </div>
                             <!-- Fourline-->
@@ -81,9 +80,18 @@
                                     <!-- Result-->
                                     <div class="invest-result">
                                         <ul class="result-list">
-                                            <li class="result-item">{{ 'panel_invest.result_amount'| trans }} (BNR): 0</li>
-                                            <li class="result-item">{{ 'panel_invest.result_bonus'| trans }} (BNR): 0</li>
-                                            <li class="result-item">{{ 'panel_invest.result_get'| trans }} (BNR): 0</li>
+                                            <li class="result-item result">
+                                                {{ 'panel_invest.result_amount'| trans }} (BNR):
+                                                <span></span>
+                                            </li>
+                                            <li class="result-item bonus">
+                                                {{ 'panel_invest.result_bonus'| trans }} (BNR):
+                                                <span></span>
+                                            </li>
+                                            <li class="result-item total-result">
+                                                {{ 'panel_invest.result_get'| trans }} (BNR):
+                                                <span></span>
+                                            </li>
                                         </ul>
                                     </div>
                                 </div>
