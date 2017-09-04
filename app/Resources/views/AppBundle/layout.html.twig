@@ -10,7 +10,7 @@
 
 {% if app.user.wavesAddress is null %}
 
-    <!-- Alert Waves-->
+    <!-- Alert Waves -->
     <div class="alert-waves">
         <div class="container">
             <div class="waves-address-wrap">
@@ -133,30 +133,29 @@
     <!-- Popup waves-->
     <div class="overlay popup-overlay">
         <div class="popup popup-waves" data-name="waves"><i class="popup-close"></i>
-            <h2 class="pp-title">Инструкция</h2>
-            <h3 class="pp-desc pp-desc-invest">Как получить адрес Waves?</h3>
+            <h2 class="pp-title">{{ 'pp-waves.title'| trans }}</h2>
+            <h3 class="pp-desc pp-desc-invest">{{ 'pp-waves.title_waves'| trans }}</h3>
             <ul class="pp-manual-list">
 
                 <!-- Line-->
                 <li class="pp-manual-item">
-                    <span>Прежде чем получить доступ ко всему функционалу сайта, вам потребуется указать свой адрес кошелька Waves. Это займет 2 минуты вашего времени.</span>
+                    <span>{{ 'pp-waves.oneitem'| trans }}</span>
 
                     <div class="pp-warrning">
-                        <div class="title">Внимание!</div>
-                        <p class="desc">Перед началом прохождения инструкции, убедитесь, что у вас выключено расширение
-                            Adblock или другое подобное. Иначе работоспособность сайта не гарантируется.</p>
+                        <div class="title">{{ 'pp-waves.attention'| trans }}</div>
+                        <p class="desc">{{ 'pp-waves.oneitem_att_desc'| trans }}</p>
                     </div>
                 </li>
 
                 <!-- Line-->
                 <li class="pp-manual-item">
-                    <span><b>1.</b> Перейдем на официальный сайт веб-клиента для кошелька Waves: <a
-                                href="https://waveswallet.io/" class="pp-link"
-                                target="_blank">https://waveswallet.io/</a></span>
+                    <span><b>1.</b> {{ 'pp-waves.twoitem'| trans }}
+                        <a href="https://waveswallet.io/" class="pp-link" target="_blank">https://waveswallet.io/</a>
+                    </span>
 
                     <div class="pp-warrning">
-                        <div class="title">Внимание!</div>
-                        <p class="desc">Обязательно сверяйте ссылку с той, что указана в нашей инструкции.</p>
+                        <div class="title">{{ 'pp-waves.attention'| trans }}</div>
+                        <p class="desc">{{ 'pp-waves.twoitem_att_desc'| trans }}</p>
                     </div>
 
                     <img class="pp-img" src="/img/screen/sc-waves1.png">
@@ -164,18 +163,17 @@
 
                 <!-- Line-->
                 <li class="pp-manual-item">
-                    <span><b>2.</b> Регистрируем новый аккаунт в системе Waves. Для этого жмем на кнопку <b>NEW ACCOUNT</b></span>
+                    <span><b>2.</b> {{ 'pp-waves.threeitem'| trans }} <b>{{ 'pp-waves.threeitem_b'| trans }}</b></span>
                     <img class="pp-img" src="/img/screen/sc-waves2.png">
                 </li>
 
                 <!-- Line-->
                 <li class="pp-manual-item">
-                    <span><b>3.</b> Читаем текст уведомления и жмем на кнопку <b>I UNDERSTAND</b>.</span>
+                    <span><b>3.</b> {{ 'pp-waves.fouritem'| trans }} <b>{{ 'pp-waves.fouritem_b'| trans }}</b>.</span>
 
                     <div class="pp-warrning">
-                        <div class="title">Внимание!</div>
-                        <p class="desc">Читать уведомление обязательно, в нем важная информация для безопасности вашего
-                            аккаунта.</p>
+                        <div class="title">{{ 'pp-waves.attention'| trans }}</div>
+                        <p class="desc">{{ 'pp-waves.fouritem_att_desc'| trans }}</p>
                     </div>
 
                     <img class="pp-img" src="/img/screen/sc-waves3.png">
@@ -183,15 +181,11 @@
 
                 <!-- Line-->
                 <li class="pp-manual-item">
-                    <span><b>4.</b> Записываем SEED, который был сгенерирован для вас. Удостоверьтесь, что верно переписали SEED.</span>
+                    <span><b>4.</b> {{ 'pp-waves.fiveitem'| trans }}</span>
 
                     <div class="pp-warrning">
-                        <div class="title">Внимание!</div>
-                        <p class="desc">Настоятельно рекомендуем не копировать и не распространять SEED в пределах вашей
-                            файловой системы и Интернета. Самый надежный способ - записать SEED на физический листок
-                            бумаги (лучше несколько) и положить в безопасное место. Если вы все-таки храните SEED в
-                            электронном виде, храните его на носителе у которого нет доступа к Интернету. SEED не должен
-                            быть доступен третьим лицам.</p>
+                        <div class="title">{{ 'pp-waves.attention'| trans }}</div>
+                        <p class="desc">{{ 'pp-waves.fiveitem_att_desc'| trans }}</p>
                     </div>
 
                     <img class="pp-img" src="/img/screen/sc-waves4.png">
@@ -199,21 +193,20 @@
 
                 <!-- Line-->
                 <li class="pp-manual-item">
-                    <span><b>5.</b> Поле <b>NAME</b> опционально, его заполнение необязательно. Если вы собираетесь создавать много аккаунтов, рекомендуется заполнить это поле, для удобства, чтобы не путаться в адресах созданных аккаунтов.</span>
+                    <span><b>5.</b> {{ 'pp-waves.sixitem_start'| trans }} <b>{{ 'pp-waves.sixitem_b'| trans }}</b> {{ 'pp-waves.sixitem'| trans }}</span>
 
                     <img class="pp-img" src="/img/screen/sc-waves5.png">
                 </li>
 
                 <!-- Line-->
                 <li class="pp-manual-item">
-                    <span><b>6.</b>. Придумываем и повторяем пароль. Пароль используется для шифрования вашего SEED и будет использован для входа в аккаунт.</span>
+                    <span><b>6.</b>. {{ 'pp-waves.sevenitem'| trans }}</span>
 
                     <div class="pp-warrning">
-                        <div class="title">Внимание!</div>
-                        <p class="desc">Пароль должен быть сложный, чтобы защитить вас от <a
-                                    href="https://ru.wikipedia.org/wiki/%D0%9F%D0%BE%D0%BB%D0%BD%D1%8B%D0%B9_%D0%BF%D0%B5%D1%80%D0%B5%D0%B1%D0%BE%D1%80"
-                                    class="pp-link" target="_blank">брутфорса</a>. Используйте пароли длиной не менее 12
-                            символов для максимальной стойкости защиты к такой атаке. Например: M3mSH6aT7waG</p>
+                        <div class="title">{{ 'pp-waves.attention'| trans }}</div>
+                        <p class="desc">{{ 'pp-waves.sevenitem_pass_st'| trans }} 
+                            <a href="https://ru.wikipedia.org/wiki/%D0%9F%D0%BE%D0%BB%D0%BD%D1%8B%D0%B9_%D0%BF%D0%B5%D1%80%D0%B5%D0%B1%D0%BE%D1%80" class="pp-link" target="_blank">{{ 'pp-waves.sevenitem_term'| trans }}</a>. {{ 'pp-waves.sevenitem_pass_end'| trans }}
+                        </p>
                     </div>
 
                     <img class="pp-img" src="/img/screen/sc-waves6.png">
@@ -221,13 +214,13 @@
 
                 <!-- Line-->
                 <li class="pp-manual-item">
-                    <span><b>7.</b> Жмем кнопку <b>REGISTER</b>.</span>
+                    <span><b>7.</b> {{ 'pp-waves.eightitem'| trans }} <b>{{ 'pp-waves.eightitem_b'| trans }}</b>.</span>
                     <img class="pp-img" src="/img/screen/sc-waves7.png">
                 </li>
 
                 <!-- Line-->
                 <li class="pp-manual-item">
-                    <span><b>8.</b> Регистрация завершена. В панеле управления аккаунтом вы можете скопировать свой адрес и использовать его для вставки в нашей системе для доступа ко всему функционалу.</span>
+                    <span><b>8.</b> {{ 'pp-waves.nineitem'| trans }}</span>
                     <img class="pp-img" src="/img/screen/sc-waves8.png">
                 </li>
             </ul>
