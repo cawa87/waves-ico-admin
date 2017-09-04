@@ -414,15 +414,55 @@ p {
   background-color: #0c4384;
 }
 
+.btn.blue:hover {
+  background-color: #062f60;
+}
+
 .btn.white {
   color: #0c4384;
   border: solid 1px #0c4384;
   background-color: transparent;
 }
 
+.btn.white:hover {
+  color: #fff;
+  background-color: #0c4384;
+  border-color: #0c4384;
+}
+
 .btn-block {
   display: block;
   width: 100%;
+}
+
+.popover-wrapper {
+  position: relative;
+  display: table;
+  width: 100%;
+}
+
+.popover-wrapper .popover {
+  position: absolute;
+  z-index: 5;
+  top: 0;
+  right: 0;
+  padding: 11px 12px;
+  padding-left: 34px;
+  -webkit-transform: translateX(calc(100% + 15px));
+  transform: translateX(calc(100% + 15px));
+  min-width: 100px;
+  min-height: 40px;
+  background-color: #fcefeb;
+  background-image: url('../img/icons/ic_error.png');
+  background-position: 7px center;
+  background-repeat: no-repeat;
+  border-radius: 2px;
+  border: 1px solid #e8ae9d;
+  box-shadow: 1px 2px 6px 0px rgba(0, 0, 0, 0.2);
+  /*opacity: 0;*/
+  -webkit-transition: opacity .2s ease-in;
+  transition: opacity .2s ease-in;
+  pointer-events: none;
 }
 
 .input {
@@ -465,6 +505,15 @@ p {
   padding: 40px 50px;
 }
 
+.panel-form .errors {
+  padding: 15px 15px 15px 35px;
+  font-size: 15px;
+  color: #333;
+  background: url(../img/icons/ic_error.png) no-repeat 8px 13px;
+  background-color: #fcefeb;
+  border: 1px solid #e8ae9d;
+}
+
 .panel-form .panel-form-body .label {
   display: block;
   margin-bottom: 13px;
@@ -473,12 +522,14 @@ p {
 }
 
 .panel-form .panel-form-body .check-label {
-  width: 260px;
+  display: inline-block;
+  vertical-align: top;
+  width: 299px;
   height: 54px;
   font-size: 14px;
   line-height: 1.29;
   color: #2f2f2f;
-  margin-left: 13px;
+  margin-left: 10px;
   cursor: pointer;
 }
 
