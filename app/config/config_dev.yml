@@ -37,7 +37,7 @@ monolog:
         #    type: chromephp
         #    level: info
 
-swiftmailer:
-    transport: gmail
-    username:  '%mailer_user%'
-    password:  '%mailer_password%'
+#swiftmailer:
+#    transport: gmail
+#    username:  '%mailer_user%'
+#    password:  '%mailer_password%'

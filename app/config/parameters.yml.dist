@@ -11,9 +11,11 @@ parameters:
     #database_path: '%kernel.project_dir%/var/data/data.sqlite'
 
     mailer_transport: smtp
-    mailer_host: 127.0.0.1
-    mailer_user: zaweb.studio@gmail.com
-    mailer_password: dgsucqrfwjatbbtk
+    mailer_host: email-smtp.eu-west-1.amazonaws.com
+    mailer_port: 587
+    mailer_encryption: tls # TLS encryption is required
+    mailer_user: 'AKIAJJLYYLJXKMXD5C5Q'
+    mailer_password: 'AhVMZp9gJDXGohRhFgtNX2j85MVvTkAj+QcB3co6JKoZ'
 
     # A secret key that's used to generate certain security-related tokens
     secret: ThisTokenIsNotSoSecretChangeIt
