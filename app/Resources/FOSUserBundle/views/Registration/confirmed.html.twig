@@ -3,12 +3,14 @@
 {% block fos_user_content %}
     <!-- Register panel-->
     <section class="panel panel-form">
-        <h2 class="panel-title">Подтверждение</h2>
+        <h2 class="panel-title">{{ 'layout.confirmation'| trans }}</h2>
         <div class="panel-body panel-form-body">
-            <div class="register-confirm"><img class="icon" src="/img/success.svg">
-                <div class="title">Почти готово!</div>
-                <p class="desc">Благодарим за регистрацию в ICO. Через 5 секунд Вы будете
-                    <a href="/" style="text-decoration: underline;">перенаправлены</a>...</p>
+            <div class="register-confirm">
+                <img class="icon" src="/img/success.svg">
+                <div class="title">{{ 'layout.confirm_done'| trans }}</div>
+                <p class="desc">{{ 'layout.confirm_done_final'| trans }}
+                    <a href="/" style="text-decoration: underline;">{{ 'layout.confirm_location'| trans }}</a>...
+                </p>
             </div>
         </div>
     </section>
