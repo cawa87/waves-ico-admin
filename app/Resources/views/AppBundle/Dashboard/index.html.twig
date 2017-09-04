@@ -33,6 +33,7 @@
                                     </div>
                                 </div>
                             </div>
+
                             <!-- Oneline-->
                             <div class="invest-line indent">
                                 <div class="col-desc">{{ 'panel_invest.currency'| trans }}</div>
@@ -51,12 +52,13 @@
                                     </div>
                                 </div>
                             </div>
+
                             <!-- Twoline-->
                             <div class="invest-line indent">
                                 <div class="col-desc">{{ 'panel_invest.amount'| trans }}</div>
                                 <div class="col-action">
                                     <div class="input-amount-wrap">
-                                        <input class="invest-field input-amount" type="text" value="0" placeholder="{{ 'panel_invest.amount'| trans }}">
+                                        <input class="invest-field input-amount" type="text" value="0" placeholder="{{ 'panel_invest.amount'| trans }}" pattern="[0-9]*">
                                         <div class="action-amount">
                                             <span class="plus">+</span>
                                             <span class="minus">-</span>
@@ -64,6 +66,7 @@
                                     </div>
                                 </div>
                             </div>
+
                             <!-- Threeline-->
                             <div class="invest-line indent">
                                 <div class="col-desc"></div>
@@ -73,6 +76,7 @@
                                     </button>
                                 </div>
                             </div>
+
                             <!-- Fourline-->
                             <div class="invest-line">
                                 <div class="col-desc"></div>
@@ -82,15 +86,15 @@
                                         <ul class="result-list">
                                             <li class="result-item result">
                                                 {{ 'panel_invest.result_amount'| trans }} (BNR):
-                                                <span></span>
+                                                <span>0</span>
                                             </li>
                                             <li class="result-item bonus">
                                                 {{ 'panel_invest.result_bonus'| trans }} (BNR):
-                                                <span></span>
+                                                <span>0</span>
                                             </li>
                                             <li class="result-item total-result">
                                                 {{ 'panel_invest.result_get'| trans }} (BNR):
-                                                <span></span>
+                                                <span>0</span>
                                             </li>
                                         </ul>
                                     </div>

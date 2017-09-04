@@ -23,14 +23,21 @@
             $minus = $('.action-amount .minus');
 
         $plus.on('click', function() {
+
+            if ( !($input.val()) ) { $input.val('0') }
+
             $input.val( parseFloat( $input.val() ) + 1 );
             $input.change();
+
+            $('.input-amount').trigger('input');
             return false;
         })
 
         $minus.on('click', function() {
             $input.val( Math.max( parseFloat($input.val()) - 1 , 0 ));
             $input.change();
+
+            $('.input-amount').trigger('input');
             return false;
         })
     };
@@ -40,22 +47,29 @@
 
     $('.input-amount').on('input', function() {
 
-        var date = {
+        var preg = $(this).val().replace(/[^.\d]+/g,"").replace( /^([^\.]*\.)|\./g, '$1' );
+        var date = {};
+
+        $(this).val(preg);
+
+        date = {
             currency: $('.select-currency .currency').text(),
             value: $('.input-amount').val(),
         }
 
-        $.ajax({
-            url: Routing.generate('invest_estimation', date),
-            success: function(data) {
-                console.log(data);
-                resultAmount.find('span').text( data.amount );
-                resultBonus.find('span').text( data.bonus );
-                resultTotal.find('span').text( data.amount + data.bonus );
-            }
-        });
-        
-    })
+        if ( $(this).val() ) {
+
+            $.ajax({
+                url: Routing.generate('invest_estimation', date),
+                success: function(data) {
+                    console.log(data);
+                    resultAmount.find('span').text( data.amount );
+                    resultBonus.find('span').text( data.bonus );
+                    resultTotal.find('span').text( data.amount + data.bonus );
+                }
+            });
+        }
+    });
 
 })();
 
