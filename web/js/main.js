@@ -85,6 +85,16 @@
     var btnEdit = $('.panel-address .btn-edit');
     var btnDone = $('.panel-address .btn-done');
 
+    // Trans
+    var transEdit = ( $('.select-lang').text().trim() === 'English' )
+                                        ? 'Edit'
+                                        : 'Изменить';
+
+    var transCancel = ( $('.select-lang').text().trim() === 'English' ) 
+                                        ? 'Cancel'
+                                        : 'Отмена';
+
+
     function handleShowEditInput() {
         wAction.toggleClass('process');
 
@@ -92,10 +102,12 @@
         wForm.toggle().find('.input').focus().select();
 
         ( wAction.hasClass('process') )
-                ? $(this).text('Отмена')
-                : $(this).text('Изменить');
+                ? $(this).text(transCancel)
+                : $(this).text(transEdit);
 
-        btnDone.show();
+        ( wAction.hasClass('process') )
+                ? btnDone.show()
+                : btnDone.hide();
     };
 
 
@@ -106,7 +118,7 @@
         $.post(url, formSerialize, function(response) {
 
             wAction.removeClass('process');
-            btnEdit.text('Изменить');
+            btnEdit.text(transEdit);
             btnDone.hide();
             wView.text( wForm.find('.input').val() );
             wForm.hide();

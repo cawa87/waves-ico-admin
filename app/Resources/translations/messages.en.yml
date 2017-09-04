@@ -90,7 +90,8 @@ panel-address:
     title: 'Account address'
     address-wallet: 'WALLET ADDRESS'
     desc: "This is the address of your Waves wallet, to receive a percentage of BANER's profit."
-    btn_copy: Copy
+    btn_edit: Edit
+    btn_done: Done
 
 panel-settings:
     title: 'Settings'

@@ -90,7 +90,8 @@ panel-address:
     title: 'Адрес аккаунта'
     address-wallet: 'АДРЕС КОШЕЛЬКА'
     desc: 'Это адрес вашего кошелька Waves, для получения процента от прибыли компании BANER.'
-    btn_copy: Скопировать
+    btn_edit: Изменить
+    btn_done: Готово
 
 panel-settings:
     title: Настройки
