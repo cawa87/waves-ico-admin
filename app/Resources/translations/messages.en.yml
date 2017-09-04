@@ -2,6 +2,7 @@ layout:
     logged_in_as: 'Logged in as %username%'
     login: Login
     register: Register
+    confirmation: Confirmation
 
     email: 'Email'
     password: 'Password'
@@ -11,8 +12,14 @@ layout:
     btn_forget: 'Forgot your password?'
     checkbox_start: 'I have read and agree with'
     checkbox_link: 'Terms and Conditions'
-    checkbox_end: "and confirm that I'm NOT the US citizen"
+    checkbox_end: 'and confirm that'
+    checkbox_link_not: "I'm NOT the US citizen"
     repeat_login: 'Already have an account?'
+
+    confirm_done: 'Almost done!'
+    confirm_trans_in_mail: 'Please check the incoming in your mailbox to complete registration'
+    confirm_done_final: "Thank you for registering with ICQ. After 5 seconds you will be"
+    confirm_location: redirected
 
     first_name: 'First name'
     last_name: 'Last name'

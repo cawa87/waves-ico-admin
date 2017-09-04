@@ -2,6 +2,7 @@ layout:
     logged_in_as: 'Вы вошли как %username%'
     login: Вход
     register: Регистрация
+    confirmation: Подтверждение
 
     email: 'Email'
     password: 'Пароль'
@@ -11,8 +12,14 @@ layout:
     btn_forget: 'Забыли пароль?'
     checkbox_start: 'Я прочитал и согласен с'
     checkbox_link: 'Terms and Conditions'
-    checkbox_end: 'и подтверждаю, что я НЕ являюсь гражданином США'
+    checkbox_end: 'и подтверждаю, что'
+    checkbox_link_not: 'я НЕ являюсь гражданином США'
     repeat_login: 'Уже есть учетная запись?'
+
+    confirm_done: 'Почти готово!'
+    confirm_trans_in_mail: 'Пожалуйста, проверьте входящие в вашем почтовом ящике, чтобы завершить регистрацию'
+    confirm_done_final: 'Благодарим за регистрацию в ICO. Через 5 секунд Вы будете'
+    confirm_location: перенаправлены
 
     first_name: Имя
     last_name: Фамилия
