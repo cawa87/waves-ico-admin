@@ -20,24 +20,32 @@
             {{ form_start(form, {'method': 'post', 'action': path('fos_user_registration_register'), 'attr': {'class': 'fos_user_registration_register'}}) }}
 
             <div class="form-line">
-                {{ form_row(form.firstName) }}
                 <label class="label" for="first_name">{{ 'layout.first_name'| trans }}</label>
-                <input class="input" type="text" name="fos_user_registration_form[firstName]" id="first_name" placeholder="{{ 'layout.first_name'| trans }}" value="">
+                <div class="popover-wrapper">
+                    <input class="input" type="text" name="fos_user_registration_form[firstName]" id="first_name" placeholder="{{ 'layout.first_name'| trans }}" value="">
+                    {{ form_row(form.firstName) }}
+                </div>
             </div>
             <div class="form-line">
-                {{ form_row(form.lastName) }}
                 <label class="label" for="last_name">{{ 'layout.last_name'| trans }}</label>
-                <input class="input" type="text" name="fos_user_registration_form[lastName]" id="last_name" placeholder="{{ 'layout.last_name'| trans }}" value="">
+                <div class="popover-wrapper">
+                    <input class="input" type="text" name="fos_user_registration_form[lastName]" id="last_name" placeholder="{{ 'layout.last_name'| trans }}" value="">
+                    {{ form_row(form.lastName) }}
+                </div>
             </div>
             <div class="form-line">
                 <label class="label" for="email">{{ 'layout.email'| trans }}</label>
-                {{ form_row(form.email) }}
-                <input class="input" type="text" name="fos_user_registration_form[email]" id="email" placeholder="{{ 'layout.email'| trans }}" value="">
+                <div class="popover-wrapper">
+                    <input class="input" type="email" name="fos_user_registration_form[email]" id="email" placeholder="{{ 'layout.email'| trans }}" value="">
+                    {{ form_row(form.email) }}
+                </div>
             </div>
             <div class="form-line">
-                {{ form_row(form.plainPassword) }}
                 <label class="label" for="password">{{ 'layout.password'| trans }}</label>
-                <input class="input" type="password" name="fos_user_registration_form[plainPassword][first]" id="password" placeholder="{{ 'layout.password'| trans }}" value="">
+                <div class="popover-wrapper">
+                    <input class="input" type="password" name="fos_user_registration_form[plainPassword][first]" id="password" placeholder="{{ 'layout.password'| trans }}" value="">
+                    {{ form_row(form.plainPassword) }}
+                </div>
             </div>
             <div class="form-line">
                 <label class="label" for="password_repeat">{{ 'layout.repeat_pass'| trans }}</label>
@@ -45,10 +53,14 @@
             </div>
             <div class="form-line">
                 <input type="checkbox" id="agreement" name="agreement" value="false" required>
-                <label class="check-label" for="agreement">{{ 'layout.checkbox_start'| trans }} <a href="" class="link" target="_blank">{{ 'layout.checkbox_link'| trans }}</a> {{ 'layout.checkbox_end'| trans }}</label>
+                <label class="check-label" for="agreement">{{ 'layout.checkbox_start'| trans }}
+                    <a href="/media/terms_and_conditions.pdf#zoom=75" class="link" target="_blank">{{ 'layout.checkbox_link'| trans }}</a>
+                    {{ 'layout.checkbox_end'| trans }}
+                    <a href="/media/terms_and_conditions_usa.pdf#zoom=75" class="link" target="_blank">{{ 'layout.checkbox_link_not'| trans }}</a>
+                </label>
             </div>
             <button class="btn btn-block btn-form blue" type="submit">{{ 'layout.btn_reg'| trans }}</button>
-            <div class="tip-sign-in">{{ 'layout.repeat_login'| trans }} <a class="link" href="login.html">{{ 'layout.btn_login'| trans }}</a></div>
+            <div class="tip-sign-in">{{ 'layout.repeat_login'| trans }} <a class="link" href="{{path('fos_user_security_login')}}">{{ 'layout.btn_login'| trans }}</a></div>
 
             {{ form_end(form) }}
 

@@ -276,9 +276,7 @@
 {%- endblock repeated_row -%}
 
 {%- block form_row -%}
-    <div>
-        {{- form_errors(form) -}}
-    </div>
+    {{- form_errors(form) -}}
 {%- endblock form_row -%}
 
 {%- block button_row -%}
@@ -322,7 +320,7 @@
 
 {%- block form_errors -%}
     {%- if errors|length > 0 -%}
-        <ul>
+        <ul class="popover">
             {%- for error in errors -%}
                 <li>{{ error.message }}</li>
             {%- endfor -%}
