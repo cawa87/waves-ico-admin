@@ -18,7 +18,7 @@
         <div class="panel-body panel-form-body">
 
             {% if error %}
-                <div>{{ error.messageKey|trans(error.messageData, 'security') }}</div>
+                <div class="errors">{{ error.messageKey|trans(error.messageData, 'security') }}</div>
             {% endif %}
 
 
@@ -29,16 +29,16 @@
 
                 <div class="form-line">
                     <label class="label" for="email">{{ 'layout.email'| trans }}</label>
-                    <input class="input" type="email" name="_username" id="email" placeholder="{{ 'layout.email'| trans }}" value="">
+                    <input class="input" type="email" name="_username" id="email" placeholder="{{ 'layout.email'| trans }}" value="" required>
                 </div>
                 <div class="form-line">
                     <label class="label" for="password">{{ 'layout.password'| trans }}</label>
-                    <input class="input" type="password" name="_password" id="password" placeholder="{{ 'layout.password'| trans }}">
+                    <input class="input" type="password" name="_password" id="password" placeholder="{{ 'layout.password'| trans }}" required>
                 </div>
                 <button class="btn btn-block btn-form blue" type="submit">{{ 'layout.btn_login'| trans }}</button>
                 <a class="btn btn-block btn-form white"
                    href="{{ path('fos_user_registration_register') }}">{{ 'layout.btn_reg'| trans }}</a>
-                <a class="link tip-password" href="{{ path('fos_user_resetting_send_email') }}">{{ 'layout.btn_forget'| trans }}</a>
+                <a class="link tip-password" href="{{ path('fos_user_resetting_check_email') }}">{{ 'layout.btn_forget'| trans }}</a>
             </form>
         </div>
     </section>
