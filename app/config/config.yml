@@ -66,21 +66,25 @@ doctrine:
 
 # Swiftmailer Configuration
 swiftmailer:
-    transport: '%mailer_transport%'
-    host: '%mailer_host%'
-    username: '%mailer_user%'
-    password: '%mailer_password%'
+    transport: %mailer_transport%
+    host:      %mailer_host%
+    username:  %mailer_user%
+    password:  %mailer_password%
+    encryption: "%mailer_encryption%"
+    port: %mailer_port%
+    auth_mode:  login
     spool:
         type: file
         path: '%kernel.project_dir%/app/spool'
+
 
 fos_user:
     db_driver: orm # other valid values are 'mongodb' and 'couchdb'
     firewall_name: main
     user_class: AppBundle\Entity\User
     from_email:
-        address: "stub@baner.su"
-        sender_name: "stub"
+        address: ico@baner.su
+        sender_name: Baner.su ICO
 
     registration:
         form:
