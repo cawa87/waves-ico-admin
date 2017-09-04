@@ -4,19 +4,12 @@
 {% block fos_user_content %}
     <!-- Register panel-->
     <section class="panel panel-form">
-        <h2 class="panel-title">Подтверждение
-            <div class="dropdown-block dropdown-lang"><a class="select-lang" data-toggle="dropdown" href="">Russian</a>
-                <ul class="dropdown-menu dropdown-menu-lang" data-toggle="dropdown-menu">
-                    <li class="drop-item">Russian</li>
-                    <li class="drop-item">English</li>
-                    <li class="drop-item">China</li>
-                </ul>
-            </div>
-        </h2>
+        <h2 class="panel-title">{{ 'layout.confirmation'| trans }}</h2>
         <div class="panel-body panel-form-body">
-            <div class="register-confirm"><img class="icon" src="/img/success.svg">
-                <div class="title">Почти готово!</div>
-                <p class="desc">Пожалуйста, проверьте входящие в вашем почтовом ящике, чтобы завершить регистрацию</p>
+            <div class="register-confirm">
+                <img class="icon" src="/img/success.svg">
+                <div class="title">{{ 'layout.confirm_done'| trans }}</div>
+                <p class="desc">{{ 'layout.confirm_trans_in_mail'| trans }}</p>
             </div>
         </div>
     </section>
