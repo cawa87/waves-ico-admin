@@ -108,3 +108,38 @@ tooltip:
     waves: "This is the Waves address of the company BANER dedicated personally to you. It is necessary to use it to buy tokens. In other words, it is to him that you send your money from your private office"
     bonus: 'During the PRE-ICO period, BANER gives a bonus of up to 25%. As you approach the end of PRE-ICO, the bonus decreases. For example, in 1-2 days the bonus is 25%. If you buy 100 BNR tokens, then the account will be credited'
     bonus_counting: '100 BNR + 25% = 125 BNR.'
+
+pp-waves:
+    title: Manual
+    title_waves: 'How to get the Waves address?'
+    attention: Attention!
+
+    oneitem: "Before you get access to the entire functionality of the site, you'll need to provide your wallet address Waves. It will take 2 minutes of your time."
+    oneitem_att_desc: "Before you begin the instruction, make sure you have turned off the extension Adblock or similar. Otherwise, on the site is not guaranteed to normal work."
+
+    twoitem: "Let's go to the official website of the web client for wallet Waves:"
+    twoitem_att_desc: "Be sure to compare the link with specified in our instruction."
+
+    threeitem: "Register a new account in Waves system. To do this, click on the button"
+    threeitem_b: 'NEW ACCOUNT'
+
+    fouritem: "Read the text of the notification and click on the button"
+    fouritem_b: 'I UNDERSTAND'
+    fouritem_att_desc: "Read notification always, it contains important information for the security of your account."
+
+    fiveitem: "Write down SEED, which was generated for you. Make sure, that correctly rewrote SEED."
+    fiveitem_att_desc: "Strongly recommend not copying and not distributing SEED within your file system and the Internet. The most reliable way — write down SEED on a physical sheet of paper (better a few) and put in a safe place. If you still store SEED in electronic form, store it on a media that does not have Internet access. SEED should not be available to third parties."
+
+    sixitem_start: ' Input field'
+    sixitem: "is optional. If you are going to create a lot of accounts, it is recommended to fill this field, for convenience, to not to be confused in the addresses of the created accounts."
+    sixitem_b: 'NAME'
+
+    sevenitem: "Create and repeat a password. The password is used to encrypt your SEED and will be used to sign in to your account."
+    sevenitem_pass_st: "The password must be complex to protect you from"
+    sevenitem_term: 'bruteforce'
+    sevenitem_pass_end: "Use passwords of at least 12 characters in length for maximum protection against this attack. For example: M3mSH6aT7waG"
+
+    eightitem: 'Click the button'
+    eightitem_b: REGISTER
+
+    nineitem: "Registration completed. In the account management panel, you can copy your address and use it to insert into our system to access all functionality."
