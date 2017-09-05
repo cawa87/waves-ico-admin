@@ -211,3 +211,16 @@ pp-invest:
     info_salck: "Dmitry Smirnov in Slack:"
     info_tgr: "Dmitry Smirnov in Telegram:"
     footer: "For the information given by other sources, BANER will not be responsible!"
+
+registration:
+    email:
+        subject: 'Welcome %username%!'
+        message: |
+            Hello %username%!
+
+            To finish activating your account - please visit %confirmationUrl%
+
+            This link can only be used once to validate your account.
+
+            Best Regards,
+            BANER Team

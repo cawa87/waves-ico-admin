@@ -45,7 +45,7 @@ class UserAddressController extends Controller
             $investedAll[$currency['currency']] = $currency;
         }
 
-       
+
 
 
         return $this->render('AppBundle/UserAddress/index.html.twig', [
