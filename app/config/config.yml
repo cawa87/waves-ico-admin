@@ -84,7 +84,7 @@ fos_user:
     user_class: AppBundle\Entity\User
     from_email:
         address: ico@baner.su
-        sender_name: Baner.su ICO
+        sender_name: BANER Team
 
     registration:
         form:
@@ -93,7 +93,7 @@ fos_user:
             enabled: true
             from_email:
                 address: ico@baner.su
-                sender_name: Baner.su ICO
+                sender_name: BANER Team
 
 stof_doctrine_extensions:
     orm:
