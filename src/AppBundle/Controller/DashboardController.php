@@ -58,7 +58,7 @@ class DashboardController extends Controller
             'rates' => $rates,
             'invesed' => $invesed,
             'invested_usd' => $inv['USD'],
-            'invested_btc' => $inv['USD'] * $btcRate,
+            'invested_btc' => $inv['USD'] / $btcRate,
             'balance' => $balance
         ]);
     }
