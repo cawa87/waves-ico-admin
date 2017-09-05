@@ -77,7 +77,9 @@ services:
 
     app.services.twig.investments_management:
         class: AppBundle\Service\Twig\InvestmentsManagement
-
+        arguments:
+          - "@doctrine.orm.entity_manager"
+          - '%current_day%'
 
     AppBundle\Wrappers\WavesNodeWrapper: '@app.wrappers.waves_node_wrapper'
 
