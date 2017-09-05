@@ -45,19 +45,19 @@ class DashboardController extends Controller
 
         $investedAll[1] = [
             'amount' => 0,
-            'code' => 'USD',
+            'code' => 'WAVES',
         ];
         $investedAll[2] = [
             'amount' => 0,
-            'code' => 'EUR',
+            'code' => 'USD',
         ];
         $investedAll[3] = [
             'amount' => 0,
-            'code' => 'BTC',
+            'code' => 'EUR',
         ];
         $investedAll[4] = [
             'amount' => 0,
-            'code' => 'WAVES',
+            'code' => 'BTC',
         ];
         $investedAll[5] = [
             'amount' => 0,
