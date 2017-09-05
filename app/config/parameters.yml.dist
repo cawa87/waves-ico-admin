@@ -11,11 +11,11 @@ parameters:
     #database_path: '%kernel.project_dir%/var/data/data.sqlite'
 
     mailer_transport: smtp
-    mailer_host: email-smtp.eu-west-1.amazonaws.com
+    mailer_host: smtp.mailgun.org
     mailer_port: 587
     mailer_encryption: tls # TLS encryption is required
-    mailer_user: 'AKIAJJLYYLJXKMXD5C5Q'
-    mailer_password: 'AhVMZp9gJDXGohRhFgtNX2j85MVvTkAj+QcB3co6JKoZ'
+    mailer_user: 'postmaster@baner.su'
+    mailer_password: '6ee79c1db9dca1399105d216aec266f3
 
     # A secret key that's used to generate certain security-related tokens
     secret: ThisTokenIsNotSoSecretChangeIt
@@ -32,5 +32,7 @@ parameters:
     bnr_wallet: asdkfjlkasdjfaklsdjfasdjfkl
 
     # Waves Node
+#    node_api_key: '2EVfAAxNyfFTZ2MBKFKw7'
     node_api_key: '123456'
-    node_api_url: http://176.9.63.48:6869/
+   # node_api_url: 'http://176.9.63.48:6869/'
+    node_api_url: 'http://46.4.97.149:6869/'
