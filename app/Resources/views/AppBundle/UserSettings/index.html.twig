@@ -11,32 +11,20 @@
             <section class="panel panel-settings">
                 <h2 class="panel-title">{{ 'panel-settings.title'| trans }}</h2>
                 <div class="panel-body settings-body">
-                    <div class="set-line">
-                        <div class="set-name">{{ 'panel-settings.password'| trans }}</div>
-                        <div class="set-value">****<a class="btn-change-pass btn blue" href="settings-password.html">{{ 'panel-settings.btn-change'| trans }}</a></div>
-                    </div>
-                    <div class="set-line">
-                        <div class="set-name">{{ 'panel-settings.email'| trans }}</div>
-                        <div class="set-value">admain@baner.com</div>
-                    </div>
-                    <div class="set-line">
-                        <div class="set-name">{{ 'panel-settings.phone'| trans }}</div>
-                        <div class="set-value">+7 (812) 111 22 33</div>
-                    </div>
-                </div>
-            </section>
-        </div>
 
-        <!-- Coll content-->
-        <div class="content content-center">
-            <section class="panel panel-settings">
-                <h2 class="panel-title">{{ 'panel-settings.title'| trans }}</h2>
-                <div class="panel-body settings-body">
-                    <div class="set-line">
+                    <div class="set-line setline-pass">
+                        <div class="set-name">{{ 'panel-settings.password'| trans }}</div>
+                        <div class="set-value">
+                            <a class="btn blue link-edit" href="">{{ 'panel-settings.btn-change'| trans }}</a>
+                        </div>
+                    </div>
+
+                    <div class="set-line setline-edit-pass">
                         <div class="new-pass-list">
                             <div class="passline">
                                 <div class="set-name">{{ 'panel-settings.old_pass'| trans }}</div>
-                                <input class="input set-input" type="text"><a class="link link-cancel" href="settings.html">{{ 'panel-settings.btn_cancel'| trans }}</a>
+                                <input class="input set-input" type="text">
+                                <a class="link link-cancel" href="">{{ 'panel-settings.btn_cancel'| trans }}</a>
                             </div>
                             <div class="passline">
                                 <div class="set-name">{{ 'panel-settings.new_pass'| trans }}</div>
@@ -47,13 +35,14 @@
                                 <input class="input set-input" type="text">
                             </div>
                             <div class="passline">
-                                <div class="set-name"></div><a class="btn blue btn-get-pass" href="">{{ 'panel-settings.btn_change_pass'| trans }}</a>
+                                <div class="set-name"></div><a class="btn blue btn-edit" href="">{{ 'panel-settings.btn_change_pass'| trans }}</a>
                             </div>
                         </div>
                     </div>
+
                     <div class="set-line">
                         <div class="set-name">{{ 'panel-settings.email'| trans }}</div>
-                        <div class="set-value">admain@baner.com</div>
+                        <div class="set-value">{{app.user.email}}</div>
                     </div>
                     <div class="set-line">
                         <div class="set-name">{{ 'panel-settings.phone'| trans }}</div>

@@ -1767,6 +1767,14 @@ p {
   border-bottom: 1px solid #e3e4e8;
 }
 
+.panel-settings .set-line.setline-pass {
+  display: block;
+}
+
+.panel-settings .set-line.setline-edit-pass {
+  display: none;
+}
+
 .panel-settings .set-line::after {
   content: '';
   display: block;
@@ -1799,10 +1807,11 @@ p {
   width: calc(100% - 150px);
 }
 
-.panel-settings .set-line .set-value .btn-change-pass {
+.panel-settings .set-line .link-edit {
   position: absolute;
   top: -7px;
-  right: 0;
+  /*right: 0;*/
+  left: 0;
   height: 30px;
   padding-top: 0;
   padding-bottom: 0;

@@ -3,7 +3,7 @@
 
 // Dropdown
 
-(function() {
+;(function() {
 
     var dropdownBlock = $('.dropdown-block');
     var dropdownButton = dropdownBlock.find('[data-toggle="dropdown"]');
@@ -39,7 +39,7 @@
 
 // Tooltip
 
-(function() {
+;(function() {
 
     var tooltip = $('.tooltip');
     var tooltipButton = tooltip.find('.tooltip-call');
@@ -74,6 +74,7 @@
 
 
 // Edit Waves address (page address)
+
 ;(function() {
 
     var wAction = $('.waves-action'),
@@ -133,5 +134,28 @@
 
 })();
 
+
+// Settings page
+
+;(function() {
+
+    var panelSettings = $('.panel-settings');
+    // var linkEdit = panelSettings.find('.link-edit');
+    // var linkCancel = panelSettings.find('.link-cancel');
+    var btnEdit = panelSettings.find('.btn-edit');
+
+    $('.link-edit').on('click', function(e) {
+        e.preventDefault();
+        panelSettings.find('.setline-pass').hide();
+        panelSettings.find('.setline-edit-pass').show();
+    })
+
+    $('.link-cancel').on('click', function(e) {
+        e.preventDefault();
+        panelSettings.find('.setline-pass').show();
+        panelSettings.find('.setline-edit-pass').hide();
+    })
+
+})();
 
 //# sourceMappingURL=main.js.map
