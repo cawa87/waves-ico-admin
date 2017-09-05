@@ -1,34 +1,32 @@
 <?php
 
 
-namespace AppBundle\Service\Twig;
+namespace AppBundle\Service;
 
 
 use AppBundle\Entity\Transaction;
 use Doctrine\Common\Persistence\ObjectManager;
 
-class InvestmentsManagement
+class BonusService
 {
 
     protected $em;
+    protected $day;
 
-    /**
-     * UserManagement constructor.
-     */
+    protected $days = [
+
+    ];
+
+
     public function __construct(ObjectManager $em, $day)
     {
         $this->em = $em;
         $this->day = $day;
     }
 
-
-    public function getDaysBeforeEnd()
-    {
-        return $this->day;
-    }
-
     public function getBonus()
     {
+
         $bonus = 0;
 
         if ($this->day >= 28) {
@@ -52,11 +50,6 @@ class InvestmentsManagement
         }
 
         return $bonus;
-    }
 
-
-    public  function getBalance($user){
-
-        return $this->em->getRepository(Transaction::class)->getTotalBalance($user);
     }
 }

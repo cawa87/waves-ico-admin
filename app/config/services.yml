@@ -77,7 +77,9 @@ services:
 
     app.services.twig.investments_management:
         class: AppBundle\Service\Twig\InvestmentsManagement
-
+        arguments:
+          - "@doctrine.orm.entity_manager"
+          - '%current_day%'
 
     AppBundle\Wrappers\WavesNodeWrapper: '@app.wrappers.waves_node_wrapper'
 
@@ -92,3 +94,12 @@ services:
         arguments: ['%kernel.default_locale%']
         # redundant if you're using autoconfigure
         tags: [kernel.event_subscriber]
+
+    AppBundle\Service\BonusService: "@app.wrappers.bonus_service"
+
+    app.wrappers.bonus_service:
+        class: AppBundle\Service\BonusService
+        public: true
+        arguments:
+          - "@doctrine.orm.entity_manager"
+          - '%current_day%'
