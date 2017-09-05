@@ -1457,7 +1457,7 @@ p {
   background-image: url("../img/icons-invested/ic-waves.png");
 }
 
-.panel-invested .currency-list .currency-item.euro .icon {
+.panel-invested .currency-list .currency-item.eur .icon {
   background-image: url("../img/icons-invested/ic-euro.svg");
 }
 
@@ -1494,6 +1494,7 @@ p {
 }
 
 .panel-bonus .panel-body .empty-scale .part-scale {
+  width: 0;
   height: 5px;
   background-color: #159f84;
 }

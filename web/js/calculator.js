@@ -65,7 +65,7 @@
                     console.log(data);
                     resultAmount.find('span').text( data.amount );
                     resultBonus.find('span').text( data.bonus );
-                    resultTotal.find('span').text( data.amount + data.bonus );
+                    resultTotal.find('span').text( data.amount + ( data.amount * data.bonus / 100 ) );
                 }
             });
         }

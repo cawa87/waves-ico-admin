@@ -89,7 +89,7 @@
                                                 <span>0</span>
                                             </li>
                                             <li class="result-item bonus">
-                                                {{ 'panel_invest.result_bonus'| trans }} (BNR):
+                                                {{ 'panel_invest.result_bonus'| trans }} (%):
                                                 <span>0</span>
                                             </li>
                                             <li class="result-item total-result">
@@ -108,8 +108,11 @@
             <!-- Right aside-->
             <aside class="aside-right">
                 <div class="panel-mini statistics">
-                    <div class="line">{{ 'aside_right.day'| trans }}:<span>{{ investments_management.getDaysBeforeEnd }}</span></div>
-                    <div class="line">{{ 'aside_right.bonus'| trans }}:<span>25%</span>
+                    <div class="line">{{ 'aside_right.day'| trans }}:
+                        <span class="left-day">{{ investments_management.getDaysBeforeEnd }}</span>
+                        <!-- <span class="left-day">25</span> -->
+                    </div>
+                    <div class="line">{{ 'aside_right.bonus'| trans }}:<span>{{ investments_management.getBonus }}%</span>
                         <div class="tooltip tooltip-bonus">
                             <div class="tooltip-call black"></div>
                             <div class="tooltip-content">{{ 'tooltip.bonus'| trans }}:
@@ -144,26 +147,15 @@
                 <h2 class="panel-title">{{ 'panel_invested.title'| trans }}</h2>
                 <div class="panel-body">
                     <ul class="currency-list">
-                        <li class="currency-item usd"><i class="icon"></i>
-                            <div class="amount">0</div>
-                            <div class="currency">USD</div>
-                        </li>
-                        <li class="currency-item euro"><i class="icon"></i>
-                            <div class="amount">0</div>
-                            <div class="currency">EURO</div>
-                        </li>
-                        <li class="currency-item btc"><i class="icon"></i>
-                            <div class="amount">0</div>
-                            <div class="currency">BTC</div>
-                        </li>
-                        <li class="currency-item waves"><i class="icon"></i>
-                            <div class="amount">0</div>
-                            <div class="currency">WAVES</div>
-                        </li>
-                        <li class="currency-item eth"><i class="icon"></i>
-                            <div class="amount">0</div>
-                            <div class="currency">ETH</div>
-                        </li>
+
+                        {% for key, invest in invested %}
+                            <li class="currency-item {{ invest.code|lower }}">
+                                <i class="icon"></i>
+                                <div class="amount">{{ invest.amount }}</div>
+                                <div class="currency">{{ invest.code }}</div>
+                            </li>
+                        {% endfor %}
+
                     </ul>
                 </div>
             </section>
@@ -171,43 +163,48 @@
             <!-- Bonus panel-->
             <section class="panel panel-bonus">
                 <h2 class="panel-title">{{ 'panel_bonus.title'| trans }}</h2>
+
                 <div class="panel-body">
                     <div class="bonus-item">
                         <div class="percent">25%</div>
                         <div class="empty-scale">
-                            <div class="part-scale full-scale"></div>
+                            <div class="part-scale" data-day="2"></div>
                         </div>
                         <div class="time">{{ 'panel_bonus.day'| trans }} 1-2</div>
                     </div>
                     <div class="bonus-item">
                         <div class="percent">20%</div>
                         <div class="empty-scale">
-                            <div class="part-scale full-scale"></div>
+                            <div class="part-scale" data-day="3"></div>
                         </div>
                         <div class="time">{{ 'panel_bonus.day'| trans }} 3-5</div>
                     </div>
                     <div class="bonus-item">
                         <div class="percent">15%</div>
                         <div class="empty-scale">
-                            <div class="part-scale full-scale"></div>
+                            <div class="part-scale" data-day="3"></div>
                         </div>
                         <div class="time">{{ 'panel_bonus.day'| trans }} 6-8</div>
                     </div>
                     <div class="bonus-item">
                         <div class="percent">10%</div>
                         <div class="empty-scale">
-                            <div class="part-scale part-scale-20"></div>
+                            <div class="part-scale" data-day="4"></div>
                         </div>
                         <div class="time">{{ 'panel_bonus.day'| trans }} 9-12</div>
                     </div>
                     <div class="bonus-item">
                         <div class="percent">5%</div>
-                        <div class="empty-scale"></div>
+                        <div class="empty-scale">
+                            <div class="part-scale" data-day="5"></div>
+                        </div>
                         <div class="time">{{ 'panel_bonus.day'| trans }} 13-17</div>
                     </div>
                     <div class="bonus-item">
                         <div class="percent">0%</div>
-                        <div class="empty-scale"></div>
+                        <div class="empty-scale">
+                            <div class="part-scale" data-day="8"></div>
+                        </div>
                         <div class="time">{{ 'panel_bonus.day'| trans }} 18-25</div>
                     </div>
                 </div>
