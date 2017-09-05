@@ -3,6 +3,7 @@ layout:
     login: Login
     register: Register
     confirmation: Confirmation
+    restore: 'Restoring Password'
 
     email: 'Email'
     password: 'Password'

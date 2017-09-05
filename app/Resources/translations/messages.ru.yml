@@ -3,6 +3,7 @@ layout:
     login: Вход
     register: Регистрация
     confirmation: Подтверждение
+    restore: 'Восстановление пароля'
 
     email: 'Email'
     password: 'Пароль'

@@ -1,5 +1,30 @@
 {% extends "@FOSUser/layout.html.twig" %}
 
 {% block fos_user_content %}
-    {% include "@FOSUser/Resetting/request_content.html.twig" %}
+    {#{% include "@FOSUser/Resetting/request_content.html.twig" %}#}
+    <!-- Register panel-->
+    <section class="panel panel-form">
+        <h2 class="panel-title">{{ 'layout.restore'| trans }}
+            <div class="dropdown-block dropdown-lang">
+                <a class="select-lang" data-toggle="dropdown" href="">
+                    {{ (app.request.locale == "en") ? 'English' : 'Russian' }}
+                </a>
+                <ul class="dropdown-menu dropdown-menu-lang" data-toggle="dropdown-menu">
+                    <li class="drop-item"><a href="?_locale=ru">Russian</a></li>
+                    <li class="drop-item"><a href="?_locale=en">English</a></li>
+                </ul>
+            </div>
+        </h2>
+
+        <div class="panel-body panel-form-body">
+            <form action="{{ path('fos_user_resetting_send_email') }}" method="POST" class="fos_user_resetting_request form-email-password">
+                <p class="desc">На вашу электронную почту будет отправлена инструкция по восстановлению пароля</p>
+                <div class="form-line">
+                    <label class="label" for="username">Email</label>
+                    <input type="email" class="input" id="username" name="username" placeholder="Эл. почта" required>
+                </div>
+                <button class="btn btn-block btn-form blue" type="submit">Отправить</button>
+            </form><a class="link btn-prev" href="{{path('fos_user_security_login')}}">Назад</a>
+        </div>
+    </section>
 {% endblock fos_user_content %}
