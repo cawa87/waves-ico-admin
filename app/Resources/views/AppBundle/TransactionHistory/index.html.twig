@@ -16,10 +16,20 @@
                         <div class="history-row history-row-head">
                             <div class="history-cell">{{ 'panel-history.table_date'| trans }}</div>
                             <div class="history-cell">{{ 'panel-history.table_desc'| trans }}</div>
-                            <div class="history-cell">{{ 'panel-history.table_status'| trans }}</div>
+                            <!-- <div class="history-cell">{{ 'panel-history.table_status'| trans }}</div> -->
                             <div class="history-cell">{{ 'panel-history.table_amount'| trans }}</div>
                         </div>
-                        <div class="history-row">
+
+                        {% for key, transaction in transactions %}
+                            <div class="history-row">
+                                <div class="history-cell cell-date">{{ transaction.createdAt.date|date("m/d/Y") }}</div>
+                                <div class="history-cell cell-desc">{{ transaction.info }}</div>
+                                <!-- <div class="history-cell cell-status expired"></div> -->
+                                <div class="history-cell cell-amount">{{ transaction.amount }}</div>
+                            </div>
+                        {% endfor %}
+
+                        <!-- <div class="history-row">
                             <div class="history-cell cell-date">12 Jun 16:52</div>
                             <div class="history-cell cell-desc">Converting 0.000000 BTC to 2.438626 PLBT</div>
                             <div class="history-cell cell-status recelved">Recelved</div>
@@ -36,7 +46,7 @@
                             <div class="history-cell cell-desc">Converting 0.000000 BTC to 2.438626 PLBT</div>
                             <div class="history-cell cell-status copleted">Copleted</div>
                             <div class="history-cell cell-amount">+1.15 PLBT</div>
-                        </div>
+                        </div> -->
                     </div>
                 </section>
             </div>
