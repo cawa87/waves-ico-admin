@@ -19,7 +19,7 @@ layout:
 
     confirm_done: 'Almost done!'
     confirm_trans_in_mail: 'Please check the incoming in your mailbox to complete registration'
-    confirm_done_final: "Thank you for registering with ICQ. After 5 seconds you will be"
+    confirm_done_final: "Thank you for registering with ICO. After 5 seconds you will be"
     confirm_location: redirected
 
     first_name: 'First name'
