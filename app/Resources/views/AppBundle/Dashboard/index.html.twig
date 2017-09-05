@@ -89,7 +89,7 @@
                                                 <span>0</span>
                                             </li>
                                             <li class="result-item bonus">
-                                                {{ 'panel_invest.result_bonus'| trans }} (BNR):
+                                                {{ 'panel_invest.result_bonus'| trans }} (%):
                                                 <span>0</span>
                                             </li>
                                             <li class="result-item total-result">
@@ -112,7 +112,7 @@
                         <span class="left-day">{{ investments_management.getDaysBeforeEnd }}</span>
                         <!-- <span class="left-day">25</span> -->
                     </div>
-                    <div class="line">{{ 'aside_right.bonus'| trans }}:<span>25%</span>
+                    <div class="line">{{ 'aside_right.bonus'| trans }}:<span>{{ investments_management.getBonus }}%</span>
                         <div class="tooltip tooltip-bonus">
                             <div class="tooltip-call black"></div>
                             <div class="tooltip-content">{{ 'tooltip.bonus'| trans }}: 
