@@ -73,14 +73,11 @@ class DashboardController extends Controller
             $investedAll[$currency['currency']] = $currency;
         }
 
-        var_dump($investedAll); die();
 
         $userCount = $product = $this->getDoctrine()
             ->getRepository(User::class)
             ->getCount();
 
-
-        var_dump($invested); die();
 
         return $this->render('AppBundle/Dashboard/index.html.twig', [
             'userCount' => $userCount,

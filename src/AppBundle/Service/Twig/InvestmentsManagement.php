@@ -4,6 +4,7 @@
 namespace AppBundle\Service\Twig;
 
 
+use AppBundle\Entity\Transaction;
 use Doctrine\Common\Persistence\ObjectManager;
 
 class InvestmentsManagement
@@ -32,9 +33,9 @@ class InvestmentsManagement
         return 30;
     }
 
-    
-    public  function getBalance(){
 
-        return $this->em->getRepository(Transaction::class)->getTotalBalance($this->getUser());
+    public  function getBalance($user){
+
+        return $this->em->getRepository(Transaction::class)->getTotalBalance($user);
     }
 }

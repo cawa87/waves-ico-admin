@@ -100,7 +100,7 @@
         <aside class="aside-left">
             <div class="panel-mini total-balance">
                 <div class="title">{{ 'aside_left.balance'| trans }}:</div>
-                <div class="num-balance"><span>{{ (balance) ? balance : '0' }}</span> BNR</div>
+                <div class="num-balance"><span>{{ (investments_management.getBalance(app.user)) ? investments_management.getBalance(app.user) : '0' }}</span> BNR</div>
             </div>
             <!-- Navigation-->
             <nav class="main-nav">
