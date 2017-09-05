@@ -30,8 +30,10 @@ class DashboardController extends Controller
 
         $rates['USD'] = 10; // @todo BNR price to params
 
-        $rates['BTC'] = $rates['USD'] / $this->getDoctrine()
-                ->getRepository(CurrencyRate::class)->getLastRateByCurrency(4);
+        $btcRate = $this->getDoctrine()
+            ->getRepository(CurrencyRate::class)->getLastRateByCurrency(4);
+
+        $rates['BTC'] = $rates['USD'] / $btcRate;
         $rates['ETH'] = $rates['USD'] / $this->getDoctrine()
                 ->getRepository(CurrencyRate::class)->getLastRateByCurrency(5);
         $rates['EUR'] = $rates['USD'] / $this->getDoctrine()
@@ -56,6 +58,7 @@ class DashboardController extends Controller
             'rates' => $rates,
             'invesed' => $invesed,
             'invested_usd' => $inv['USD'],
+            'invested_btc' => $inv['USD'] * $btcRate,
             'balance' => $balance
         ]);
     }
