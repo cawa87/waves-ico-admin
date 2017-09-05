@@ -14,8 +14,10 @@ class TransactionRepository extends \Doctrine\ORM\EntityRepository
     public function getInvested()
     {
         $qb = $this->createQueryBuilder('tr');
-        $qb->select('SUM(tr.amount)');
-        $qb->where('cr.type = :type');
+        $qb->select('SUM(tr.amount) as amount, cr.code, cr.id as currency');
+        $qb->join('tr.currency', 'cr');
+        $qb->where('tr.transactionType = :type');
+        $qb->groupBy('cr.code');
 
         $qb->setParameter('type', 100);
 
@@ -24,6 +26,6 @@ class TransactionRepository extends \Doctrine\ORM\EntityRepository
 
     public function getTotalBalance()
     {
-        
+
     }
 }
