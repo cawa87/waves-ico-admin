@@ -74,7 +74,7 @@ class DashboardController extends Controller
         }
 
 
-        $userCount = $product = $this->getDoctrine()
+        $userCount = $this->getDoctrine()
             ->getRepository(User::class)
             ->getCount();
 
