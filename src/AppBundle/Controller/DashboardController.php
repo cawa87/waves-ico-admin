@@ -26,7 +26,7 @@ class DashboardController extends Controller
 
         $invesed = $this->getDoctrine()->getRepository(Transaction::class)->getInvested();
 
-
+        $balance = $this->getDoctrine()->getRepository(Transaction::class)->getTotalBalance();
 
         $rates['USD'] = 10; // @todo BNR price to params
 
@@ -55,7 +55,8 @@ class DashboardController extends Controller
             'userCount' => $userCount,
             'rates' => $rates,
             'invesed' => $invesed,
-            'invested_usd' => $inv['USD']
+            'invested_usd' => $inv['USD'],
+            'balance' => $balance
         ]);
     }
 }
