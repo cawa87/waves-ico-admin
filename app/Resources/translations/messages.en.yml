@@ -147,67 +147,67 @@ pp-waves:
     nineitem: "Registration completed. In the account management panel, you can copy your address and use it to insert into our system to access all functionality."
 
 pp-invest:
-    title: "Инструкция"
-    title_invest: "Как купить BNR токены?"
-    attention: Внимание!
+    title: "Manual"
+    title_invest: "How to buy BNR tokens?"
+    attention: Attention!
     deposit: DEPOSIT
     send: SEND
     bnr: BNR
     submit: SUBMIT
     fee: fee
 
-    oneitem: "У вас уже есть адрес кошелька Waves, а значит вы можете пополнить свой счет (депозит) любой из представленных в системе Waves валют — US DOLLAR, EURO, BITCOIN, ETHEREUM, WAVES, а затем купить BNR токен."
-    oneitem_att_desc: "Перед началом прохождения инструкции, убедитесь, что у вас выключено расширение Adblock или другое подобное. Иначе работоспособность сайта не гарантируется."
+    oneitem: "You already have a address of wallet of Waves, so you can replenish your deposit any of the currencies represented in the Wave system — US DOLLAR, EURO, BITCOIN, ETHEREUM, WAVES, and then buy a BNR token."
+    oneitem_att_desc: "Before you begin the instruction, make sure you have turned off the extension Adblock or similar. Otherwise, on the site is not guaranteed to normal work."
 
-    twoitem_1: "Пополнение кошелька Waves. Если у вас уже есть средства на вашем кошельке Waves — можете пропустить этот шаг. Мы будем считать, чтобы вы знаете как это делается."
-    twoitem_2_1: "В личном кабинете Waves вы видите валюты, которые поддерживает данная система. Около каждой валюты имеется кнопка"
-    twoitem_2_2: "которая дает возможность пополнить ваш счет в выбранной валюте. По нажатию кнопки"
-    twoitem_2_3: "вам будет предоставлена подробная инструкция о том, как пополнить ваш депозит в выбранной валюте."
-    twoitem_att_desc: "Пополняйте ваш счет именно в той валюте, за которую вы будете покупать BNR токены."
+    twoitem_1: "Replenishment of wallet of Waves. If you already have funds in your Waves wallet — you can skip this step. We will assume that you know how to do this."
+    twoitem_2_1: "In the personal cabinet Waves you see the currencies that supported by this system. Near each currency there is a button"
+    twoitem_2_2: "which allows you to replenish your deposit in the selected currency. By pressing the button"
+    twoitem_2_3: "you will be given detailed instructions on how to replenish your deposit in the selected currency."
+    twoitem_att_desc: "Replenish your deposit exactly in the currency of which you will buy BNR tokens."
 
-    threeitem_1: "Покупка BNR токена. В личном кабинете около каждой валюты имеется кнопка"
-    threeitem_2: "Вам нужно нажать на ту кнопку <b>SEND</b>, которая соответствует валюте за которую вы хотите купить"
-    threeitem_2_1: "токенов."
+    threeitem_1: "Purchase of BNR tokens. In the personal cabinet near each of them there is a button"
+    threeitem_2: "You need to click on that button SEND, which corresponds to the currency for which you want to buy a"
+    threeitem_2_1: "token."
 
-    fouritem_1: "По нажатию кнопки"
-    fouritem_1_1: "откроется форма, которую нужно заполнить. Форма для заполнения у всех валют одинаковая. В нашем примере мы выберем Bitcoin, то есть мы произведем покупку"
-    fouritem_1_2: "токенов"
-    fouritem_1_3: "за Bitcoin"
-    fouritem_1_4: "Рассмотрим каждое поле формы."
+    fouritem_1: "By pressing the button"
+    fouritem_1_1: "a form will appear that you must fill out. The form for filling in all currencies is the same. In our example, we will select Bitcoin, that is, we will make the purchase of"
+    fouritem_1_2: "tokens"
+    fouritem_1_3: "for Bitcoin"
+    fouritem_1_4: "Let's consider each field of the form."
 
     fouritem_2: "Recipient's Address"
-    fouritem_2_1: "Адрес получателя."
-    fouritem_2_2: "В этом поле вы должны указать официальный адрес кошелька Waves проекта BANER:"
+    fouritem_2_1: "Address of the recipient."
+    fouritem_2_2: "In this field you must specify the official address of the Waves purse of the BANER project:"
     fouritem_2_3: "3PQiSAJKUNDbHXvawpbJvkoH4FvAkSnfGMw"
 
-    fouritem_att_desc: "Официальный адрес Waves проекта BANER вы можете узнать только из этой инструкции или в личном кабинете BANER ICO по адресу:"
+    fouritem_att_desc: "The official address of the Waves of the BANER project can be found only from this instruction or in the personal cabinet of BANER ICO at the address:"
 
-    fouritem_3: "Ни в коем случае не переводите денежные средства на адреса взятые из неофициальных источников! Остерегайтесь мошенников!"
+    fouritem_3: "Do not transfer money to addresses taken from unofficial sources! Beware of scammers!"
 
     fouritem_4_title: "Amount"
-    fouritem_4_desc: "Сумма. Количество той валюты, за которую вы хотите купить BNR токен. В нашем случае это Bitcoin."
+    fouritem_4_desc: "The amount of the currency for which you want to buy a BNR token. In our case, this is Bitcoin."
 
     fouritem_5_title: "Attachment"
-    fouritem_5_title: "Комментарий. Вы можете написать комментарий к транзакции. Это поле опционально и не требует обязательного заполнения."
+    fouritem_5_desc: "A comment. You can write a comment on the transaction. This field is optional and does not require mandatory completion."
 
     fouritem_6_title: "Fee"
-    fouritem_6_title: "Комиссия. Сумма которую с вас возьмет система Waves за проведения транзакции."
+    fouritem_6_desc: "Commission. The amount that will be taken from you by the Waves system for conducting the transaction."
 
-    fouritem_7: "Наглядный пример заполнения формы:"
+    fouritem_7: "A clear example of filling a form:"
 
-    fouritem_8: "После заполнения формы нажимаем кнопку"
-    fouritem_8_1: "Если все действия были выполнены верно и система Waves провела транзакцию, в своем личном кабинете BANER ICO:"
-    fouritem_8_2: "в скором времени вы увидите купленное вами количество BNR токенов. Обратите внимание, что сумма остатка на депозите должна покрывать расходы на комиссию"
+    fouritem_8: "After filling the form press the button"
+    fouritem_8_1: "If all actions have been executed correctly and the system Waves conducted the transaction in his personal account BANER ICO:"
+    fouritem_8_2: "soon you will see the number of BNR tokens you bought. Please note that the balance on the deposit must cover commission costs"
 
-    fouritem_att_desc_1: "Время обработки транзакции может занимать длительное время — это зависит от многих факторов, но обычно не более 1 часа. Если вы хотите как можно быстрее провести транзакцию, укажите в поле <b>Fee</b> большую сумму комиссии для более быстрого проведения транзакции."
+    fouritem_att_desc_1: "The processing time of a transaction can take a long time - it depends on many factors, but usually no more than 1 hour. If you want to make a transaction as quickly as possible, specify in the Fee field a large amount of commission for a faster transaction."
 
-    fouritem_9: "Если вы испытываете сложности с покупкой BNR токенов, просьба обращаться по адресу support@baner.su или в официальные каналы Slack и Telegram."
+    fouritem_9: "If you experience difficulties with the purchase of BNR tokens, please contact support@baner.su or in the official channels of Slack and Telegram."
 
     fouritem_slack: "Slack:"
     fouritem_tgr: "Telegram:"
 
-    fouritem_att_desc_2: "На вопросы относительно покупки BNR токенов достоверную информацию имеет право давать исключительно Dmitry Smirnov. Остерегайтесь мошенников!"
+    fouritem_att_desc_2: "For questions regarding the purchase of BNR tokens, Dmitry Smirnov has the right to give reliable information only. Beware of scammers!"
 
-    info_salck: "Dmitry Smirnov в Slack:"
-    info_tgr: "Dmitry Smirnov в Telegram:"
-    footer: "За информацию данную другими источниками, компания BANER не будет нести ответственность!"
+    info_salck: "Dmitry Smirnov in Slack:"
+    info_tgr: "Dmitry Smirnov in Telegram:"
+    footer: "For the information given by other sources, BANER will not be responsible!"
