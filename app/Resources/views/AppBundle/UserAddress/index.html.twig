@@ -57,12 +57,12 @@
                         <div class="invested-all">
                             <div class="title">{{ 'aside_right.invested'| trans }}</div>
                             <ul class="currency-list">
-                                <li class="currency-item bnr">0 BTC</li>
-                                <li class="currency-item usd">0 USD</li>
+                                <li class="currency-item bnr"><span>{{ invested_btc| number_format(5) }}</span> BTC</li>
+                                <li class="currency-item usd"><span>{{ invested_usd| number_format(5) }}</span> USD</li>
                             </ul>
                         </div>
                         <div class="members">
-                            <div class="title">{{ 'aside_right.members'| trans }}</div><span class="count">0</span>
+                            <div class="title">{{ 'aside_right.members'| trans }}</div><span class="count">{{ userCount }}</span>
                         </div>
                     </div>
                 </section>
