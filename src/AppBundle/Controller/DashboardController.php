@@ -24,7 +24,7 @@ class DashboardController extends Controller
     public function indexAction(Request $request)
     {
 
-        $invesed = $this->getDoctrine()->getRepository(Transaction::class)->getInvested();
+        $invested = $this->getDoctrine()->getRepository(Transaction::class)->getInvested();
 
         $balance = $this->getDoctrine()->getRepository(Transaction::class)->getTotalBalance($this->getUser());
 
@@ -42,7 +42,7 @@ class DashboardController extends Controller
                 ->getRepository(CurrencyRate::class)->getLastRateByCurrency(1);
 
         $inv['USD'] = 0;
-        foreach ($invesed as $currency) {
+        foreach ($invested as $currency) {
              $rate =  $this->getDoctrine()
                 ->getRepository(CurrencyRate::class)->getLastRateByCurrency($currency['currency']);
              $amount = $rate * $currency['amount'];
@@ -58,7 +58,7 @@ class DashboardController extends Controller
         return $this->render('AppBundle/Dashboard/index.html.twig', [
             'userCount' => $userCount,
             'rates' => $rates,
-            'invesed' => $invesed,
+            'invested' => $invested,
             'invested_usd' => $inv['USD'],
             'invested_btc' => $inv['USD'] / $btcRate,
             'balance' => $balance
