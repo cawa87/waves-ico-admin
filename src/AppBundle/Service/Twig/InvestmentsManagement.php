@@ -31,23 +31,24 @@ class InvestmentsManagement
     {
         $bonus = 0;
 
-        if ($this->day >= 28) {
+
+        if ($this->day >= 25 || $this->day == 24) {
             $bonus = 25;
         }
 
-        if ($this->day <= 27 && $this->day >= 25) {
+        if ($this->day <= 23 && $this->day >= 21) {
             $bonus = 20;
         }
 
-        if ($this->day <= 24 && $this->day >= 22) {
+        if ($this->day <= 20 && $this->day >= 18) {
             $bonus = 15;
         }
 
-        if ($this->day <= 21 && $this->day >= 18) {
+        if ($this->day <= 17 && $this->day >= 14) {
             $bonus = 10;
         }
 
-        if ($this->day <= 17 && $this->day >= 12) {
+        if ($this->day <= 13 && $this->day >= 6) {
             $bonus = 5;
         }
 

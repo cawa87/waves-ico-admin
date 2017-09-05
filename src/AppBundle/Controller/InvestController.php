@@ -21,9 +21,10 @@ class InvestController extends Controller
     {
         $rate = $this->getDoctrine()->getRepository(CurrencyRate::class)->getLastRateByCurrencyCode($currency);
 
+
         return $this->json([
             'success' => true,
-            'amount' => $rate * $value,
+            'amount' => ($rate * $value)/10,  // @todo PRICE!
             'bonus' => $this->get('app.wrappers.bonus_service')->getBonus(),
         ]);
     }
