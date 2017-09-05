@@ -50,8 +50,8 @@ aside_right:
     members: УЧАСТНИКИ
 
 alert_waves:
-    title: 'Адрес waves'
-    placeholder: 'Введите адрес waves для дальнейшей работы'
+    title: 'Адрес Waves'
+    placeholder: 'Введите адрес Waves для дальнейшей работы'
     btn: Готово
     btn_popup: 'Что такое Waves и где его взять'
     error: 'Ошибка. Проверьте правильность введенного вами адреса.'

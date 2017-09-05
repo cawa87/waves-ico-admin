@@ -50,7 +50,7 @@ aside_right:
     members: MEMBERS
 
 alert_waves:
-    title: 'Address waves'
+    title: 'Address Waves'
     placeholder: 'Enter the address of the waves for further work'
     btn: Done
     btn_popup: 'What is Waves and where to get it'

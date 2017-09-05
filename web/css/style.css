@@ -303,6 +303,10 @@ p {
   text-decoration: underline;
 }
 
+.link-disable {
+  pointer-events: none;
+}
+
 .dropdown-block {
   position: relative;
 }
@@ -484,6 +488,7 @@ p {
 }
 
 .panel-form .dropdown-lang .select-lang {
+  padding-right: 15px;
   color: #0c4384;
 }
 
@@ -491,7 +496,7 @@ p {
   content: '';
   position: absolute;
   top: 50%;
-  right: -12px;
+  right: 0;
   display: block;
   width: 5px;
   height: 5px;
@@ -499,6 +504,7 @@ p {
   border-top: 1px solid #0c4384;
   -webkit-transform: translateY(-5px) rotate(-135deg);
           transform: translateY(-5px) rotate(-135deg);
+  pointer-events: none;
 }
 
 .panel-form .panel-form-body {
@@ -995,6 +1001,7 @@ p {
   border-top: 1px solid #fff;
   -webkit-transform: translateY(-4px) rotate(-135deg);
           transform: translateY(-4px) rotate(-135deg);
+  pointer-events: none;
 }
 
 .main-header .dropdown-user {
@@ -1019,6 +1026,7 @@ p {
   border-top: 1px solid #fff;
   -webkit-transform: translateY(-4px) rotate(-135deg);
           transform: translateY(-4px) rotate(-135deg);
+  pointer-events: none;
 }
 
 .main-header .waves-view {
