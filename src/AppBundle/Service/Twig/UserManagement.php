@@ -17,10 +17,4 @@ class UserManagement
         $this->repository = $repository;
     }
 
-
-    public function getUserCount()
-    {
-        //@todo
-        return 0;
-    }
 }

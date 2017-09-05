@@ -11,7 +11,7 @@ class LoadUserData implements FixtureInterface
 {
     public function load(ObjectManager $manager)
     {
-        $user = new User();
+       /* $user = new User();
         $user->setUsername('admin');
         $user->setPlainPassword('test');
         $user->setEmail('test@mail.com');
@@ -23,6 +23,6 @@ class LoadUserData implements FixtureInterface
 
 
 
-        $manager->flush();
+        $manager->flush();*/
     }
 }

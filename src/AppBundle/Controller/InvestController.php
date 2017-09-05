@@ -19,10 +19,7 @@ class InvestController extends Controller
      */
     public function InvestEstimationAction(Request $request, $currency, $value)
     {
-        //@todo
         $rate = $this->getDoctrine()->getRepository(CurrencyRate::class)->getLastRateByCurrencyCode($currency);
-
-
 
         return $this->json([
             'success' => true,
