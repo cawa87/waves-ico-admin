@@ -44,7 +44,7 @@ class SyncWavesTransactionCommand extends ContainerAwareCommand
             $address = $user->getWallet()->getAddress();
             $output->writeln('User address: ' . $address);
 
-            $transactions = $wrapper->getAddressTransactions($address);
+            $transactions = $wrapper->getAddressTransactionsFromMain($address);
             foreach ($transactions as $transaction) {
 
                 $trs = $em->getRepository(WavesTransaction::class)->findOneBy([
@@ -69,8 +69,7 @@ class SyncWavesTransactionCommand extends ContainerAwareCommand
                     // var_dump(date('m/d/Y H:i:s', substr($transaction->timestamp,0,10)));
                     $em->getManager()->persist($wavesTransaction);
 
-                    if ($transaction->recipient == $user->getWallet()->getAddress()
-                        && $transaction->sender == $user->getWavesAddress()) {
+                    if ($transaction->recipient == $user->getWallet()->getAddress()) {
 
                         if (!$transaction->assetId) {
                             $assetId = $em->getRepository(Currency::class)->findOneBy([

@@ -13,6 +13,9 @@ class WavesNodeWrapper
 
     const TRANSACTION_LIMIT = 100;
 
+    protected $mainNodeUrl = 'https://nodes.wavesnodes.com/';
+
+
 
     /**
      * WavesNodeWrapper constructor.
@@ -70,4 +73,19 @@ class WavesNodeWrapper
 
         return json_decode($res->getBody())[0];
     }
+
+    public function getAddressTransactionsFromMain($address)
+    {
+        $client = $this->client;
+        $url = $this->mainNodeUrl . 'transactions/address/' . $address . '/limit/' . self::TRANSACTION_LIMIT;
+        // var_dump($url); die();
+
+        $res = $client->request('GET', $url, [
+            'headers' => []
+        ]);
+        //echo $res->getStatusCode();
+
+        return json_decode($res->getBody())[0];
+    }
+
 }
