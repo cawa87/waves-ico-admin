@@ -31,4 +31,10 @@ class InvestmentsManagement
         //@todo
         return 30;
     }
+
+    
+    public  function getBalance(){
+
+        return $this->em->getRepository(Transaction::class)->getTotalBalance($this->getUser());
+    }
 }

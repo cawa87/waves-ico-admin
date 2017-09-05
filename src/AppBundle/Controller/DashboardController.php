@@ -26,7 +26,7 @@ class DashboardController extends Controller
 
         $invested = $this->getDoctrine()->getRepository(Transaction::class)->getInvested();
 
-        $balance = $this->getDoctrine()->getRepository(Transaction::class)->getTotalBalance($this->getUser());
+
 
         $rates['USD'] = 10; // @todo BNR price to params
 
@@ -42,26 +42,52 @@ class DashboardController extends Controller
                 ->getRepository(CurrencyRate::class)->getLastRateByCurrency(1);
 
         $inv['USD'] = 0;
+
+        $investedAll[1] = [
+            'amount' => 0,
+            'code' => 'WAVES',
+        ];
+        $investedAll[2] = [
+            'amount' => 0,
+            'code' => 'USD',
+        ];
+        $investedAll[3] = [
+            'amount' => 0,
+            'code' => 'EUR',
+        ];
+        $investedAll[4] = [
+            'amount' => 0,
+            'code' => 'BTC',
+        ];
+        $investedAll[5] = [
+            'amount' => 0,
+            'code' => 'ETH',
+        ];
+
         foreach ($invested as $currency) {
              $rate =  $this->getDoctrine()
                 ->getRepository(CurrencyRate::class)->getLastRateByCurrency($currency['currency']);
              $amount = $rate * $currency['amount'];
             $inv['USD']  += $amount;
+
+            $investedAll[$currency['currency']] = $currency;
         }
+
+        var_dump($investedAll); die();
 
         $userCount = $product = $this->getDoctrine()
             ->getRepository(User::class)
             ->getCount();
 
-        
+
+        var_dump($invested); die();
 
         return $this->render('AppBundle/Dashboard/index.html.twig', [
             'userCount' => $userCount,
             'rates' => $rates,
-            'invested' => $invested,
+            'invested' => $investedAll,
             'invested_usd' => $inv['USD'],
             'invested_btc' => $inv['USD'] / $btcRate,
-            'balance' => $balance
         ]);
     }
 }
