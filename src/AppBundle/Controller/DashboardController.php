@@ -26,7 +26,7 @@ class DashboardController extends Controller
 
         $invesed = $this->getDoctrine()->getRepository(Transaction::class)->getInvested();
 
-        $balance = $this->getDoctrine()->getRepository(Transaction::class)->getTotalBalance();
+        $balance = $this->getDoctrine()->getRepository(Transaction::class)->getTotalBalance($this->getUser());
 
         $rates['USD'] = 10; // @todo BNR price to params
 
@@ -52,6 +52,8 @@ class DashboardController extends Controller
         $userCount = $product = $this->getDoctrine()
             ->getRepository(User::class)
             ->getCount();
+
+        
 
         return $this->render('AppBundle/Dashboard/index.html.twig', [
             'userCount' => $userCount,

@@ -24,16 +24,18 @@ class TransactionRepository extends \Doctrine\ORM\EntityRepository
         return $qb->getQuery()->getArrayResult();
     }
 
-    public function getTotalBalance()
+    public function getTotalBalance($user)
     {
         $qb = $this->createQueryBuilder('tr');
         $qb->select('SUM(tr.amount) as amount');
       //  $qb->join('tr.currency', 'cr');
         $qb->where('tr.transactionType = :type');
+        $qb->andWhere('tr.user = :user');
        // $qb->groupBy('cr.code');
 
         $qb->setParameter('type', 300);
+        $qb->setParameter('user', $user);
 
-        return $qb->getQuery()->getScalarResult();
+        return $qb->getQuery()->getSingleScalarResult();
     }
 }

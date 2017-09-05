@@ -15,7 +15,7 @@ parameters:
     mailer_port: 587
     mailer_encryption: tls # TLS encryption is required
     mailer_user: 'postmaster@baner.su'
-    mailer_password: '6ee79c1db9dca1399105d216aec266f3
+    mailer_password: '6ee79c1db9dca1399105d216aec266f3'
 
     # A secret key that's used to generate certain security-related tokens
     secret: ThisTokenIsNotSoSecretChangeIt
