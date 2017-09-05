@@ -10,4 +10,30 @@ namespace AppBundle\Repository;
  */
 class TransactionRepository extends \Doctrine\ORM\EntityRepository
 {
+
+    public function getInvested()
+    {
+        $qb = $this->createQueryBuilder('tr');
+        $qb->select('SUM(tr.amount) as amount, cr.code, cr.id as currency');
+        $qb->join('tr.currency', 'cr');
+        $qb->where('tr.transactionType = :type');
+        $qb->groupBy('cr.code');
+
+        $qb->setParameter('type', 100);
+
+        return $qb->getQuery()->getArrayResult();
+    }
+
+    public function getTotalBalance()
+    {
+        $qb = $this->createQueryBuilder('tr');
+        $qb->select('SUM(tr.amount) as amount');
+      //  $qb->join('tr.currency', 'cr');
+        $qb->where('tr.transactionType = :type');
+       // $qb->groupBy('cr.code');
+
+        $qb->setParameter('type', 300);
+
+        return $qb->getQuery()->getScalarResult();
+    }
 }
