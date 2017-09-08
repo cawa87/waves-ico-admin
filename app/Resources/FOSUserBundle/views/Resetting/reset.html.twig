@@ -1,16 +1,51 @@
-{#
 {% extends "@FOSUser/layout.html.twig" %}
 
-{% trans_default_domain 'FOSUserBundle' %}
+{% form_theme form ':form:register.html.twig' %}
 
 {% block fos_user_content %}
-    <!-- Register panel-->
+    <!-- Reset password panel -->
     <section class="panel panel-form">
-        <h2 class="panel-title">{{ 'layout.restore'| trans }}</h2>
+        <h2 class="panel-title">Изменение пароля
+            <div class="dropdown-block dropdown-lang">
+                <a class="select-lang" data-toggle="dropdown" href="">
+                    {{ (app.request.locale == "en") ? 'English' : 'Russian' }}
+                </a>
+                <ul class="dropdown-menu dropdown-menu-lang" data-toggle="dropdown-menu">
+                    <li class="drop-item"><a href="?_locale=ru">Russian</a></li>
+                    <li class="drop-item"><a href="?_locale=en">English</a></li>
+                </ul>
+            </div>
+        </h2>
 
-          <div class="panel-body panel-form-body">
-              <div>11212</div>
-          </div>
+        <div class="panel-body panel-form-body">
+            {{ form_start(form, { 'action': path('fos_user_resetting_reset', {'token': token}), 'attr': { 'class': 'fos_user_resetting_reset' } }) }}
+
+                <div class="form-line">
+                    <label class="label" for="fos_user_resetting_form_plainPassword_first">New password</label>
+                    <div class="popover-wrapper">
+                        <input class="input"
+                               type="password"
+                               id="fos_user_resetting_form_plainPassword_first"
+                               name="fos_user_resetting_form[plainPassword][first]"
+                               required
+                               placeholder="New password">
+                        {{ form_row(form.plainPassword) }}
+                    </div>
+                </div>
+                <div class="form-line">
+                    <label class="label" for="fos_user_resetting_form_plainPassword_second">{{ 'layout.repeat_pass'| trans }}</label>
+                    <input class="input"
+                           type="password"
+                           id="fos_user_resetting_form_plainPassword_second"
+                           name="fos_user_resetting_form[plainPassword][second]"
+                           required
+                           placeholder="Repeat password">
+                </div>
+
+                <button class="btn btn-block btn-form blue" type="submit">Подтвердить</button>
+
+            {{ form_end(form) }}
+        </div>
+
     </section>
 {% endblock %}
-#}
