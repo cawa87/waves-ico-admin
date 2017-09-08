@@ -95,9 +95,9 @@ services:
         # redundant if you're using autoconfigure
         tags: [kernel.event_subscriber]
 
-    AppBundle\Service\BonusService: "@app.wrappers.bonus_service"
+    AppBundle\Service\BonusService: "@app.services.bonus_service"
 
-    app.wrappers.bonus_service:
+    app.services.bonus_service:
         class: AppBundle\Service\BonusService
         public: true
         arguments:

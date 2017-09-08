@@ -26,7 +26,7 @@ class InvestController extends Controller
         return $this->json([
             'success' => true,
             'amount' => ($rate * $value) / 10,  // @todo PRICE!
-            'bonus' => $this->get('app.wrappers.bonus_service')->getBonus(),
+            'bonus' => $this->get('app.services.bonus_service')->getBonus(),
         ]);
     }
 

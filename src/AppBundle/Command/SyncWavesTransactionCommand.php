@@ -7,6 +7,7 @@ use AppBundle\Entity\CurrencyRate;
 use AppBundle\Entity\Transaction;
 use AppBundle\Entity\User;
 use AppBundle\Entity\WavesTransaction;
+use AppBundle\Service\BonusService;
 use Symfony\Bundle\FrameworkBundle\Command\ContainerAwareCommand;
 use Symfony\Component\Console\Input\InputArgument;
 use Symfony\Component\Console\Input\InputInterface;
@@ -30,6 +31,7 @@ class SyncWavesTransactionCommand extends ContainerAwareCommand
     {
 
         $wrapper = $this->getContainer()->get('app.wrappers.waves_node_wrapper');
+        $bonusService = $this->getContainer()->get('app.services.bonus_service');
 
         $em = $this->getContainer()->get('doctrine');
         $users = $em->getRepository(User::class)->findAll();
@@ -100,14 +102,16 @@ class SyncWavesTransactionCommand extends ContainerAwareCommand
 
 
                         // reserve token
+                        $amount = (($transaction->amount / 100000000) * $currencyRate) / 10;
+                        $amount += ($amount/100)*$bonusService->getBonus();
+
                         $output->writeln('Creating token reserve TX');
                         $bnrTransaction = new Transaction();
                         $bnrTransaction->setTransactionType($bnrTransaction::TYPE_TOKEN_RESERVED);
                         $bnrTransaction->setUser($user);
                         // @todo current BNR price to param
-                        $bnrTransaction->setAmount((($transaction->amount / 100000000) * $currencyRate) / 10); // CURRENT PRICE
-                        $bnrTransaction->setInfo('Token reserved. ' .
-                            ((($transaction->amount / 100000000) * $currencyRate) / 10) . ' BNR.');
+                        $bnrTransaction->setAmount($amount); // CURRENT PRICE
+                        $bnrTransaction->setInfo('Token reserved. ' . $amount . ' BNR.');
 
                         $em->getManager()->persist($bnrTransaction);
 
