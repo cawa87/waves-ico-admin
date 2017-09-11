@@ -177,10 +177,10 @@ pp-invest:
 
     fouritem_2: "Recipient's Address"
     fouritem_2_1: "Address of the recipient."
-    fouritem_2_2: "In this field you must specify the official address of the Waves purse of the BANER project:"
-    fouritem_2_3: "3PQiSAJKUNDbHXvawpbJvkoH4FvAkSnfGMw"
+    fouritem_2_2: "In this field you must specify the address BANER Waves, this address is unique for each user, it is issued personally."
+    fouritem_2_3: "You can find it in your personal cabinet."
 
-    fouritem_att_desc: "The official address of the Waves of the BANER project can be found only from this instruction or in the personal cabinet of BANER ICO at the address:"
+    fouritem_att_desc: "The official address of the Waves of the BANER project can be found only in your personal BANER ICO office at:"
     fouritem_att_desc_link: 'https://ico-panel.baner.su/?_locale=en'
 
     fouritem_3: "Do not transfer money to addresses taken from unofficial sources! Beware of scammers!"
